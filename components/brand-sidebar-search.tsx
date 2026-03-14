@@ -34,7 +34,10 @@ export function BrandSidebarSearch({
       {/* Search */}
       <div>
         <div className="flex items-center gap-2 rounded-lg bg-neutral-100/80 px-3 py-2 transition-shadow focus-within:ring-2 focus-within:ring-ring dark:bg-neutral-900">
-          <IconSearch className="h-3.5 w-3.5 text-neutral-500" aria-hidden="true" />
+          <IconSearch
+            className="h-3.5 w-3.5 text-neutral-500"
+            aria-hidden="true"
+          />
           <input
             type="search"
             placeholder={`${t("search")}…`}
@@ -42,7 +45,7 @@ export function BrandSidebarSearch({
             onChange={(e) => setQuery(e.target.value)}
             aria-label={t("search")}
             autoComplete="off"
-            className="w-full bg-transparent text-[13px] text-neutral-700 placeholder:text-neutral-500 outline-none dark:text-neutral-300 dark:placeholder:text-neutral-500"
+            className="w-full bg-transparent text-[13px] text-neutral-700 outline-none placeholder:text-neutral-500 dark:text-neutral-300 dark:placeholder:text-neutral-500"
           />
         </div>
       </div>
@@ -74,12 +77,15 @@ export function BrandSidebarSearch({
                   href={`/${brand.slug}`}
                   onClick={onNavigate}
                   className={cn(
-                    "flex items-center gap-px rounded-lg px-2 py-1.5 transition-colors",
+                    "flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
                     isActive
                       ? "bg-neutral-100/70 dark:bg-neutral-800/50"
                       : "hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
                   )}
-                  style={{ contentVisibility: "auto", containIntrinsicSize: "auto 40px" }}
+                  style={{
+                    contentVisibility: "auto",
+                    containIntrinsicSize: "auto 40px",
+                  }}
                 >
                   <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]">
                     <Image

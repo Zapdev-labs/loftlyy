@@ -13,7 +13,8 @@ export const discord: Brand = {
     {
       name: "Blurple",
       hex: "#5865F2",
-      usage: "Primary brand color. Used across the logo, buttons, links, and interactive elements.",
+      usage:
+        "Primary brand color. Used across the logo, buttons, links, and interactive elements.",
     },
     {
       name: "Green",
@@ -105,8 +106,8 @@ export const discord: Brand = {
     {
       label: "Full Wordmark",
       src: "/brands/discord/logo-wordmark.svg",
-      width: 384,
-      height: 96,
+      width: 803,
+      height: 159,
       format: "svg",
     },
   ],

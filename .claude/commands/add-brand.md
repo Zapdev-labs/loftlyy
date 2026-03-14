@@ -1,0 +1,110 @@
+Add a new brand to Loftlyy. The brand name is: $ARGUMENTS
+
+Follow these steps in order. Do not skip any step. Use parallel tool calls wherever possible.
+
+## Step 1: Research
+
+Use WebFetch to visit the brand's official website and gather:
+- Brand description (2-3 sentences)
+- Official colors with hex values and usage descriptions
+- Typography: font names, roles, weights, designer, foundry
+- Founded year, headquarters, designer/design team, last rebrand year
+- Brand philosophy (1-2 sentence summary)
+- Legal guidelines URL and dos/donts
+
+Also check `data/categories.ts` for available industry/style categories.
+
+## Step 2: Fetch Logo Assets
+
+Find official SVG logos. Try these sources in order:
+1. Brand's official press/brand page
+2. `https://www.logo.wine/logo/Brand_Name` via WebFetch
+3. Brand's website HTML for inline SVG or CDN paths:
+   ```bash
+   curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "https://brand.com" | grep -oiE '[a-zA-Z0-9/_:.-]*\.svg' | sort -u
+   ```
+
+Create at minimum these variants:
+- `<slug>-logo-black.svg` — dark fill for light backgrounds
+- `<slug>-logo-white.svg` — white fill for dark backgrounds (label MUST contain "White")
+- Additional brand-color variants if applicable
+
+**CRITICAL SVG rules:**
+- Every SVG MUST have explicit `width` and `height` attributes, not just `viewBox`
+- Icon logos: minimum 128x128 dimensions (increase `width`/`height` if viewBox is small like 16x16 — keep viewBox the same)
+- ViewBox must tightly crop the artwork — no excessive padding
+- NEVER fabricate wordmarks with `<text>` elements — only use proper vector paths
+- Create color variants by changing the `fill` attribute
+
+Save to `public/brands/<slug>/`.
+
+## Step 3: Fetch Font Files
+
+Find the brand's actual font files as `.woff2`:
+
+```bash
+curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "https://brand.com" | grep -oiE '[a-zA-Z0-9/_:.-]*\.(woff2|woff|ttf)' | sort -u
+```
+
+Also check subpages (blog, docs, developer portal) if the homepage doesn't yield results. Try predictable CDN paths.
+
+For system fonts (e.g., SF Pro on macOS), use pyftsubset to subset:
+```bash
+python3 -m venv /tmp/fonttools-env && /tmp/fonttools-env/bin/pip install fonttools brotli
+/tmp/fonttools-env/bin/pyftsubset /path/to/font.ttf --output-file=output.woff2 --flavor=woff2 --text="The quick brown fox jumps over the lazy dog. 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz !@#\$%&*()" --layout-features='*'
+```
+
+Requirements:
+- Must be `.woff2` format, under 200KB each
+- Must be local files at `/brands/<slug>/fonts/` — NEVER use external URLs as `fontUrl`
+- One file per typography entry in the data
+
+Save to `public/brands/<slug>/fonts/`.
+
+## Step 4: Create Brand Data File
+
+Create `data/brands/<slug>.ts` following the `Brand` type from `lib/types.ts`.
+
+Key rules:
+- `width`/`height` in assets and thumbnail MUST exactly match the SVG's `width`/`height` attributes
+- Asset labels containing "white", "ivory", or "light" (case-insensitive) get dark backgrounds automatically
+- `fontUrl` must be a local path like `/brands/<slug>/fonts/file.woff2`
+- `industry` must match a slug in `data/categories.ts`
+- Use today's date for `dateAdded`
+
+## Step 5: Register the Brand
+
+Edit `data/brands/index.ts`:
+1. Add the import
+2. Add the brand to the `brands` array (it's auto-sorted by name)
+
+## Step 6: Add Translations
+
+Add the brand's description to each locale file in `messages/`:
+- `messages/en.json` — English description
+- `messages/es.json` — Spanish translation
+- `messages/fr.json` — French translation
+- `messages/de.json` — German translation
+- `messages/ja.json` — Japanese translation
+
+Add under `brands.<slug>.description`. If the industry or tags are new, add those translations under `categories` and `tags` too.
+
+## Step 7: Verify
+
+Run these checks:
+
+```bash
+# All asset files exist
+for f in <list-all-src-paths>; do test -f "public$f" && echo "OK: $f" || echo "MISSING: $f"; done
+
+# All SVGs have width/height
+for f in public/brands/<slug>/*.svg; do head -1 "$f" | grep -q 'width=' && echo "OK: $(basename $f)" || echo "MISSING w/h: $(basename $f)"; done
+
+# All fonts valid
+file public/brands/<slug>/fonts/*.woff2
+
+# Type check passes
+pnpm typecheck
+```
+
+Report the verification results. If anything fails, fix it before finishing.
