@@ -31,6 +31,9 @@ pnpm-debug.log*
 # env files
 .env*.local
 
+# raw assets (pre-optimization source images)
+/_raw-assets
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
