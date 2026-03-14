@@ -1,5 +1,30 @@
 import type { Brand } from "@/lib/types"
 
+export function SiteStructuredData({
+  siteName,
+  siteDescription,
+  url,
+}: {
+  siteName: string
+  siteDescription: string
+  url: string
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    description: siteDescription,
+    url,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
 export function BrandStructuredData({ brand }: { brand: Brand }) {
   const jsonLd = {
     "@context": "https://schema.org",

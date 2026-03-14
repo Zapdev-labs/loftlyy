@@ -61,6 +61,12 @@ export async function generateMetadata({
       type: "website",
       locale,
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: brand.assets[0] ? [brand.assets[0].src] : [],
+    },
   }
 }
 

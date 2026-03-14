@@ -1,12 +1,16 @@
+import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { NextIntlClientProvider, hasLocale } from "next-intl"
-import { getMessages, setRequestLocale } from "next-intl/server"
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 
 import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { SiteStructuredData } from "@/components/structured-data"
 import { routing } from "@/i18n/routing"
 import { cn } from "@/lib/utils"
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://loftlyy.com"
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -19,6 +23,46 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
   display: "swap",
 })
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "metadata" })
+
+  const title = {
+    default: `${t("siteName")} — ${t("siteDescription")}`,
+    template: `%s | ${t("siteName")}`,
+  }
+  const description = `${t("siteDescription")}. Brand identity of brands for inspiration.`
+
+  return {
+    metadataBase: new URL(BASE_URL),
+    title,
+    description,
+    openGraph: {
+      title: title.default,
+      description,
+      siteName: t("siteName"),
+      type: "website",
+      locale,
+      url: `${BASE_URL}/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title.default,
+      description,
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${BASE_URL}/${l}`])
+      ),
+    },
+  }
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -37,7 +81,10 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale)
-  const messages = await getMessages()
+  const [messages, t] = await Promise.all([
+    getMessages(),
+    getTranslations({ locale, namespace: "metadata" }),
+  ])
 
   const clientMessages = {
     brand: messages.brand,
@@ -53,6 +100,11 @@ export default async function LocaleLayout({
       <head>
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+        <SiteStructuredData
+          siteName={t("siteName")}
+          siteDescription={t("siteDescription")}
+          url={`${BASE_URL}/${locale}`}
+        />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={clientMessages}>

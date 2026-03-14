@@ -52,6 +52,11 @@ export async function generateMetadata({
       type: "website",
       locale,
     },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   }
 }
 

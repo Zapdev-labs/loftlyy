@@ -1,5 +1,19 @@
 import { useTranslations } from "next-intl"
-import { setRequestLocale } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "metadata" })
+
+  return {
+    title: `${t("siteName")} — ${t("siteDescription")}`,
+    description: `${t("siteDescription")}. Brand identity of brands for inspiration.`,
+  }
+}
 
 export default async function BrandsPage({
   params,
