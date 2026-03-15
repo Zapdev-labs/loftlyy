@@ -3,8 +3,18 @@
     "siteName": "Loftlyy",
     "siteDescription": "ブランドアイデンティティ、ロゴ、カラー、デザインシステムを発見・探索"
   },
+  "home": {
+    "headline": "実際のブランドアイデンティティを発見。",
+    "subheadline": "ブランドアイデンティティの常に成長し続けるデータベース。",
+    "popular": "人気",
+    "explore": "その他のブランド",
+    "browseAll": "サイドバーで{count}ブランドを検索・フィルタリング",
+    "startExploring": "探索を始める",
+    "cta": "探索を始める",
+    "sponsor": "サポートする"
+  },
   "nav": {
-    "search": "ブランドを検索...",
+    "search": "ブランドを検索",
     "allBrands": "すべてのブランド",
     "categories": "カテゴリ",
     "filters": "フィルター",
@@ -13,7 +23,9 @@
     "styleTags": "スタイル",
     "colorFamily": "カラー",
     "typographyStyle": "タイポグラフィ",
-    "noBrandsFound": "ブランドが見つかりません"
+    "noBrandsFound": "ブランドが見つかりません",
+    "language": "言語",
+    "theme": "テーマ"
   },
   "brand": {
     "overview": "概要",
@@ -94,6 +106,10 @@
     "wise": {
       "description": "Wiseは、国際送金を迅速、安価、透明にするグローバルフィンテック企業です。旧TransferWiseとして知られ、実際の為替レートで国境を越えて送金する数百万の顧客にサービスを提供しています。",
       "philosophy": "透明で、大胆で、ボーダーレス。Wiseのアイデンティティは、特徴的なグリーンと旗のモチーフを使用して国境を越えるお金の動きを象徴します——金融サービスは公正でシンプルであるべきだと信じる企業にふさわしい率直なデザイン。"
+    },
+    "stripe": {
+      "description": "Stripeは、あらゆる規模のインターネットビジネス向けに決済処理APIとツールを提供する金融インフラプラットフォームです。2010年設立、世界中の数百万の企業を支えています。",
+      "philosophy": "Stripeのアイデンティティは、開発者ファーストの明快さと洗練されたシンプルさに基づいています。特徴的なパープルのカラーパレットとクリーンなタイポグラフィで、フィンテックにおける信頼と洗練を表現しています。"
     }
   },
   "tags": {
@@ -123,10 +139,14 @@
     "money-transfer": "送金",
     "banking": "バンキング",
     "international": "インターナショナル",
-    "currency": "通貨"
+    "currency": "通貨",
+    "api": "API",
+    "developer-tools": "開発者ツール",
+    "financial-infrastructure": "金融インフラ",
+    "e-commerce": "Eコマース"
   },
   "common": {
-    "loading": "読み込み中...",
+    "loading": "読み込み中",
     "notFound": "見つかりません",
     "notFoundDescription": "お探しのページは存在しません。",
     "backToHome": "ホームに戻る"

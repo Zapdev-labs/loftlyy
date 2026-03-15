@@ -70,7 +70,7 @@ export function MobileSidebarToggle() {
             className="fixed inset-y-0 left-0 z-50 flex w-[272px] animate-in flex-col gap-4 overscroll-y-contain bg-white pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] shadow-xl duration-200 slide-in-from-left dark:bg-neutral-950"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-5">
+            <div className="flex items-center justify-between px-5 pt-5 lg:pt-0">
               <div className="flex items-center gap-2.5">
                 <Image
                   src="/logo.webp"

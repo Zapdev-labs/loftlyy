@@ -8,7 +8,13 @@ export const anthropic: Brand = {
   url: "https://anthropic.com",
   industry: "ai",
   categories: ["ai", "saas", "wordmark-logos", "minimal-logos"],
-  tags: ["artificial-intelligence", "machine-learning", "research", "claude", "ai-safety"],
+  tags: [
+    "artificial-intelligence",
+    "machine-learning",
+    "research",
+    "claude",
+    "ai-safety",
+  ],
   colors: [
     {
       name: "Anthropic Tan",
@@ -165,6 +171,13 @@ export const anthropic: Brand = {
   thumbnail: {
     label: "Anthropic Symbol — Slate",
     src: "/brands/anthropic/anthropic-symbol-slate.svg",
+    width: 92,
+    height: 64,
+    format: "svg",
+  },
+  thumbnailDark: {
+    label: "Anthropic Symbol — Ivory",
+    src: "/brands/anthropic/anthropic-symbol-ivory.svg",
     width: 92,
     height: 64,
     format: "svg",

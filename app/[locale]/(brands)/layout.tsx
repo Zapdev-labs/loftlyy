@@ -16,7 +16,7 @@ export default function BrandsLayout({
       </a>
       <BrandSidebar />
       <div className="flex flex-1 flex-col overflow-hidden border-l border-neutral-200 dark:border-neutral-800/50">
-        <header className="flex h-11 shrink-0 items-center px-4 lg:hidden">
+        <header className="flex shrink-0 items-center p-2 lg:hidden">
           <MobileSidebarToggle />
         </header>
         <main id="main-content" className="flex-1 overflow-y-auto">

@@ -118,6 +118,13 @@ export const discord: Brand = {
     height: 96,
     format: "svg",
   },
+  thumbnailDark: {
+    label: "Clyde (White)",
+    src: "/brands/discord/logo-clyde-white.svg",
+    width: 127,
+    height: 96,
+    format: "svg",
+  },
   dateAdded: "2026-03-14",
   founded: 2015,
   headquarters: "San Francisco, CA",

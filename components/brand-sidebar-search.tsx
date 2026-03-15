@@ -1,16 +1,15 @@
 "use client"
 
-import { useState, useDeferredValue } from "react"
+import { useDeferredValue, useState } from "react"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
-import { IconSearch } from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { cn } from "@/lib/utils"
 import { filterBrands } from "@/lib/filters"
 import { useBrandFilters } from "@/hooks/use-brand-filters"
-import { SidebarFilters } from "@/components/sidebar-filters"
+import { CommandMenu } from "@/components/command-menu"
 import type { Brand } from "@/lib/types"
 
 export function BrandSidebarSearch({
@@ -20,7 +19,7 @@ export function BrandSidebarSearch({
   brands: Brand[]
   onNavigate?: () => void
 }) {
-  const [query, setQuery] = useState("")
+  const [query] = useState("")
   const pathname = usePathname()
   const t = useTranslations("nav")
   const { filters, hasActiveFilters, toggleFilter, clearFilters } =
@@ -30,34 +29,17 @@ export function BrandSidebarSearch({
   const filtered = filterBrands(brands, filters, deferredQuery)
 
   return (
-    <div className="flex flex-1 flex-col gap-3">
-      {/* Search */}
-      <div>
-        <div className="flex items-center gap-2 rounded-lg bg-neutral-100/80 px-3 py-2 transition-shadow focus-within:ring-2 focus-within:ring-ring dark:bg-neutral-900">
-          <IconSearch
-            className="h-3.5 w-3.5 text-neutral-500"
-            aria-hidden="true"
-          />
-          <input
-            type="search"
-            placeholder={`${t("search")}…`}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            aria-label={t("search")}
-            autoComplete="off"
-            className="w-full bg-transparent text-[13px] text-neutral-700 outline-none placeholder:text-neutral-500 dark:text-neutral-300 dark:placeholder:text-neutral-500"
-          />
-        </div>
+    <div className="flex flex-1 flex-col gap-3 px-5 lg:px-0">
+      {/* Command menu trigger + filters */}
+      <div className="flex flex-col gap-2">
+        <CommandMenu
+          brands={brands}
+          filters={filters}
+          onToggleFilter={toggleFilter}
+          onClearFilters={clearFilters}
+          hasActiveFilters={hasActiveFilters}
+        />
       </div>
-
-      {/* Filters */}
-      <SidebarFilters
-        brands={brands}
-        filters={filters}
-        onToggle={toggleFilter}
-        onClear={clearFilters}
-        hasActiveFilters={hasActiveFilters}
-      />
 
       {/* Brand list */}
       <div className="flex flex-1 flex-col gap-2 overflow-hidden">
@@ -77,7 +59,7 @@ export function BrandSidebarSearch({
                   href={`/${brand.slug}`}
                   onClick={onNavigate}
                   className={cn(
-                    "flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
+                    "flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors",
                     isActive
                       ? "bg-neutral-100/70 dark:bg-neutral-800/50"
                       : "hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
@@ -87,7 +69,16 @@ export function BrandSidebarSearch({
                     containIntrinsicSize: "auto 40px",
                   }}
                 >
-                  <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]">
+                  <div
+                    className={cn(
+                      "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]",
+                      /black|dark|slate|navy/i.test(brand.thumbnail.label)
+                        ? "dark:bg-neutral-200"
+                        : /ivory|white|light/i.test(brand.thumbnail.label)
+                          ? "bg-neutral-800"
+                          : ""
+                    )}
+                  >
                     <Image
                       src={brand.thumbnail.src}
                       alt={brand.name}
@@ -98,7 +89,7 @@ export function BrandSidebarSearch({
                   </div>
                   <span
                     className={cn(
-                      "truncate text-[13.5px]",
+                      "truncate text-sm font-medium",
                       isActive
                         ? "font-medium text-neutral-900 dark:text-neutral-100"
                         : "text-neutral-600 dark:text-neutral-400"

@@ -177,6 +177,13 @@ export function getSimilarBrandCards(
       width: b.thumbnail.width,
       height: b.thumbnail.height,
     },
+    thumbnailDark: b.thumbnailDark
+      ? {
+          src: b.thumbnailDark.src,
+          width: b.thumbnailDark.width,
+          height: b.thumbnailDark.height,
+        }
+      : undefined,
     colors: b.colors.slice(0, 4).map((c) => ({ hex: c.hex })),
   }))
 }

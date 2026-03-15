@@ -81,6 +81,13 @@ export const spotify: Brand = {
     height: 225,
     format: "svg",
   },
+  thumbnailDark: {
+    label: "Spotify Icon — White",
+    src: "/brands/spotify/spotify-icon-white.svg",
+    width: 236,
+    height: 225,
+    format: "svg",
+  },
   dateAdded: "2026-03-14",
   founded: 2006,
   headquarters: "Stockholm, Sweden",

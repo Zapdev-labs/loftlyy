@@ -3,8 +3,18 @@
     "siteName": "Loftlyy",
     "siteDescription": "Descubre y explora identidades de marca, logotipos, colores y sistemas de diseno"
   },
+  "home": {
+    "headline": "Descubre identidades de marca reales.",
+    "subheadline": "Una base de datos en constante crecimiento de identidad de marca.",
+    "popular": "Populares",
+    "explore": "Mas Marcas",
+    "browseAll": "Usa la barra lateral para buscar y filtrar {count} marcas",
+    "startExploring": "Comenzar a explorar",
+    "cta": "Comenzar a explorar",
+    "sponsor": "Apoyanos"
+  },
   "nav": {
-    "search": "Buscar marcas...",
+    "search": "Buscar marcas",
     "allBrands": "Todas las marcas",
     "categories": "Categorias",
     "filters": "Filtros",
@@ -13,7 +23,9 @@
     "styleTags": "Estilo",
     "colorFamily": "Color",
     "typographyStyle": "Tipografia",
-    "noBrandsFound": "No se encontraron marcas"
+    "noBrandsFound": "No se encontraron marcas",
+    "language": "Idioma",
+    "theme": "Tema"
   },
   "brand": {
     "overview": "Resumen",
@@ -94,6 +106,10 @@
     "wise": {
       "description": "Wise es una empresa global de tecnologia financiera que hace que las transferencias internacionales de dinero sean rapidas, baratas y transparentes. Anteriormente conocida como TransferWise, atiende a millones de clientes que mueven dinero a traves de fronteras con tipos de cambio reales.",
       "philosophy": "Transparente, audaz y sin fronteras. La identidad de Wise utiliza un verde distintivo y un motivo de bandera para simbolizar el movimiento de dinero a traves de las fronteras — diseno directo para una empresa que cree que los servicios financieros deben ser justos y simples."
+    },
+    "stripe": {
+      "description": "Stripe es una plataforma de infraestructura financiera que proporciona APIs de procesamiento de pagos y herramientas para negocios en internet de todos los tamanos. Fundada en 2010, Stripe impulsa millones de empresas en todo el mundo.",
+      "philosophy": "La identidad de Stripe se basa en la claridad orientada al desarrollador y la simplicidad refinada. La marca utiliza una paleta purpura distintiva y tipografia limpia para transmitir confianza y sofisticacion en tecnologia financiera."
     }
   },
   "tags": {
@@ -123,10 +139,14 @@
     "money-transfer": "Transferencias",
     "banking": "Banca",
     "international": "Internacional",
-    "currency": "Moneda"
+    "currency": "Moneda",
+    "api": "API",
+    "developer-tools": "Herramientas para Desarrolladores",
+    "financial-infrastructure": "Infraestructura Financiera",
+    "e-commerce": "Comercio Electronico"
   },
   "common": {
-    "loading": "Cargando...",
+    "loading": "Cargando",
     "notFound": "No encontrado",
     "notFoundDescription": "La pagina que buscas no existe.",
     "backToHome": "Volver al inicio"

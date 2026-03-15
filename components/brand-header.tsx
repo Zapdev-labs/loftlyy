@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
+import { cn } from "@/lib/utils"
 import type { Brand } from "@/lib/types"
 
 export function BrandHeader({ brand }: { brand: Brand }) {
@@ -23,7 +24,16 @@ export function BrandHeader({ brand }: { brand: Brand }) {
   return (
     <section className="flex flex-col gap-4">
       <div className="flex items-start gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-neutral-100 shadow-[0_0_0_0.5px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.06)] dark:bg-neutral-800 dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)]">
+        <div
+          className={cn(
+            "flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl shadow-[0_0_0_0.5px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.06)] dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)]",
+            /black|dark|slate|navy/i.test(brand.thumbnail.label)
+              ? "bg-neutral-100 dark:bg-neutral-200"
+              : /ivory|white|light/i.test(brand.thumbnail.label)
+                ? "bg-neutral-800 dark:bg-neutral-800"
+                : "bg-neutral-100 dark:bg-neutral-800"
+          )}
+        >
           <Image
             src={brand.thumbnail.src}
             alt={`${brand.name} logo`}

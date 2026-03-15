@@ -3,8 +3,18 @@
     "siteName": "Loftlyy",
     "siteDescription": "Decouvrez et explorez les identites de marque, logos, couleurs et systemes de design"
   },
+  "home": {
+    "headline": "Decouvrez de vraies identites de marque.",
+    "subheadline": "Une base de donnees en croissance constante d'identite de marque.",
+    "popular": "Populaires",
+    "explore": "Plus de Marques",
+    "browseAll": "Utilisez la barre laterale pour rechercher et filtrer {count} marques",
+    "startExploring": "Commencer a explorer",
+    "cta": "Commencer a explorer",
+    "sponsor": "Nous soutenir"
+  },
   "nav": {
-    "search": "Rechercher des marques...",
+    "search": "Rechercher des marques",
     "allBrands": "Toutes les marques",
     "categories": "Categories",
     "filters": "Filtres",
@@ -13,7 +23,9 @@
     "styleTags": "Style",
     "colorFamily": "Couleur",
     "typographyStyle": "Typographie",
-    "noBrandsFound": "Aucune marque trouvee"
+    "noBrandsFound": "Aucune marque trouvee",
+    "language": "Langue",
+    "theme": "Theme"
   },
   "brand": {
     "overview": "Apercu",
@@ -94,6 +106,10 @@
     "wise": {
       "description": "Wise est une entreprise mondiale de technologie financiere qui rend les transferts d'argent internationaux rapides, peu couteux et transparents. Anciennement connue sous le nom de TransferWise, elle sert des millions de clients qui transferent de l'argent a travers les frontieres avec des taux de change reels.",
       "philosophy": "Transparente, audacieuse et sans frontieres. L'identite de Wise utilise un vert distinctif et un motif de drapeau pour symboliser le mouvement de l'argent a travers les frontieres — un design direct pour une entreprise qui croit que les services financiers doivent etre justes et simples."
+    },
+    "stripe": {
+      "description": "Stripe est une plateforme d'infrastructure financiere qui fournit des APIs de traitement des paiements et des outils pour les entreprises internet de toutes tailles. Fondee en 2010, Stripe alimente des millions d'entreprises dans le monde entier.",
+      "philosophy": "L'identite de Stripe repose sur la clarte orientee developpeur et la simplicite raffinee. La marque utilise une palette violette distinctive et une typographie epuree pour transmettre confiance et sophistication dans la technologie financiere."
     }
   },
   "tags": {
@@ -123,10 +139,14 @@
     "money-transfer": "Transferts d'argent",
     "banking": "Banque",
     "international": "International",
-    "currency": "Devise"
+    "currency": "Devise",
+    "api": "API",
+    "developer-tools": "Outils pour Developpeurs",
+    "financial-infrastructure": "Infrastructure Financiere",
+    "e-commerce": "Commerce Electronique"
   },
   "common": {
-    "loading": "Chargement...",
+    "loading": "Chargement",
     "notFound": "Non trouve",
     "notFoundDescription": "La page que vous recherchez n'existe pas.",
     "backToHome": "Retour a l'accueil"

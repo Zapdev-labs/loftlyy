@@ -3,8 +3,18 @@
     "siteName": "Loftlyy",
     "siteDescription": "Entdecken und erkunden Sie Markenidentitaeten, Logos, Farben und Designsysteme"
   },
+  "home": {
+    "headline": "Entdecken Sie echte Markenidentitaeten.",
+    "subheadline": "Eine stetig wachsende Datenbank fuer Markenidentitaet.",
+    "popular": "Beliebt",
+    "explore": "Weitere Marken",
+    "browseAll": "Nutzen Sie die Seitenleiste, um {count} Marken zu suchen und zu filtern",
+    "startExploring": "Jetzt entdecken",
+    "cta": "Jetzt entdecken",
+    "sponsor": "Unterstuetzen"
+  },
   "nav": {
-    "search": "Marken suchen...",
+    "search": "Marken suchen",
     "allBrands": "Alle Marken",
     "categories": "Kategorien",
     "filters": "Filter",
@@ -13,7 +23,9 @@
     "styleTags": "Stil",
     "colorFamily": "Farbe",
     "typographyStyle": "Typografie",
-    "noBrandsFound": "Keine Marken gefunden"
+    "noBrandsFound": "Keine Marken gefunden",
+    "language": "Sprache",
+    "theme": "Design"
   },
   "brand": {
     "overview": "Uebersicht",
@@ -94,6 +106,10 @@
     "wise": {
       "description": "Wise ist ein globales Finanztechnologieunternehmen, das internationale Geldtransfers schnell, guenstig und transparent macht. Fruher als TransferWise bekannt, bedient es Millionen von Kunden, die Geld ueber Grenzen hinweg mit echten Wechselkursen senden.",
       "philosophy": "Transparent, mutig und grenzenlos. Wises Identitaet nutzt ein markantes Gruen und ein Flaggenmotiv, um die Bewegung von Geld ueber Grenzen zu symbolisieren — geradliniges Design fuer ein Unternehmen, das glaubt, dass Finanzdienstleistungen fair und einfach sein sollten."
+    },
+    "stripe": {
+      "description": "Stripe ist eine Finanzinfrastruktur-Plattform, die Zahlungsverarbeitungs-APIs und Tools fuer Internetunternehmen jeder Groesse bereitstellt. 2010 gegruendet, unterstuetzt Stripe Millionen von Unternehmen weltweit.",
+      "philosophy": "Stripes Identitaet basiert auf entwicklerorientierter Klarheit und raffinierter Einfachheit. Die Marke verwendet eine markante lila Farbpalette und klare Typografie, um Vertrauen und Raffinesse in der Finanztechnologie zu vermitteln."
     }
   },
   "tags": {
@@ -123,10 +139,14 @@
     "money-transfer": "Geldtransfer",
     "banking": "Bankwesen",
     "international": "International",
-    "currency": "Waehrung"
+    "currency": "Waehrung",
+    "api": "API",
+    "developer-tools": "Entwicklerwerkzeuge",
+    "financial-infrastructure": "Finanzinfrastruktur",
+    "e-commerce": "E-Commerce"
   },
   "common": {
-    "loading": "Wird geladen...",
+    "loading": "Wird geladen",
     "notFound": "Nicht gefunden",
     "notFoundDescription": "Die Seite, die Sie suchen, existiert nicht.",
     "backToHome": "Zurueck zur Startseite"

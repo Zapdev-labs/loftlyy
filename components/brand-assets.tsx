@@ -16,9 +16,14 @@ import type { BrandAsset } from "@/lib/types"
 
 const WHITESPACE_RE = /\s+/g
 const LIGHT_ASSET_RE = /ivory|white|light/i
+const DARK_ASSET_RE = /black|dark|slate|navy/i
 
 function needsDarkBg(label: string): boolean {
   return LIGHT_ASSET_RE.test(label)
+}
+
+function needsLightBg(label: string): boolean {
+  return DARK_ASSET_RE.test(label)
 }
 
 function getSpan(asset: BrandAsset): "wide" | "normal" {
@@ -159,7 +164,9 @@ function AssetCard({
           "flex flex-1 items-center justify-center p-8",
           needsDarkBg(asset.label)
             ? "bg-neutral-800 dark:bg-neutral-800"
-            : "bg-neutral-50 dark:bg-neutral-900"
+            : needsLightBg(asset.label)
+              ? "bg-neutral-50 dark:bg-neutral-200"
+              : "bg-neutral-50 dark:bg-neutral-900"
         )}
       >
         <Image

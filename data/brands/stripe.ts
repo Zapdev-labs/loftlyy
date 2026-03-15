@@ -1,0 +1,150 @@
+import type { Brand } from "@/lib/types"
+
+export const stripe: Brand = {
+  slug: "stripe",
+  name: "Stripe",
+  description:
+    "Stripe is a financial infrastructure platform that provides payment processing APIs and tools for internet businesses of every size. Founded in 2010 in San Francisco, Stripe powers millions of companies worldwide — from startups to Fortune 500s — enabling them to accept payments, manage subscriptions, and build financial products.",
+  url: "https://stripe.com",
+  industry: "fintech",
+  categories: ["fintech", "saas", "wordmark-logos", "minimal-logos"],
+  tags: [
+    "payments",
+    "api",
+    "developer-tools",
+    "financial-infrastructure",
+    "e-commerce",
+  ],
+  colors: [
+    {
+      name: "Stripe Purple",
+      hex: "#533AFD",
+      usage: "Primary brand color, CTAs, key accents.",
+    },
+    {
+      name: "Purple Light",
+      hex: "#7E6BFD",
+      usage: "Secondary accent, hover states, gradients.",
+    },
+    {
+      name: "Purple Pale",
+      hex: "#A99DFE",
+      usage: "Tertiary accent, backgrounds, subtle highlights.",
+    },
+    {
+      name: "Dark Navy",
+      hex: "#0A2540",
+      usage: "Primary text, dark backgrounds, headings.",
+    },
+    {
+      name: "Slate Gray",
+      hex: "#425466",
+      usage: "Secondary text, body copy.",
+    },
+    {
+      name: "Cloud",
+      hex: "#F6F9FC",
+      usage: "Light backgrounds, cards, sections.",
+    },
+  ],
+  typography: [
+    {
+      name: "Söhne",
+      role: "Primary / Headings & Body",
+      weights: ["200", "300", "425", "500"],
+      category: "sans-serif",
+      designer: "Berton Hasebe",
+      foundry: "Klim Type Foundry",
+      fontUrl: "/brands/stripe/fonts/sohne-var.woff2",
+    },
+    {
+      name: "Source Code Pro",
+      role: "Code / Monospace",
+      weights: ["500"],
+      category: "monospace",
+      designer: "Paul D. Hunt",
+      foundry: "Adobe",
+      fontUrl: "/brands/stripe/fonts/source-code-pro-medium.woff2",
+    },
+  ],
+  assets: [
+    {
+      label: "Stripe Wordmark — Black",
+      src: "/brands/stripe/stripe-wordmark-black.svg",
+      width: 240,
+      height: 100,
+      format: "svg",
+    },
+    {
+      label: "Stripe Wordmark — White",
+      src: "/brands/stripe/stripe-wordmark-white.svg",
+      width: 240,
+      height: 100,
+      format: "svg",
+    },
+    {
+      label: "Stripe Wordmark — Purple",
+      src: "/brands/stripe/stripe-wordmark-purple.svg",
+      width: 240,
+      height: 100,
+      format: "svg",
+    },
+    {
+      label: "Stripe Icon — Purple",
+      src: "/brands/stripe/stripe-icon-purple.svg",
+      width: 256,
+      height: 256,
+      format: "svg",
+    },
+    {
+      label: "Stripe Icon — Black",
+      src: "/brands/stripe/stripe-icon-black.svg",
+      width: 256,
+      height: 256,
+      format: "svg",
+    },
+    {
+      label: "Stripe Icon — White",
+      src: "/brands/stripe/stripe-icon-white.svg",
+      width: 256,
+      height: 256,
+      format: "svg",
+    },
+  ],
+  thumbnail: {
+    label: "Stripe Wordmark — Purple",
+    src: "/brands/stripe/stripe-wordmark-purple.svg",
+    width: 240,
+    height: 100,
+    format: "svg",
+  },
+  thumbnailDark: {
+    label: "Stripe Wordmark — White",
+    src: "/brands/stripe/stripe-wordmark-white.svg",
+    width: 240,
+    height: 100,
+    format: "svg",
+  },
+  dateAdded: "2026-03-15",
+  founded: 2010,
+  headquarters: "San Francisco, California",
+  designer: "Stripe Design Team",
+  lastRebranded: "2024",
+  philosophy:
+    "Stripe's identity is built around developer-first clarity and refined simplicity. The brand uses a distinctive purple palette and clean typography to convey trust and sophistication in financial technology, making complex payment infrastructure feel approachable.",
+  legal: {
+    guidelinesUrl: "https://stripe.com/newsroom/brand-assets",
+    dos: [
+      "Use official Stripe brand assets from the brand resources page",
+      "Maintain clear space around the Stripe logo",
+      "Use the Stripe wordmark or icon on clean, uncluttered backgrounds",
+      "Refer to the company as 'Stripe' (capitalized) in text",
+    ],
+    donts: [
+      "Modify the Stripe wordmark or icon proportions",
+      "Use the Stripe brand to imply partnership without authorization",
+      "Recolor the logo outside of approved black, white, or purple variants",
+      "Place the Stripe logo on visually busy or low-contrast backgrounds",
+    ],
+  },
+}

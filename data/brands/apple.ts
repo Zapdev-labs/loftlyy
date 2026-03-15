@@ -81,6 +81,13 @@ export const apple: Brand = {
     height: 1230,
     format: "svg",
   },
+  thumbnailDark: {
+    label: "Apple Logo — White",
+    src: "/brands/apple/apple-logo-white.svg",
+    width: 1020,
+    height: 1230,
+    format: "svg",
+  },
   dateAdded: "2026-03-14",
   founded: 1976,
   headquarters: "Cupertino, CA",

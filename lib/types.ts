@@ -42,6 +42,7 @@ export interface Brand {
   typography: BrandTypography[]
   assets: BrandAsset[]
   thumbnail: BrandAsset
+  thumbnailDark?: BrandAsset
   dateAdded: string
   founded?: number
   headquarters?: string
@@ -57,6 +58,7 @@ export interface SimilarBrandCard {
   name: string
   industry: string
   thumbnail: { src: string; width: number; height: number }
+  thumbnailDark?: { src: string; width: number; height: number }
   colors: { hex: string }[]
 }
 

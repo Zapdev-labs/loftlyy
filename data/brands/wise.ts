@@ -79,6 +79,13 @@ export const wise: Brand = {
     height: 512,
     format: "svg",
   },
+  thumbnailDark: {
+    label: "Wise Flag — White",
+    src: "/brands/wise/wise-flag-white.svg",
+    width: 256,
+    height: 256,
+    format: "svg",
+  },
   dateAdded: "2026-03-14",
   founded: 2011,
   headquarters: "London, United Kingdom",

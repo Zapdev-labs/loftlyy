@@ -3,8 +3,18 @@
     "siteName": "Loftlyy",
     "siteDescription": "Discover and explore brand identities, logos, colors, and design systems"
   },
+  "home": {
+    "headline": "Discover real-world brand identities.",
+    "subheadline": "A constantly growing database of brand identity.",
+    "popular": "Popular",
+    "explore": "More Brands",
+    "browseAll": "Use the sidebar to search and filter {count} brands",
+    "startExploring": "Start exploring",
+    "cta": "Start exploring",
+    "sponsor": "Support us"
+  },
   "nav": {
-    "search": "Search brands...",
+    "search": "Search brands",
     "allBrands": "All Brands",
     "categories": "Categories",
     "filters": "Filters",
@@ -13,7 +23,9 @@
     "styleTags": "Style",
     "colorFamily": "Color",
     "typographyStyle": "Typography",
-    "noBrandsFound": "No brands found"
+    "noBrandsFound": "No brands found",
+    "language": "Language",
+    "theme": "Theme"
   },
   "brand": {
     "overview": "Overview",
@@ -94,6 +106,10 @@
     "wise": {
       "description": "Wise is a global financial technology company that makes international money transfers fast, cheap, and transparent. Originally known as TransferWise, it serves millions of customers moving money across borders with real exchange rates.",
       "philosophy": "Transparent, bold, and borderless. Wise's identity uses a distinctive green and a flag motif to symbolize the movement of money across borders — straightforward design for a company that believes financial services should be fair and simple."
+    },
+    "stripe": {
+      "description": "Stripe is a financial infrastructure platform that provides payment processing APIs and tools for internet businesses of every size. Founded in 2010, Stripe powers millions of companies worldwide, enabling them to accept payments and build financial products.",
+      "philosophy": "Stripe's identity is built around developer-first clarity and refined simplicity. The brand uses a distinctive purple palette and clean typography to convey trust and sophistication in financial technology."
     }
   },
   "tags": {
@@ -123,10 +139,14 @@
     "money-transfer": "Money Transfer",
     "banking": "Banking",
     "international": "International",
-    "currency": "Currency"
+    "currency": "Currency",
+    "api": "API",
+    "developer-tools": "Developer Tools",
+    "financial-infrastructure": "Financial Infrastructure",
+    "e-commerce": "E-Commerce"
   },
   "common": {
-    "loading": "Loading...",
+    "loading": "Loading",
     "notFound": "Not Found",
     "notFoundDescription": "The page you're looking for doesn't exist.",
     "backToHome": "Back to Home"

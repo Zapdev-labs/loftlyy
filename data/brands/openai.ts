@@ -99,6 +99,13 @@ export const openai: Brand = {
     height: 256,
     format: "svg",
   },
+  thumbnailDark: {
+    label: "OpenAI Logo — White",
+    src: "/brands/openai/openai-logo-white.svg",
+    width: 256,
+    height: 256,
+    format: "svg",
+  },
   dateAdded: "2026-03-14",
   founded: 2015,
   headquarters: "San Francisco, CA",
