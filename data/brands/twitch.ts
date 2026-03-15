@@ -134,7 +134,7 @@ export const twitch: Brand = {
   philosophy:
     "Bold, energetic, and community-driven. Twitch's identity is anchored by the iconic Glitch — a speech-bubble-meets-gaming-controller mark rendered in unmistakable purple that signals live, interactive entertainment and the passionate communities built around it.",
   legal: {
-    guidelinesUrl: "https://brand.twitch.tv",
+    guidelinesUrl: "https://brand.twitch.com/",
     dos: [
       "Use official Twitch logos from brand.twitch.tv for any permitted usage.",
       "Maintain clear space around the Glitch and wordmark logos.",

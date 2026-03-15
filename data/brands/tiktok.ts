@@ -109,7 +109,7 @@ export const tiktok: Brand = {
   philosophy:
     "Energetic, youthful, and unmistakably digital. TikTok's identity pairs a bold note symbol with a glitch-inspired cyan-and-red offset effect, creating a sense of movement and creativity that mirrors the platform's endless stream of short-form content.",
   legal: {
-    guidelinesUrl: "https://www.tiktok.com/brand",
+    guidelinesUrl: "https://tiktokbrandhub.com/",
     dos: [
       "Use the official TikTok logo with the cyan and red glitch effect on appropriate backgrounds",
       "Maintain clear space around the logo equal to the height of the musical note",

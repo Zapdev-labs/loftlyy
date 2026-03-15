@@ -190,7 +190,7 @@ export const anthropic: Brand = {
   philosophy:
     "Warm, trustworthy, and thoughtfully restrained. Anthropic's identity pairs an organic tan palette with clean typography to communicate safety-focused AI research — approachable yet serious, human yet technical.",
   legal: {
-    guidelinesUrl: "https://www.anthropic.com/brand",
+    guidelinesUrl: "https://www.anthropic.com/company",
     dos: [
       "Use official Anthropic logo files from the brand page",
       "Maintain clear space around the logo",

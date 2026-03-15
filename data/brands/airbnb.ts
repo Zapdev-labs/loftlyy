@@ -124,7 +124,7 @@ export const airbnb: Brand = {
   philosophy:
     "Airbnb's identity is anchored by the Bélo — a symbol of belonging that represents people, places, love, and Airbnb itself. The warm Rausch color and custom Cereal typeface create a friendly, approachable brand that invites connection and exploration across cultures.",
   legal: {
-    guidelinesUrl: "https://www.airbnb.com/press/brand-assets",
+    guidelinesUrl: "https://news.airbnb.com/media-assets/",
     dos: [
       "Use official Airbnb brand assets from the press page",
       "Maintain clear space around the Bélo symbol",

@@ -101,7 +101,7 @@ export const canva: Brand = {
   philosophy:
     "Canva's identity blends playful teal and purple gradients with a distinctive hand-drawn wordmark to embody its mission of democratizing design. The flowing, organic letterforms reflect creativity and accessibility, while the vibrant gradient signals innovation and joy in the creative process.",
   legal: {
-    guidelinesUrl: "https://www.canva.com/about/",
+    guidelinesUrl: "https://www.canva.dev/docs/connect/guidelines/brand/",
     dos: [
       "Use official Canva logos from approved brand resources",
       "Maintain clear space around the Canva wordmark",

@@ -120,7 +120,7 @@ export const notion: Brand = {
   philosophy:
     "Notion's identity embodies the principle that tools should be as flexible as the people using them. The minimal black-and-white palette and iconic page-with-N logomark reflect a belief in simplicity, modularity, and the idea that the best software gets out of your way.",
   legal: {
-    guidelinesUrl: "https://www.notion.so/brand",
+    guidelinesUrl: "https://www.notion.com/brand",
     dos: [
       "Use official Notion logos from the brand resources page",
       "Maintain clear space around the Notion logo",

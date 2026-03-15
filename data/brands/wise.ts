@@ -94,7 +94,7 @@ export const wise: Brand = {
   philosophy:
     "Transparent, bold, and borderless. Wise's identity uses a distinctive green and a flag motif to symbolize the movement of money across borders — straightforward design for a company that believes financial services should be fair and simple.",
   legal: {
-    guidelinesUrl: "https://wise.com/brand/",
+    guidelinesUrl: "https://wise.design/",
     dos: [
       "Use official Wise brand assets from the brand resource page",
       "Maintain clear space around the Wise logo",

@@ -113,7 +113,7 @@ export const snapchat: Brand = {
   philosophy:
     "Snapchat's identity is built around the iconic Ghost — a playful, approachable symbol that represents the ephemeral nature of the platform. The bold yellow and minimal ghost silhouette create instant recognition, embodying creativity, spontaneity, and authentic self-expression.",
   legal: {
-    guidelinesUrl: "https://snap.com/brand-guidelines",
+    guidelinesUrl: "https://snap.com/en-US/brand-guidelines",
     dos: [
       "Use the official Snapchat Ghost logo as provided in official brand assets.",
       "Maintain clear space around the Ghost logo equal to the height of the Ghost's body.",
