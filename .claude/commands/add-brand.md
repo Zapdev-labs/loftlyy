@@ -49,7 +49,14 @@ Create at minimum these variants:
 - NEVER fabricate wordmarks with `<text>` elements — only use proper vector paths
 - Create color variants by changing the `fill` attribute
 
-Save to `public/brands/<slug>/`.
+Save SVGs to a temporary local directory (e.g., `/tmp/brands/<slug>/`), then upload each to Cloudflare R2:
+
+```bash
+wrangler r2 object put "loftlyy-assets/brands/<slug>/<filename>.svg" \
+  --file="/tmp/brands/<slug>/<filename>.svg" \
+  --content-type="image/svg+xml" \
+  --remote
+```
 
 ## Step 3: Fetch Font Files
 
@@ -71,10 +78,17 @@ python3 -m venv /tmp/fonttools-env && /tmp/fonttools-env/bin/pip install fonttoo
 Requirements:
 
 - Must be `.woff2` format, under 200KB each
-- Must be local files at `/brands/<slug>/fonts/` — NEVER use external URLs as `fontUrl`
+- Asset paths in brand data use `/brands/<slug>/fonts/` — these are served from R2, NEVER use external URLs as `fontUrl`
 - One file per typography entry in the data
 
-Save to `public/brands/<slug>/fonts/`.
+Save font files to a temporary local directory, then upload to Cloudflare R2:
+
+```bash
+wrangler r2 object put "loftlyy-assets/brands/<slug>/fonts/<font-file>.woff2" \
+  --file="/tmp/brands/<slug>/fonts/<font-file>.woff2" \
+  --content-type="font/woff2" \
+  --remote
+```
 
 ## Step 4: Create Brand Data File
 
@@ -120,10 +134,15 @@ pnpm validate && pnpm typecheck
 This checks:
 
 - All brand data fields are complete and valid
-- All asset/thumbnail/font files exist on disk
-- All SVGs have proper width/height attributes
 - All translations are consistent across all 5 locales
 - Brand categories and tags have matching translations
-- No orphaned brand directories
+
+Also verify that assets were uploaded to R2 by spot-checking a URL:
+
+```bash
+curl -sI "https://pub-079f39a5918e4dde95387cd357e855f3.r2.dev/brands/<slug>/<filename>.svg" | head -5
+```
+
+You should see a `200 OK` with `content-type: image/svg+xml`.
 
 Report the verification results. If anything fails, fix it before finishing.

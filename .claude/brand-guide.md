@@ -20,10 +20,22 @@ Before writing any code, gather:
 
 ## 2. Create Asset Files
 
-### Directory structure
+### Asset hosting — Cloudflare R2
+
+All brand assets are hosted on **Cloudflare R2**, NOT in the local `public/` directory.
+
+- **R2 bucket**: `loftlyy-assets`
+- **Public URL**: `https://pub-079f39a5918e4dde95387cd357e855f3.r2.dev`
+- **Key structure**: `brands/<slug>/<filename>`
+
+Assets are served at: `https://pub-079f39a5918e4dde95387cd357e855f3.r2.dev/brands/<slug>/<filename>`
+
+The app prepends `NEXT_PUBLIC_ASSET_BASE_URL` to all asset paths automatically.
+
+### Directory structure (in R2)
 
 ```
-public/brands/<slug>/
+brands/<slug>/
 ├── <slug>-logo-black.svg        # Icon — dark variant
 ├── <slug>-logo-white.svg        # Icon — light variant (triggers dark bg)
 ├── <slug>-logo-<brand-color>.svg # Icon — brand color variant
@@ -33,6 +45,32 @@ public/brands/<slug>/
     ├── <font-name>.woff2         # Primary font specimen
     └── <font-name>.woff2         # Additional fonts
 ```
+
+### Uploading assets to R2
+
+Save files to a temporary local directory (e.g., `/tmp/brands/<slug>/`), then upload with correct content types:
+
+```bash
+# SVG files
+wrangler r2 object put "loftlyy-assets/brands/<slug>/<filename>.svg" \
+  --file="/tmp/brands/<slug>/<filename>.svg" \
+  --content-type="image/svg+xml" \
+  --remote
+
+# Font files
+wrangler r2 object put "loftlyy-assets/brands/<slug>/fonts/<font>.woff2" \
+  --file="/tmp/brands/<slug>/fonts/<font>.woff2" \
+  --content-type="font/woff2" \
+  --remote
+
+# PNG files (if any)
+wrangler r2 object put "loftlyy-assets/brands/<slug>/<filename>.png" \
+  --file="/tmp/brands/<slug>/<filename>.png" \
+  --content-type="image/png" \
+  --remote
+```
+
+**CRITICAL**: Always use `--content-type` and `--remote` flags. Without `--content-type`, files serve as raw text instead of rendering properly. Without `--remote`, files go to the local emulator only.
 
 ### SVG requirements
 
@@ -106,7 +144,8 @@ So name your assets accordingly:
 - **Format**: `.woff2` preferred (smallest, best browser support)
 - **Size**: Keep under ~200KB per file. Subset if needed (specimen text only).
 - **One file per typography entry**: The `fontUrl` field loads one file for the specimen preview.
-- **Do not use external URLs** (e.g., `https://foundry.com/font/`) as `fontUrl` — the `FontFace` API needs a direct file URL.
+- **Do not use external URLs** (e.g., `https://foundry.com/font/`) as `fontUrl` — use local paths like `/brands/<slug>/fonts/file.woff2` which get served from R2.
+- **Upload to R2** with `--content-type="font/woff2" --remote` — see "Uploading assets to R2" section above.
 
 ---
 
@@ -227,26 +266,23 @@ If the industry or tags are new, add translations for those too under `categorie
 Run these checks before considering the brand done:
 
 ```bash
-# 1. All asset files exist
-for f in <list-of-asset-src-paths>; do
-  test -f "public$f" && echo "OK: $f" || echo "MISSING: $f"
-done
+# 1. Verify assets uploaded to R2 (spot-check a few)
+curl -sI "https://pub-079f39a5918e4dde95387cd357e855f3.r2.dev/brands/<slug>/<filename>.svg" | head -5
+# Should return 200 with content-type: image/svg+xml
 
-# 2. All SVGs have width/height
-for f in public/brands/<slug>/*.svg; do
-  head -1 "$f" | grep -q 'width=' && echo "OK: $(basename $f)" || echo "MISSING w/h: $(basename $f)"
-done
+curl -sI "https://pub-079f39a5918e4dde95387cd357e855f3.r2.dev/brands/<slug>/fonts/<font>.woff2" | head -5
+# Should return 200 with content-type: font/woff2
 
-# 3. All font files exist and are valid
-file public/brands/<slug>/fonts/*.woff2
-
-# 4. Type check
+# 2. Type check
 pnpm typecheck
 
-# 5. Lint
+# 3. Lint
 pnpm check
 
-# 6. Dev server renders correctly
+# 4. Validate brand data & translations
+pnpm validate
+
+# 5. Dev server renders correctly
 pnpm dev
 # Visit /en/<slug> and verify:
 #   - Thumbnail renders in sidebar at correct size
@@ -268,5 +304,7 @@ pnpm dev
 | Icon has too much whitespace    | ViewBox has padding around artwork           | Tighten viewBox to path bounds                        |
 | White logo on white bg          | Label missing "white"/"light"/"ivory"        | Add variant keyword to label                          |
 | Font specimen shows system font | `fontUrl` is external URL or missing         | Use local `/brands/<slug>/fonts/` path to .woff2 file |
+| SVG renders as raw text         | Missing `--content-type` on R2 upload        | Re-upload with `--content-type="image/svg+xml"`       |
+| Assets uploaded to local only   | Missing `--remote` flag on wrangler          | Re-upload with `--remote` flag                        |
 | Dev server shows stale data     | `.next` cache                                | Delete `.next/` and restart `pnpm dev`                |
 | Data dimensions don't match SVG | `width`/`height` in data ≠ SVG attrs         | Sync data values to actual SVG attributes             |
