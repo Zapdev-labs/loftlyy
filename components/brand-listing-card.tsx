@@ -9,7 +9,7 @@ export function BrandListingCard({ brand }: { brand: Brand }) {
       href={`/${brand.slug}`}
       className="group flex flex-col gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-muted"
     >
-      <div className="flex h-20 items-center justify-center rounded-md bg-background p-3">
+      <div className="flex h-20 items-center justify-center rounded-md bg-neutral-200 p-3 dark:bg-neutral-800">
         <Image
           src={brand.thumbnail.src}
           alt={brand.name}

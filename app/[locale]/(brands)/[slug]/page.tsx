@@ -209,7 +209,6 @@ export default async function BrandPage({
       />
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-6">
         <BrandStory brand={brand} translatedPhilosophy={translatedPhilosophy} />
-        <AdBanner />
       </div>
       <BrandAssets assets={brand.assets} brandName={brand.name} />
       <BrandColors colors={brand.colors} />
@@ -241,6 +240,16 @@ export default async function BrandPage({
         />
       </div>
       <BrandLegal brand={brand} />
+      <div className="flex justify-center pb-2">
+        <a
+          href={`https://www.ikiform.com/f/report-a-brand-issue-w93co6?brand_url=${encodeURIComponent(`${BASE_URL}/${locale}/${brand.slug}`)}&brand_name=${encodeURIComponent(brand.name)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Report an issue with this brand
+        </a>
+      </div>
     </article>
   )
 }

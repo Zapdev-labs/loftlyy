@@ -142,14 +142,13 @@ export function BrandSidebarSearch({
                         quality={75}
                         loading="lazy"
                         className={cn(
-                          "h-full w-full object-contain scale-80  ",
+                          "h-full w-full scale-80 object-contain",
                           brand.thumbnail.width / brand.thumbnail.height < 0.7
                             ? "p-1"
                             : brand.thumbnail.width / brand.thumbnail.height <
                                 0.85
                               ? "p-1"
-                              : brand.thumbnail.width /
-                                    brand.thumbnail.height >
+                              : brand.thumbnail.width / brand.thumbnail.height >
                                   1.5
                                 ? "p-0.5"
                                 : brand.thumbnail.width /
