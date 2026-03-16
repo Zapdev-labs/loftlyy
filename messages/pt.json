@@ -167,6 +167,10 @@
       "description": "Google é uma empresa de tecnologia global especializada em serviços de internet, busca, computação em nuvem e publicidade. Conhecida por sua identidade colorida e acessível, a Google moldou a web moderna e redefine continuamente como as pessoas acessam e interagem com a informação.",
       "philosophy": "O logotipo de quatro cores do Google reflete uma marca lúdica e acessível que valoriza simplicidade e universalidade. A mudança de serif para sans-serif geométrico em 2015 sinalizou uma identidade moderna e focada no produto, projetada para telas de todos os tamanhos."
     },
+    "notra": {
+      "description": "Notra é uma plataforma de automação de conteúdo alimentada por IA que se conecta a ferramentas de desenvolvimento como GitHub, Linear e Slack para gerar automaticamente conteúdo pronto para publicação a partir do trabalho entregue. Transforma PRs mesclados, recursos e marcos em changelogs, posts de blog e atualizações sociais enquanto mantém a voz da marca da sua equipe.",
+      "philosophy": "A identidade da Notra combina calor editorial com precisão técnica. A marca de pena desenhada à mão evoca a autoria criativa, enquanto o acento lavanda suave e a combinação tipográfica serif-sans sinalizam um produto que conecta o fluxo de trabalho de engenharia à produção de conteúdo polido."
+    },
     "notion": {
       "description": "Notion é um workspace tudo em um que combina notas, documentos, wikis, gestão de projetos e bancos de dados em uma única plataforma conectada. Fundada em 2013 em San Francisco, a Notion permite que equipes e indivíduos personalizem seus fluxos de trabalho com blocos modulares.",
       "philosophy": "A identidade da Notion incorpora o princípio de que ferramentas devem ser tão flexíveis quanto as pessoas que as usam. A paleta minimalista em preto e branco e o icônico logotipo de página com N refletem simplicidade, modularidade e a ideia de que o melhor software sai do seu caminho."
@@ -426,7 +430,8 @@
     "monitoring": "Monitoramento",
     "quality-assurance": "Garantia de Qualidade",
     "database": "Banco de dados",
-    "infrastructure": "Infraestrutura"
+    "infrastructure": "Infraestrutura",
+    "content-automation": "Automação de Conteúdo"
   },
   "tag": {
     "title": "Marcas com tag \"{tag}\"",

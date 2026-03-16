@@ -167,6 +167,10 @@
       "description": "Google è un'azienda tecnologica globale specializzata in servizi Internet, ricerca, cloud computing e pubblicità. Conosciuta per la sua identità colorata e accessibile, Google ha plasmato il web moderno e ridefinisce continuamente il modo in cui le persone accedono alle informazioni.",
       "philosophy": "Il logotipo a quattro colori di Google riflette un marchio giocoso e accessibile che valorizza semplicità e universalità. Il passaggio dal serif al sans-serif geometrico nel 2015 ha segnato un'identità moderna e orientata al prodotto, progettata per schermi di ogni dimensione."
     },
+    "notra": {
+      "description": "Notra è una piattaforma di automazione dei contenuti basata sull'IA che si connette a strumenti di sviluppo come GitHub, Linear e Slack per generare automaticamente contenuti pronti per la pubblicazione dal lavoro completato. Trasforma PR uniti, funzionalità e milestone in changelog, post del blog e aggiornamenti social mantenendo la voce del brand del tuo team.",
+      "philosophy": "L'identità di Notra unisce calore editoriale e precisione tecnica. Il segno della penna d'oca disegnato a mano evoca la paternità creativa, mentre l'accento lavanda morbido e l'abbinamento tipografico serif-sans segnalano un prodotto che colma il divario tra il flusso di lavoro ingegneristico e il contenuto raffinato."
+    },
     "notion": {
       "description": "Notion è uno spazio di lavoro all in one che combina note, documenti, wiki, project management e database in un'unica piattaforma connessa. Fondata nel 2013 a San Francisco, permette a team e individui di personalizzare i propri flussi di lavoro con blocchi modulari.",
       "philosophy": "L'identità di Notion incarna il principio secondo cui gli strumenti dovrebbero essere flessibili quanto le persone che li usano. La palette minimale in bianco e nero e l'iconico marchio a pagina con la N riflettono semplicità, modularità e l'idea che il miglior software si faccia da parte."
@@ -426,7 +430,8 @@
     "monitoring": "Monitoraggio",
     "quality-assurance": "Garanzia di Qualità",
     "database": "Database",
-    "infrastructure": "Infrastruttura"
+    "infrastructure": "Infrastruttura",
+    "content-automation": "Automazione dei Contenuti"
   },
   "tag": {
     "title": "Brand taggati \"{tag}\"",

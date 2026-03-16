@@ -167,6 +167,10 @@
       "description": "Google ist ein globales Technologieunternehmen, das auf Internetdienste, Suche, Cloud Computing und Werbung spezialisiert ist. Bekannt für seine farbenfrohe, zugängliche Identität, hat Google das moderne Web geprägt und definiert kontinuierlich neu, wie Menschen auf Informationen zugreifen.",
       "philosophy": "Googles vierfarbiges Wortzeichen spiegelt eine spielerische, zugängliche Marke wider, die Einfachheit und Universalität schätzt. Der Wechsel von Serifen- zu geometrischer Sans-Serif-Schrift 2015 signalisierte eine moderne, produktorientierte Identität für Bildschirme jeder Größe."
     },
+    "notra": {
+      "description": "Notra ist eine KI-gestützte Content-Automatisierungsplattform, die sich mit Entwicklertools wie GitHub, Linear und Slack verbindet, um automatisch veröffentlichungsfertige Inhalte aus abgeschlossener Arbeit zu generieren. Sie verwandelt gemergte PRs, Features und Meilensteine in Changelogs, Blogbeiträge und Social-Media-Updates und passt sich dabei der Markenstimme Ihres Teams an.",
+      "philosophy": "Notras Identität verbindet redaktionelle Wärme mit technischer Präzision. Die handgezeichnete Federmarke weckt Assoziationen mit kreativer Urheberschaft, während der sanfte Lavendelakzent und die Serif-Sans-Typografie-Paarung ein Produkt signalisieren, das die Brücke zwischen Engineering-Workflow und poliertem Content schlägt."
+    },
     "notion": {
       "description": "Notion ist ein All-in-One-Arbeitsbereich, der Notizen, Dokumente, Wikis, Projektmanagement und Datenbanken in einer einzigen vernetzten Plattform vereint. 2013 in San Francisco gegründet, ermöglicht Notion Teams und Einzelpersonen, ihre Arbeitsabläufe mit modularen Bausteinen anzupassen.",
       "philosophy": "Notions Identität verkörpert das Prinzip, dass Werkzeuge so flexibel sein sollten wie die Menschen, die sie nutzen. Die minimalistische Schwarz-Weiß-Palette und das ikonische Seite-mit-N-Logozeichen spiegeln Einfachheit, Modularität und die Idee wider, dass die beste Software sich zurücknimmt."
@@ -426,7 +430,8 @@
     "monitoring": "Überwachung",
     "quality-assurance": "Qualitätssicherung",
     "database": "Datenbank",
-    "infrastructure": "Infrastruktur"
+    "infrastructure": "Infrastruktur",
+    "content-automation": "Content-Automatisierung"
   },
   "tag": {
     "title": "Marken mit Tag \"{tag}\"",

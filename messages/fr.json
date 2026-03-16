@@ -167,6 +167,10 @@
       "description": "Google est une entreprise technologique mondiale spécialisée dans les services Internet, la recherche, le cloud computing et la publicité. Connue pour son identité colorée et accessible, Google a façonné le web moderne et redéfinit continuellement la façon dont les gens accèdent à l'information.",
       "philosophy": "Le logotype en quatre couleurs de Google reflète une marque ludique et accessible qui valorise la simplicité et l'universalité. Le passage du serif au sans-serif géométrique en 2015 a marqué une identité moderne axée sur le produit, conçue pour les écrans de toutes tailles."
     },
+    "notra": {
+      "description": "Notra est une plateforme d'automatisation de contenu alimentée par l'IA qui se connecte aux outils de développement comme GitHub, Linear et Slack pour générer automatiquement du contenu prêt à publier à partir du travail livré. Elle transforme les PRs fusionnées, les fonctionnalités et les jalons en changelogs, articles de blog et mises à jour sociales tout en respectant la voix de marque de votre équipe.",
+      "philosophy": "L'identité de Notra allie chaleur éditoriale et précision technique. La marque de plume dessinée à la main évoque la création littéraire, tandis que l'accent lavande doux et l'association typographique serif-sans signalent un produit qui fait le lien entre le flux de travail d'ingénierie et le contenu soigné."
+    },
     "notion": {
       "description": "Notion est un espace de travail tout-en-un qui combine notes, documents, wikis, gestion de projets et bases de données en une seule plateforme connectée. Fondée en 2013 à San Francisco, Notion permet aux équipes et aux individus de personnaliser leurs flux de travail grâce à des blocs modulaires.",
       "philosophy": "L'identité de Notion incarne le principe selon lequel les outils doivent être aussi flexibles que les personnes qui les utilisent. La palette minimaliste noir et blanc et l'iconique logo page-avec-N reflètent la simplicité, la modularité et l'idée que le meilleur logiciel se fait oublier."
@@ -426,7 +430,8 @@
     "monitoring": "Surveillance",
     "quality-assurance": "Assurance Qualité",
     "database": "Base de données",
-    "infrastructure": "Infrastructure"
+    "infrastructure": "Infrastructure",
+    "content-automation": "Automatisation de Contenu"
   },
   "tag": {
     "title": "Marques taguées \"{tag}\"",

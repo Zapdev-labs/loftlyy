@@ -14,6 +14,7 @@ import { cursor } from "./cursor"
 import { apple } from "./apple"
 import { discord } from "./discord"
 import { duolingo } from "./duolingo"
+import { notra } from "./notra"
 import { notion } from "./notion"
 import { figma } from "./figma"
 import { github } from "./github"
@@ -73,6 +74,7 @@ const rawBrands: Brand[] = [
   netflix,
   nike,
   nvidia,
+  notra,
   notion,
   openai,
   planetscale,

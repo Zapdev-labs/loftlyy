@@ -167,6 +167,10 @@
       "description": "Google es una empresa tecnológica global especializada en servicios de internet, búsqueda, computación en la nube y publicidad. Conocida por su identidad colorida y accesible, Google ha moldeado la web moderna y redefine continuamente cómo las personas acceden e interactúan con la información.",
       "philosophy": "El logotipo de cuatro colores de Google refleja una marca lúdica y accesible que valora la simplicidad y la universalidad. El cambio de serif a sans-serif geométrico en 2015 señaló una identidad moderna y centrada en el producto, diseñada para pantallas de todos los tamaños."
     },
+    "notra": {
+      "description": "Notra es una plataforma de automatización de contenido impulsada por IA que se conecta a herramientas de desarrollo como GitHub, Linear y Slack para generar automáticamente contenido listo para publicar a partir del trabajo enviado. Transforma PRs fusionados, funcionalidades y hitos en changelogs, publicaciones de blog y actualizaciones sociales mientras mantiene la voz de marca de tu equipo.",
+      "philosophy": "La identidad de Notra combina calidez editorial con precisión técnica. La marca de pluma dibujada a mano evoca la autoría creativa, mientras que el acento lavanda suave y la tipografía serif-sans señalan un producto que conecta el flujo de trabajo de ingeniería con contenido pulido."
+    },
     "notion": {
       "description": "Notion es un espacio de trabajo todo en uno que combina notas, documentos, wikis, gestión de proyectos y bases de datos en una sola plataforma conectada. Fundada en 2013 en San Francisco, Notion permite a equipos e individuos personalizar sus flujos de trabajo usando bloques modulares.",
       "philosophy": "La identidad de Notion encarna el principio de que las herramientas deben ser tan flexibles como las personas que las usan. La paleta minimalista en blanco y negro y el icónico logotipo de página con N reflejan simplicidad, modularidad y la idea de que el mejor software se aparta de tu camino."
@@ -426,7 +430,8 @@
     "monitoring": "Monitoreo",
     "quality-assurance": "Control de Calidad",
     "database": "Base de datos",
-    "infrastructure": "Infraestructura"
+    "infrastructure": "Infraestructura",
+    "content-automation": "Automatización de Contenido"
   },
   "tag": {
     "title": "Marcas etiquetadas \"{tag}\"",

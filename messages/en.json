@@ -167,6 +167,10 @@
       "description": "Google is a global technology company specializing in internet services, search, cloud computing, and advertising. Known for its colorful, approachable identity, Google has shaped the modern web and continuously redefines how people access and interact with information.",
       "philosophy": "Google's four-color wordmark reflects a playful, accessible brand that values simplicity and universality. The shift from serif to geometric sans-serif in 2015 signaled a modern, product-first identity built for screens of every size."
     },
+    "notra": {
+      "description": "Notra is an AI-powered content automation platform that connects to developer tools like GitHub, Linear, and Slack to automatically generate publish-ready content from shipped work. It transforms merged PRs, features, and milestones into changelogs, blog posts, and social updates while matching your team's brand voice.",
+      "philosophy": "Notra's identity blends editorial warmth with technical precision. The hand-drawn quill mark evokes creative authorship, while the soft lavender accent and serif-meets-sans typography pairing signal a product that bridges the gap between engineering workflow and polished content output."
+    },
     "notion": {
       "description": "Notion is an all-in-one workspace that combines notes, docs, wikis, project management, and databases into a single connected platform. Founded in 2013 in San Francisco, Notion empowers teams and individuals to customize their workflows using modular building blocks.",
       "philosophy": "Notion's identity embodies the principle that tools should be as flexible as the people using them. The minimal black-and-white palette and iconic page-with-N logomark reflect simplicity, modularity, and the idea that the best software gets out of your way."
@@ -426,7 +430,8 @@
     "monitoring": "Monitoring",
     "quality-assurance": "Quality Assurance",
     "database": "Database",
-    "infrastructure": "Infrastructure"
+    "infrastructure": "Infrastructure",
+    "content-automation": "Content Automation"
   },
   "tag": {
     "title": "Brands tagged \"{tag}\"",
