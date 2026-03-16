@@ -151,7 +151,7 @@ export const amazon: Brand = {
     "Amazon's identity is anchored by the iconic smile arrow — a curved line from A to Z that represents the company's promise to deliver everything, with a smile. The warm orange and clean wordmark convey approachability and customer obsession at massive scale.",
   legal: {
     guidelinesUrl:
-      "https://www.amazon.com/gp/help/customer/display.html?nodeId=GNYNL3A8HPATWCH8",
+      "https://www.amazon.com/gp/help/customer/display.html?nodeId=201190440",
     dos: [
       "Use official Amazon brand assets from the trademark page",
       "Maintain clear space around the Amazon logo",

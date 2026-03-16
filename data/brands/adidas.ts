@@ -101,11 +101,11 @@ export const adidas: Brand = {
   founded: 1949,
   headquarters: "Herzogenaurach, Bavaria, Germany",
   designer: "Adolf Dassler (founder), adidas Design Team",
-  lastRebranded: "2014",
+  lastRebranded: "2022",
   philosophy:
     "Through sport, we have the power to change lives. adidas's bold black-and-white identity strips away distraction — the Three Stripes and the iconic mountain mark have become universal symbols of athletic achievement, cultural relevance, and the belief that sport is the great equalizer.",
   legal: {
-    guidelinesUrl: "https://www.adidas-group.com/en/brands/adidas/",
+    guidelinesUrl: "https://www.adidas.com/us/help/us-company-information/can-i-use-adidas-name-logos-or-images",
     dos: [
       "Use the adidas logo in black or white only on approved backgrounds",
       "Maintain minimum clear space around the Three Stripes mark",

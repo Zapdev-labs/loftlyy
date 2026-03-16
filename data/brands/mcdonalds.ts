@@ -104,14 +104,14 @@ export const mcdonalds: Brand = {
   },
   dateAdded: "2026-03-16",
   founded: 1940,
-  headquarters: "Chicago, Illinois",
+  headquarters: "Chicago, Illinois, USA",
   designer: "Jim Schindler (Golden Arches, 1962), McDonald's Design Team",
-  lastRebranded: "2003",
+  lastRebranded: "2018",
   philosophy:
     "Bold, warm, and instantly recognizable. The Golden Arches are among the most iconic symbols in the world — a simple geometric M in gleaming gold that transcends language and culture, embodying accessibility, consistency, and the universal appeal of a familiar meal.",
   legal: {
     guidelinesUrl:
-      "https://corporate.mcdonalds.com/corpmcd/en-us/our-stories/article/ourstories.brand-guidelines.html",
+      "https://corporate.mcdonalds.com/corpmcd/our-stories/media-assets-library/logos.html",
     dos: [
       "Use the Golden Arches logo only in approved colors: Arches Gold, black, or white",
       "Maintain clear space around the logo equal to the height of one arch",

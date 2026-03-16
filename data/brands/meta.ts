@@ -52,13 +52,13 @@ export const meta: Brand = {
       fontUrl: "/brands/meta/fonts/optimistic-display.woff2",
     },
     {
-      name: "Facebook Reader",
+      name: "Optimistic Text",
       role: "Body / UI",
       weights: ["400", "500"],
       category: "sans-serif",
-      designer: "Meta Design Team",
-      foundry: "Meta",
-      fontUrl: "/brands/meta/fonts/facebook-reader.woff2",
+      designer: "Dalton Maag",
+      foundry: "Dalton Maag",
+      fontUrl: "/brands/meta/fonts/optimistic-text.woff2",
     },
   ],
   assets: [

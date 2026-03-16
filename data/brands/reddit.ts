@@ -46,6 +46,15 @@ export const reddit: Brand = {
   ],
   typography: [
     {
+      name: "Reddit Display",
+      role: "Display / Headlines",
+      weights: ["400", "700"],
+      category: "sans-serif",
+      designer: "Reddit Design Team",
+      foundry: "Reddit",
+      fontUrl: "/brands/reddit/fonts/reddit-display.woff2",
+    },
+    {
       name: "Reddit Sans",
       role: "Body / Interface",
       weights: ["200", "300", "400", "500", "600", "700", "800", "900"],

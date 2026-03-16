@@ -37,22 +37,13 @@ export const openai: Brand = {
   ],
   typography: [
     {
-      name: "Söhne",
-      role: "Headings / Display",
+      name: "OpenAI Sans",
+      role: "Primary / All Uses",
       weights: ["300", "400", "500", "700"],
       category: "sans-serif",
-      designer: "Berton Hasebe",
-      foundry: "Klim Type Foundry",
-      fontUrl: "/brands/openai/fonts/soehne-buch.woff2",
-    },
-    {
-      name: "Söhne Mono",
-      role: "Code / Technical",
-      weights: ["400", "500"],
-      category: "monospace",
-      designer: "Berton Hasebe",
-      foundry: "Klim Type Foundry",
-      fontUrl: "/brands/openai/fonts/soehne-mono-buch.woff2",
+      designer: "ABC Dinamo",
+      foundry: "ABC Dinamo",
+      fontUrl: "/brands/openai/fonts/openai-sans.woff2",
     },
   ],
   assets: [
@@ -110,7 +101,7 @@ export const openai: Brand = {
   founded: 2015,
   headquarters: "San Francisco, CA",
   designer: "OpenAI Design Team",
-  lastRebranded: "2023",
+  lastRebranded: "2025",
   philosophy:
     "Minimal, authoritative, and forward-looking. OpenAI's identity communicates trust and technological sophistication through restrained design, using stark black-and-white with purposeful green accents that signal innovation without intimidation.",
   legal: {

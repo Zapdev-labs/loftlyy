@@ -17,8 +17,8 @@ export const stripe: Brand = {
   ],
   colors: [
     {
-      name: "Stripe Purple",
-      hex: "#533AFD",
+      name: "Stripe Indigo",
+      hex: "#635BFF",
       usage: "Primary brand color, CTAs, key accents.",
     },
     {
@@ -127,9 +127,9 @@ export const stripe: Brand = {
   },
   dateAdded: "2026-03-15",
   founded: 2010,
-  headquarters: "San Francisco, California",
+  headquarters: "South San Francisco, California",
   designer: "Stripe Design Team",
-  lastRebranded: "2024",
+  lastRebranded: "2025",
   philosophy:
     "Stripe's identity is built around developer-first clarity and refined simplicity. The brand uses a distinctive purple palette and clean typography to convey trust and sophistication in financial technology, making complex payment infrastructure feel approachable.",
   legal: {

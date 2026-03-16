@@ -107,7 +107,7 @@ export const adobe: Brand = {
   founded: 1982,
   headquarters: "San Jose, California",
   designer: "Marva Warnock",
-  lastRebranded: "2020",
+  lastRebranded: "2025",
   philosophy:
     "Bold, creative, and empowering. Adobe's iconic red 'A' symbolizes the creative peak — a geometric mark that represents the tools and platform that empower millions of creators worldwide. The clean, modern identity reflects Adobe's evolution from desktop publishing pioneer to cloud-first creative platform.",
   legal: {

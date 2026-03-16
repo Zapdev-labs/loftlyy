@@ -58,12 +58,20 @@ export const duolingo: Brand = {
   ],
   typography: [
     {
-      name: "DIN Round",
-      role: "Primary Brand Typeface",
+      name: "Feather Bold",
+      role: "Primary Brand Typeface / Headlines",
+      weights: ["700"],
+      category: "sans-serif",
+      designer: "Krista Radoeva",
+      foundry: "Fontsmith",
+    },
+    {
+      name: "DIN Next Rounded",
+      role: "Body / Subheadings",
       weights: ["400", "700"],
       category: "sans-serif",
-      designer: "Linotype Design Studio",
-      foundry: "Linotype (custom rounded variant)",
+      designer: "Akira Kobayashi, Sandra Winter",
+      foundry: "Monotype",
     },
     {
       name: "Nunito",
@@ -115,11 +123,11 @@ export const duolingo: Brand = {
   founded: 2011,
   headquarters: "Pittsburgh, PA",
   designer: "Duolingo Design Team",
-  lastRebranded: "2022",
+  lastRebranded: "2019",
   philosophy:
     "Playful and purposeful, Duolingo's identity centers on the iconic green Duo owl — a symbol of approachable learning that balances gamified fun with genuine educational impact. The vibrant green and rounded forms communicate friendliness and accessibility, reinforcing the belief that learning a language should feel like a game, not a chore.",
   legal: {
-    guidelinesUrl: "https://duolingo.com/terms",
+    guidelinesUrl: "https://design.duolingo.com/",
     dos: [
       "Use the official Duo owl logo in its approved color variants (green, black, or white).",
       "Maintain adequate clear space around the logo equal to the width of the owl's eye.",

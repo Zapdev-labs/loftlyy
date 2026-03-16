@@ -104,9 +104,9 @@ export const zoom: Brand = {
   founded: 2011,
   headquarters: "San Jose, California",
   designer: "Zoom Design Team",
-  lastRebranded: "2022",
+  lastRebranded: "2024",
   philosophy:
-    "Zoom's identity is built on simplicity and connection, using a bold blue wordmark that conveys trust and clarity. The 2022 rebrand introduced custom typefaces Happy Display and Almaden Sans, evolving Zoom from a video app into a unified communications platform.",
+    "Zoom's identity is built on simplicity and connection, using a bold blue wordmark that conveys trust and clarity. The 2022 visual rebrand introduced custom typefaces Happy Display and Almaden Sans, evolving Zoom from a video app into a unified communications platform. In 2024, the company dropped 'Video' from its legal name — becoming Zoom Communications Inc. — reflecting its AI-first, multi-product ambition.",
   legal: {
     guidelinesUrl: "https://brand.zoom.com/",
     dos: [

@@ -129,7 +129,7 @@ export const nvidia: Brand = {
   founded: 1993,
   headquarters: "Santa Clara, CA",
   designer: "NVIDIA Brand Team",
-  lastRebranded: "2024",
+  lastRebranded: "2006",
   philosophy:
     "Bold, technical, and forward-driven. NVIDIA's identity is anchored by the iconic eye mark — a symbol of visual computing and vision — paired with the signature green that conveys energy, innovation, and the power of accelerated computing.",
   legal: {

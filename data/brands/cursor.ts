@@ -108,7 +108,7 @@ export const cursor: Brand = {
     format: "svg",
   },
   dateAdded: "2026-03-15",
-  founded: 2023,
+  founded: 2022,
   headquarters: "San Francisco, CA",
   designer: "Anysphere Design Team",
   philosophy:

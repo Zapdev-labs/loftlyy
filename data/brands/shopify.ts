@@ -47,7 +47,7 @@ export const shopify: Brand = {
       role: "Primary / Headings & Body",
       weights: ["500", "600", "700"],
       category: "sans-serif",
-      designer: "Grillitype",
+      designer: "Grilli Type",
       foundry: "Grilli Type",
       fontUrl: "/brands/shopify/fonts/polysans-neutral.woff2",
     },

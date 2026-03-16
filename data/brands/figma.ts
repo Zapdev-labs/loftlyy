@@ -4,7 +4,7 @@ export const figma: Brand = {
   slug: "figma",
   name: "Figma",
   description:
-    "Figma is a collaborative interface design tool that enables teams to design, prototype, and develop products together in real time. Acquired by Adobe in 2023, Figma has become the industry standard for UI/UX design, replacing traditional desktop tools with a browser-based platform that makes design accessible to everyone.",
+    "Figma is a collaborative interface design tool that enables teams to design, prototype, and develop products together in real time. An independent company headquartered in San Francisco, Figma has become the industry standard for UI/UX design, replacing traditional desktop tools with a browser-based platform that makes design accessible to everyone.",
   url: "https://figma.com",
   industry: "saas",
   categories: ["saas", "technology", "gradient-brands", "geometric-logos"],
@@ -18,27 +18,27 @@ export const figma: Brand = {
   colors: [
     {
       name: "Figma Red",
-      hex: "#FF3737",
+      hex: "#F24E1E",
       usage: "Primary brand accent, top-left quadrant of the icon.",
     },
     {
       name: "Figma Orange",
-      hex: "#FF7237",
+      hex: "#FF7262",
       usage: "Secondary accent, top-right quadrant of the icon.",
     },
     {
       name: "Figma Violet",
-      hex: "#874FFF",
+      hex: "#A259FF",
       usage: "Tertiary accent, middle-left quadrant of the icon.",
     },
     {
       name: "Figma Blue",
-      hex: "#00B6FF",
+      hex: "#1ABCFE",
       usage: "Accent, center-right circle of the icon.",
     },
     {
       name: "Figma Green",
-      hex: "#24CB71",
+      hex: "#0ACF83",
       usage: "Accent, bottom-left quadrant of the icon.",
     },
     {

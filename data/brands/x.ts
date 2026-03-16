@@ -166,7 +166,7 @@ export const x: Brand = {
   },
   dateAdded: "2026-03-15",
   founded: 2006,
-  headquarters: "San Francisco, California",
+  headquarters: "Bastrop, Texas",
   designer: "Martin Grasser (X logo), Douglas Bowman (Twitter bird)",
   lastRebranded: "2023",
   philosophy:

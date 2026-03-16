@@ -4,7 +4,7 @@ export const pinterest: Brand = {
   slug: "pinterest",
   name: "Pinterest",
   description:
-    "Pinterest is a visual discovery and bookmarking platform where users find and save creative ideas — from recipes and home decor to fashion and DIY projects. Founded in 2010, it serves over 450 million monthly active users as a personalized inspiration engine powered by visual search technology.",
+    "Pinterest is a visual discovery and bookmarking platform where users find and save creative ideas — from recipes and home decor to fashion and DIY projects. Founded in 2010, it serves over 550 million monthly active users as a personalized inspiration engine powered by visual search technology.",
   url: "https://www.pinterest.com",
   industry: "social-media",
   categories: ["social-media", "technology", "e-commerce"],

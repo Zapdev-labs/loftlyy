@@ -102,8 +102,8 @@ export const tiktok: Brand = {
     format: "svg",
   },
   dateAdded: "2026-03-15",
-  founded: 2016,
-  headquarters: "Los Angeles, California / Beijing, China",
+  founded: 2017,
+  headquarters: "Culver City, California / Singapore",
   designer: "TikTok Design Team",
   lastRebranded: "2023",
   philosophy:

@@ -98,7 +98,7 @@ export const cocaCola: Brand = {
   founded: 1886,
   headquarters: "Atlanta, Georgia, USA",
   designer: "Frank Mason Robinson",
-  lastRebranded: "2019",
+  lastRebranded: "2021",
   philosophy:
     "Coca-Cola's purpose is to refresh the world and make a difference — a philosophy that fuses the simple pleasure of an ice-cold drink with the belief that small moments of happiness have collective global impact. The brand earns its iconic status through unwavering consistency, joy, and cultural relevance across every market it touches.",
   legal: {

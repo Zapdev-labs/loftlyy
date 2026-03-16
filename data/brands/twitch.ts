@@ -31,7 +31,7 @@ export const twitch: Brand = {
         "Light background color. Used for contrast against purple elements and clean layouts.",
     },
     {
-      name: "Hype Yellow",
+      name: "Hype Pink",
       hex: "#FAB4FF",
       usage:
         "Accent color for highlights, hype moments, and promotional materials.",
@@ -130,7 +130,7 @@ export const twitch: Brand = {
   founded: 2011,
   headquarters: "San Francisco, CA",
   designer: "Twitch Design Team",
-  lastRebranded: "2019",
+  lastRebranded: "2024",
   philosophy:
     "Bold, energetic, and community-driven. Twitch's identity is anchored by the iconic Glitch — a speech-bubble-meets-gaming-controller mark rendered in unmistakable purple that signals live, interactive entertainment and the passionate communities built around it.",
   legal: {
