@@ -278,6 +278,10 @@
     "starbucks": {
       "description": "Starbucks est le premier torréfacteur et détaillant de café de spécialité au monde, exploitant plus de 38 000 établissements dans plus de 85 pays. Fondé en 1971 au Pike Place Market de Seattle, Starbucks sélectionne du café arabica de haute qualité et est devenu une force déterminante dans la culture mondiale des cafés, se positionnant comme un «troisième lieu» accueillant entre la maison et le travail.",
       "philosophy": "À chaque tasse, à chaque conversation, dans chaque communauté — Starbucks cultive les possibilités infinies de la connexion humaine. L'iconique sirène blanche sur fond vert Starbucks est l'un des symboles les plus reconnus au monde."
+    },
+    "cluely": {
+      "description": "Cluely est un assistant IA en temps réel qui fournit des suggestions et des réponses en direct pendant les réunions, entretiens et appels. Conçu pour les conversations à enjeux élevés, il fonctionne de manière invisible grâce à une interface superposée alimentée par des modèles de langage.",
+      "philosophy": "Épuré, professionnel et discrètement confiant. L'identité de Cluely associe des tons lavande doux à un charbon profond, projetant fiabilité et discrétion pour un outil conçu pour assister invisiblement lors de conversations importantes."
     }
   },
   "tags": {
@@ -407,7 +411,8 @@
     "beverages": "Boissons",
     "food-and-drink": "Alimentation et Boissons",
     "soft-drinks": "Boissons Gazeuses",
-    "consumer-goods": "Biens de Consommation"
+    "consumer-goods": "Biens de Consommation",
+    "meetings": "Réunions"
   },
   "tag": {
     "title": "Marques taguées \"{tag}\"",

@@ -278,6 +278,10 @@
     "starbucks": {
       "description": "Starbucks is the world's premier roaster and retailer of specialty coffee, operating over 38,000 locations in 85+ countries. Founded in 1971 at Seattle's Pike Place Market, Starbucks sources high-quality arabica coffee and has become a defining force in global coffeehouse culture, positioning itself as a welcoming 'third place' between home and work.",
       "philosophy": "With every cup, with every conversation, with every community — Starbucks nurtures the limitless possibilities of human connection. The iconic white Siren on Starbucks Green is one of the most recognized symbols on earth, embodying warmth, craft, and the promise of a welcoming space."
+    },
+    "cluely": {
+      "description": "Cluely is a real-time AI assistant that provides live suggestions and answers during meetings, interviews, and calls. Built for high-stakes conversations, it operates invisibly through an overlay interface powered by large language models.",
+      "philosophy": "Clean, professional, and quietly confident. Cluely's identity pairs soft lavender tones with deep charcoal, projecting trustworthiness and discretion for a tool designed to assist invisibly during high-stakes conversations."
     }
   },
   "tags": {
@@ -407,7 +411,8 @@
     "beverages": "Beverages",
     "food-and-drink": "Food & Drink",
     "soft-drinks": "Soft Drinks",
-    "consumer-goods": "Consumer Goods"
+    "consumer-goods": "Consumer Goods",
+    "meetings": "Meetings"
   },
   "tag": {
     "title": "Brands tagged \"{tag}\"",
