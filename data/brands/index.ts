@@ -8,6 +8,7 @@ import { airbnb } from "./airbnb"
 import { amazon } from "./amazon"
 import { anthropic } from "./anthropic"
 import { canva } from "./canva"
+import { clerk } from "./clerk"
 import { cocaCola } from "./coca-cola"
 import { cluely } from "./cluely"
 import { cursor } from "./cursor"
@@ -58,6 +59,7 @@ const rawBrands: Brand[] = [
   amazon,
   anthropic,
   canva,
+  clerk,
   apple,
   cluely,
   cursor,

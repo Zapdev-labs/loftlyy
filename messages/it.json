@@ -143,6 +143,10 @@
       "description": "Canva è una piattaforma online di design e pubblicazione che consente a tutti di progettare qualsiasi cosa e pubblicare ovunque. Fondata nel 2013 a Sydney, in Australia, Canva è diventata uno degli strumenti di design più popolari al mondo, rendendo il design grafico di qualità professionale accessibile a milioni di non-designer e professionisti.",
       "philosophy": "L'identità di Canva fonde gradienti giocosi turchese e viola con un logotipo disegnato a mano per incarnare la sua missione di democratizzazione del design. Le forme delle lettere organiche e fluide riflettono creatività e accessibilità, mentre il gradiente vibrante segnala innovazione e gioia nel processo creativo."
     },
+    "clerk": {
+      "description": "Clerk è una piattaforma di autenticazione e gestione utenti che fornisce componenti UI pronti all'uso, API e dashboard di amministrazione per aggiungere registrazione sicura, accesso e profili utente alle applicazioni web. Fondata nel 2019 a San Francisco, Clerk consente agli sviluppatori di implementare flussi di autenticazione completi in minuti anziché mesi.",
+      "philosophy": "L'identità del marchio Clerk riflette un approccio all'autenticazione incentrato sullo sviluppatore, enfatizzando semplicità e fiducia. L'estetica pulita e minimale con una palette scura e accenti viola trasmette sofisticazione tecnica rendendo al contempo l'infrastruttura di sicurezza complessa accessibile e moderna."
+    },
     "coca-cola": {
       "description": "Coca-Cola è la bevanda gassata più riconosciuta al mondo, creata nel 1886 dal Dr. John Pemberton ad Atlanta, in Georgia, e ora venduta in più di 200 paesi e territori. The Coca-Cola Company distribuisce oltre 2,2 miliardi di porzioni di bevande al giorno attraverso un portafoglio di oltre 200 marchi tramite la sua rete globale di partner imbottigliatori. La sua iconica bottiglia sagomata, il wordmark in scrittura Spenceriana e il rosso caratteristico figurano tra gli asset visivi più riprodotti nella storia commerciale.",
       "philosophy": "Lo scopo di Coca-Cola è di rinfrescare il mondo e fare la differenza — una filosofia che fonde il semplice piacere di una bevanda ghiacciata con la convinzione che i piccoli momenti di felicità abbiano un impatto globale collettivo. Il marchio guadagna il suo status iconico attraverso una coerenza incrollabile, la gioia e la rilevanza culturale in ogni mercato che tocca."
@@ -305,6 +309,7 @@
     "music": "Musica",
     "streaming": "Streaming",
     "search": "Ricerca",
+    "security": "Sicurezza",
     "audio": "Audio",
     "podcasts": "Podcast",
     "playlists": "Playlist",
@@ -333,6 +338,7 @@
     "collaboration": "Collaborazione",
     "prototyping": "Prototipazione",
     "ui-design": "Design UI",
+    "user-management": "Gestione Utenti",
     "travel": "Viaggi",
     "hospitality": "Ospitalità",
     "marketplace": "Marketplace",
@@ -362,6 +368,7 @@
     "clean-energy": "Energia Pulita",
     "social-media": "Social Media",
     "virtual-reality": "Realtà Virtuale",
+    "authentication": "Autenticazione",
     "augmented-reality": "Realtà Aumentata",
     "metaverse": "Metaverso",
     "gpu": "GPU",
@@ -409,6 +416,7 @@
     "food-service": "Ristorazione",
     "global": "Globale",
     "iconic": "Iconico",
+    "identity": "Identità",
     "sportswear": "Abbigliamento sportivo",
     "athletics": "Atletica",
     "fashion": "Moda",

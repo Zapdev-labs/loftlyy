@@ -143,6 +143,10 @@
       "description": "Canva est une plateforme de design et de publication en ligne qui permet à chacun de concevoir n'importe quoi et de publier partout. Fondée en 2013 à Sydney, en Australie, Canva est devenue l'un des outils de design les plus populaires au monde, rendant le design graphique de qualité professionnelle accessible à des millions de non-designers et de professionnels.",
       "philosophy": "L'identité de Canva mêle des dégradés ludiques turquoise et violet à un logotype manuscrit distinctif pour incarner sa mission de démocratisation du design. Les formes de lettres organiques et fluides reflètent la créativité et l'accessibilité, tandis que le dégradé vibrant signale l'innovation et la joie dans le processus créatif."
     },
+    "clerk": {
+      "description": "Clerk est une plateforme d'authentification et de gestion des utilisateurs qui fournit des composants d'interface prêts à l'emploi, des API et des tableaux de bord d'administration pour ajouter l'inscription sécurisée, la connexion et les profils utilisateurs aux applications web. Fondée en 2019 à San Francisco, Clerk permet aux développeurs d'implémenter des flux d'authentification complets en minutes plutôt qu'en mois.",
+      "philosophy": "L'identité de marque de Clerk reflète une approche axée sur le développeur en matière d'authentification, en mettant l'accent sur la simplicité et la confiance. L'esthétique épurée et minimaliste avec une palette sombre et des accents violets transmet une sophistication technique tout en rendant l'infrastructure de sécurité complexe accessible et moderne."
+    },
     "coca-cola": {
       "description": "Coca-Cola est la boisson gazeuse la plus reconnue au monde, créée en 1886 par le Dr John Pemberton à Atlanta, en Géorgie, et désormais vendue dans plus de 200 pays et territoires. The Coca-Cola Company distribue plus de 2,2 milliards de portions de boissons quotidiennement à travers un portefeuille de plus de 200 marques via son réseau mondial d'embouteilleurs partenaires. Sa bouteille contour iconique, son logotype en écriture Spencerienne et son rouge signature figurent parmi les actifs visuels les plus reproduits de l'histoire commerciale.",
       "philosophy": "La raison d'être de Coca-Cola est de rafraîchir le monde et de faire une différence — une philosophie qui fusionne le simple plaisir d'une boisson bien fraîche avec la conviction que de petits moments de bonheur ont un impact collectif mondial. La marque doit son statut iconique à une cohérence inébranlable, à la joie et à sa pertinence culturelle dans chaque marché qu'elle touche."
@@ -305,6 +309,7 @@
     "music": "Musique",
     "streaming": "Streaming",
     "search": "Recherche",
+    "security": "Sécurité",
     "audio": "Audio",
     "podcasts": "Podcasts",
     "playlists": "Playlists",
@@ -333,6 +338,7 @@
     "collaboration": "Collaboration",
     "prototyping": "Prototypage",
     "ui-design": "Design UI",
+    "user-management": "Gestion des Utilisateurs",
     "travel": "Voyage",
     "hospitality": "Hôtellerie",
     "marketplace": "Place de marché",
@@ -362,6 +368,7 @@
     "clean-energy": "Énergie Propre",
     "social-media": "Réseaux Sociaux",
     "virtual-reality": "Réalité Virtuelle",
+    "authentication": "Authentification",
     "augmented-reality": "Réalité Augmentée",
     "metaverse": "Métavers",
     "gpu": "GPU",
@@ -409,6 +416,7 @@
     "food-service": "Restauration",
     "global": "Mondial",
     "iconic": "Iconique",
+    "identity": "Identité",
     "sportswear": "Vêtements de sport",
     "athletics": "Athlétisme",
     "fashion": "Mode",

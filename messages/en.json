@@ -143,6 +143,10 @@
       "description": "Canva is an online design and publishing platform that empowers everyone to design anything and publish anywhere. Founded in 2013 in Sydney, Australia, Canva has grown into one of the world's most popular design tools, making professional-quality graphic design accessible to millions of non-designers and professionals alike.",
       "philosophy": "Canva's identity blends playful teal and purple gradients with a distinctive hand-drawn wordmark to embody its mission of democratizing design. The flowing, organic letterforms reflect creativity and accessibility, while the vibrant gradient signals innovation and joy in the creative process."
     },
+    "clerk": {
+      "description": "Clerk is an authentication and user management platform that provides drop-in UI components, APIs, and admin dashboards for adding secure sign-up, sign-in, and user profiles to web applications. Founded in 2019 in San Francisco, Clerk enables developers to implement complete authentication flows in minutes rather than months.",
+      "philosophy": "Clerk's brand identity reflects a developer-first approach to authentication, emphasizing simplicity and trust. The clean, minimal aesthetic with a dark palette and purple accents conveys technical sophistication while making complex security infrastructure feel approachable and modern."
+    },
     "coca-cola": {
       "description": "Coca-Cola is the world's most recognized sparkling beverage, created in 1886 by Dr. John Pemberton in Atlanta, Georgia, and now sold in more than 200 countries and territories. The Coca-Cola Company delivers over 2.2 billion drink servings daily across a portfolio of 200+ brands through its global network of bottling partners. Its iconic contour bottle, Spencerian-script wordmark, and signature red are among the most reproduced visual assets in commercial history.",
       "philosophy": "Coca-Cola's purpose is to refresh the world and make a difference — a philosophy that fuses the simple pleasure of an ice-cold drink with the belief that small moments of happiness have collective global impact. The brand earns its iconic status through unwavering consistency, joy, and cultural relevance across every market it touches."
@@ -331,6 +335,7 @@
     "collaboration": "Collaboration",
     "prototyping": "Prototyping",
     "ui-design": "UI Design",
+    "user-management": "User Management",
     "travel": "Travel",
     "hospitality": "Hospitality",
     "marketplace": "Marketplace",
@@ -341,6 +346,7 @@
     "productivity": "Productivity",
     "design-tools": "Design Tools",
     "search": "Search",
+    "security": "Security",
     "advertising": "Advertising",
     "cloud": "Cloud",
     "hosting": "Hosting",
@@ -362,6 +368,7 @@
     "clean-energy": "Clean Energy",
     "social-media": "Social Media",
     "virtual-reality": "Virtual Reality",
+    "authentication": "Authentication",
     "augmented-reality": "Augmented Reality",
     "metaverse": "Metaverse",
     "logistics": "Logistics",
@@ -403,6 +410,7 @@
     "food-service": "Food Service",
     "global": "Global",
     "iconic": "Iconic",
+    "identity": "Identity",
     "athletic": "Athletic",
     "footwear": "Footwear",
     "apparel": "Apparel",

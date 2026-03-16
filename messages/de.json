@@ -143,6 +143,10 @@
       "description": "Canva ist eine Online-Design- und Veröffentlichungsplattform, die es jedem ermöglicht, alles zu gestalten und überall zu veröffentlichen. 2013 in Sydney, Australien, gegründet, hat sich Canva zu einem der weltweit beliebtesten Design-Tools entwickelt und macht professionelles Grafikdesign für Millionen von Nicht-Designern und Profis gleichermaßen zugänglich.",
       "philosophy": "Canvas Identität verbindet verspielte Türkis- und Violett-Farbverläufe mit einer unverwechselbaren handgezeichneten Wortmarke, um die Mission der Demokratisierung von Design zu verkörpern. Die fließenden, organischen Buchstabenformen spiegeln Kreativität und Zugänglichkeit wider, während der lebhafte Farbverlauf Innovation und Freude am kreativen Prozess signalisiert."
     },
+    "clerk": {
+      "description": "Clerk ist eine Authentifizierungs- und Benutzerverwaltungsplattform, die sofort einsetzbare UI-Komponenten, APIs und Admin-Dashboards für sichere Registrierung, Anmeldung und Benutzerprofile in Webanwendungen bereitstellt. 2019 in San Francisco gegründet, ermöglicht Clerk Entwicklern die Implementierung vollständiger Authentifizierungsabläufe in Minuten statt Monaten.",
+      "philosophy": "Clerks Markenidentität spiegelt einen entwicklerorientierten Ansatz für Authentifizierung wider und betont Einfachheit und Vertrauen. Die klare, minimalistische Ästhetik mit dunkler Farbpalette und violetten Akzenten vermittelt technische Raffinesse und lässt komplexe Sicherheitsinfrastruktur zugänglich und modern wirken."
+    },
     "coca-cola": {
       "description": "Coca-Cola ist das weltweit bekannteste Erfrischungsgetränk, das 1886 von Dr. John Pemberton in Atlanta, Georgia, kreiert wurde und heute in mehr als 200 Ländern und Gebieten verkauft wird. The Coca-Cola Company liefert täglich über 2,2 Milliarden Getränkeportionen über ein Portfolio von mehr als 200 Marken durch sein globales Netzwerk von Abfüllpartnern. Seine ikonische Konturfl asche, der Schriftzug in Spencerianischer Schrift und das charakteristische Rot gehören zu den am häufigsten reproduzierten visuellen Elementen der Wirtschaftsgeschichte.",
       "philosophy": "Das Ziel von Coca-Cola ist es, die Welt zu erfrischen und einen Unterschied zu machen — eine Philosophie, die das schlichte Vergnügen eines eiskalten Getränks mit der Überzeugung verbindet, dass kleine Momente des Glücks kollektive globale Wirkung haben. Die Marke verdient ihren Ikonenstatus durch unerschütterliche Konsistenz, Freude und kulturelle Relevanz in jedem Markt, den sie berührt."
@@ -305,6 +309,7 @@
     "music": "Musik",
     "streaming": "Streaming",
     "search": "Suche",
+    "security": "Sicherheit",
     "audio": "Audio",
     "podcasts": "Podcasts",
     "playlists": "Playlists",
@@ -333,6 +338,7 @@
     "collaboration": "Zusammenarbeit",
     "prototyping": "Prototyping",
     "ui-design": "UI-Design",
+    "user-management": "Benutzerverwaltung",
     "travel": "Reisen",
     "hospitality": "Gastgewerbe",
     "marketplace": "Marktplatz",
@@ -362,6 +368,7 @@
     "clean-energy": "Saubere Energie",
     "social-media": "Soziale Medien",
     "virtual-reality": "Virtuelle Realität",
+    "authentication": "Authentifizierung",
     "augmented-reality": "Erweiterte Realität",
     "metaverse": "Metaverse",
     "gpu": "GPU",
@@ -409,6 +416,7 @@
     "food-service": "Gastronomie",
     "global": "Global",
     "iconic": "Ikonisch",
+    "identity": "Identität",
     "sportswear": "Sportbekleidung",
     "athletics": "Leichtathletik",
     "fashion": "Mode",

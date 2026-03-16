@@ -143,6 +143,10 @@
       "description": "Canva es una plataforma de diseño y publicación en línea que permite a todos diseñar cualquier cosa y publicar en cualquier lugar. Fundada en 2013 en Sídney, Australia, Canva se ha convertido en una de las herramientas de diseño más populares del mundo, haciendo que el diseño gráfico de calidad profesional sea accesible para millones de no diseñadores y profesionales por igual.",
       "philosophy": "La identidad de Canva combina degradados juguetones en turquesa y púrpura con un distintivo logotipo dibujado a mano para encarnar su misión de democratizar el diseño. Las formas orgánicas y fluidas de las letras reflejan creatividad y accesibilidad, mientras que el vibrante degradado señala innovación y alegría en el proceso creativo."
     },
+    "clerk": {
+      "description": "Clerk es una plataforma de autenticación y gestión de usuarios que ofrece componentes de interfaz listos para usar, APIs y paneles de administración para añadir registro seguro, inicio de sesión y perfiles de usuario a aplicaciones web. Fundada en 2019 en San Francisco, Clerk permite a los desarrolladores implementar flujos de autenticación completos en minutos en lugar de meses.",
+      "philosophy": "La identidad de marca de Clerk refleja un enfoque centrado en el desarrollador hacia la autenticación, enfatizando la simplicidad y la confianza. La estética limpia y minimalista con una paleta oscura y acentos púrpura transmite sofisticación técnica mientras hace que la compleja infraestructura de seguridad se sienta accesible y moderna."
+    },
     "coca-cola": {
       "description": "Coca-Cola es la bebida gaseosa más reconocida del mundo, creada en 1886 por el Dr. John Pemberton en Atlanta, Georgia, y actualmente vendida en más de 200 países y territorios. The Coca-Cola Company distribuye más de 2.200 millones de porciones de bebidas diariamente a través de una cartera de más de 200 marcas y su red global de socios embotelladores. Su icónica botella contorneada, el wordmark en escritura Spenceriana y el rojo característico se encuentran entre los activos visuales más reproducidos en la historia comercial.",
       "philosophy": "El propósito de Coca-Cola es refrescar el mundo y marcar la diferencia — una filosofía que fusiona el simple placer de una bebida bien fría con la creencia de que los pequeños momentos de felicidad tienen un impacto global colectivo. La marca gana su estatus icónico a través de una consistencia inquebrantable, alegría y relevancia cultural en cada mercado que toca."
@@ -305,6 +309,7 @@
     "music": "Música",
     "streaming": "Streaming",
     "search": "Búsqueda",
+    "security": "Seguridad",
     "audio": "Audio",
     "podcasts": "Podcasts",
     "playlists": "Listas de reproducción",
@@ -333,6 +338,7 @@
     "collaboration": "Colaboración",
     "prototyping": "Prototipado",
     "ui-design": "Diseño UI",
+    "user-management": "Gestión de Usuarios",
     "travel": "Viajes",
     "hospitality": "Hospitalidad",
     "marketplace": "Mercado",
@@ -362,6 +368,7 @@
     "clean-energy": "Energía Limpia",
     "social-media": "Redes Sociales",
     "virtual-reality": "Realidad Virtual",
+    "authentication": "Autenticación",
     "augmented-reality": "Realidad Aumentada",
     "metaverse": "Metaverso",
     "logistics": "Logística",
@@ -409,6 +416,7 @@
     "food-service": "Servicios de alimentación",
     "global": "Global",
     "iconic": "Icónico",
+    "identity": "Identidad",
     "sportswear": "Ropa deportiva",
     "athletics": "Atletismo",
     "fashion": "Moda",
