@@ -282,6 +282,10 @@
     "cluely": {
       "description": "Cluely is a real-time AI assistant that provides live suggestions and answers during meetings, interviews, and calls. Built for high-stakes conversations, it operates invisibly through an overlay interface powered by large language models.",
       "philosophy": "Clean, professional, and quietly confident. Cluely's identity pairs soft lavender tones with deep charcoal, projecting trustworthiness and discretion for a tool designed to assist invisibly during high-stakes conversations."
+    },
+    "interfere": {
+      "description": "Interfere is building the self-healing layer of the internet — software that automatically detects, triages, and fixes bugs in real-time without human intervention. Backed by Y Combinator, Vercel, and Hummingbird, it monitors applications continuously and identifies behavioral changes before users report issues.",
+      "philosophy": "Interfere's identity reflects a technical, precision-driven approach to software quality. The geometric logomark — a cascade of progressively larger blocks converging to a focal point — embodies the product's ability to detect and resolve issues at every scale. A bold serif-meets-sans pairing and vibrant gradient palette signal both authority and modernity."
     }
   },
   "tags": {
@@ -412,7 +416,11 @@
     "food-and-drink": "Food & Drink",
     "soft-drinks": "Soft Drinks",
     "consumer-goods": "Consumer Goods",
-    "meetings": "Meetings"
+    "meetings": "Meetings",
+    "debugging": "Debugging",
+    "automation": "Automation",
+    "monitoring": "Monitoring",
+    "quality-assurance": "Quality Assurance"
   },
   "tag": {
     "title": "Brands tagged \"{tag}\"",

@@ -17,6 +17,7 @@ import { duolingo } from "./duolingo"
 import { notion } from "./notion"
 import { figma } from "./figma"
 import { github } from "./github"
+import { interfere } from "./interfere"
 import { instagram } from "./instagram"
 import { google } from "./google"
 import { linear } from "./linear"
@@ -62,6 +63,7 @@ const rawBrands: Brand[] = [
   duolingo,
   figma,
   github,
+  interfere,
   instagram,
   google,
   linear,

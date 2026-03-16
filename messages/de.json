@@ -282,6 +282,10 @@
     "cluely": {
       "description": "Cluely ist ein KI-Assistent in Echtzeit, der während Meetings, Interviews und Anrufen Live-Vorschläge und Antworten liefert. Für wichtige Gespräche entwickelt, arbeitet es unsichtbar über eine Overlay-Oberfläche, die von großen Sprachmodellen angetrieben wird.",
       "philosophy": "Sauber, professionell und leise selbstbewusst. Cluelys Identität verbindet sanfte Lavendeltöne mit tiefem Anthrazit und vermittelt Vertrauenswürdigkeit und Diskretion für ein Werkzeug, das bei wichtigen Gesprächen unsichtbar assistiert."
+    },
+    "interfere": {
+      "description": "Interfere baut die selbstheilende Schicht des Internets — Software, die Fehler automatisch in Echtzeit erkennt, einordnet und behebt, ohne menschliches Eingreifen. Unterstützt von Y Combinator, Vercel und Hummingbird überwacht es Anwendungen kontinuierlich und identifiziert Verhaltensänderungen, bevor Nutzer Probleme melden.",
+      "philosophy": "Interferes Identität spiegelt einen technischen, präzisionsorientierten Ansatz zur Softwarequalität wider. Das geometrische Logo — eine Kaskade progressiv größerer Blöcke, die zu einem Brennpunkt konvergieren — verkörpert die Fähigkeit des Produkts, Probleme auf jeder Ebene zu erkennen und zu lösen. Eine markante Kombination aus Serif und Sans-Serif sowie eine lebendige Verlaufspalette signalisieren Autorität und Modernität."
     }
   },
   "tags": {
@@ -412,7 +416,11 @@
     "food-and-drink": "Essen & Trinken",
     "soft-drinks": "Softdrinks",
     "consumer-goods": "Konsumgüter",
-    "meetings": "Meetings"
+    "meetings": "Meetings",
+    "debugging": "Debugging",
+    "automation": "Automatisierung",
+    "monitoring": "Überwachung",
+    "quality-assurance": "Qualitätssicherung"
   },
   "tag": {
     "title": "Marken mit Tag \"{tag}\"",

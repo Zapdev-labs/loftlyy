@@ -282,6 +282,10 @@
     "cluely": {
       "description": "Cluely是一款实时AI助手，在会议、面试和通话期间提供实时建议和回答。专为高风险对话设计，通过由大型语言模型驱动的叠加界面隐形运作。",
       "philosophy": "简洁、专业且低调自信。Cluely的品牌形象将柔和的薰衣草色调与深邃的炭色相结合，为一款在重要对话中隐形辅助的工具传递可信赖与审慎的品质。"
+    },
+    "interfere": {
+      "description": "Interfere正在构建互联网的自愈层——能够在无需人工干预的情况下实时自动检测、分类和修复错误的软件。在Y Combinator、Vercel和Hummingbird的支持下，它持续监控应用程序，在用户报告问题之前识别行为变化。",
+      "philosophy": "Interfere的品牌形象体现了对软件质量的技术化、精确导向的方法。几何标志——逐渐增大的方块向焦点汇聚的级联图案——象征着产品在各个层面检测和解决问题的能力。大胆的衬线与无衬线字体搭配以及鲜艳的渐变色板，传达出权威性与现代感。"
     }
   },
   "tags": {
@@ -412,7 +416,11 @@
     "food-and-drink": "餐饮",
     "soft-drinks": "软饮料",
     "consumer-goods": "消费品",
-    "meetings": "会议"
+    "meetings": "会议",
+    "debugging": "调试",
+    "automation": "自动化",
+    "monitoring": "监控",
+    "quality-assurance": "质量保证"
   },
   "tag": {
     "title": "标记为\"{tag}\"的品牌",

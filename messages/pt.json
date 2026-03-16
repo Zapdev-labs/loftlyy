@@ -282,6 +282,10 @@
     "cluely": {
       "description": "Cluely é um assistente de IA em tempo real que fornece sugestões e respostas ao vivo durante reuniões, entrevistas e chamadas. Projetado para conversas de alto risco, opera de forma invisível através de uma interface sobreposta alimentada por modelos de linguagem de grande porte.",
       "philosophy": "Limpo, profissional e discretamente confiante. A identidade da Cluely combina tons de lavanda suaves com carvão profundo, projetando confiabilidade e discrição para uma ferramenta projetada para assistir invisivelmente durante conversas importantes."
+    },
+    "interfere": {
+      "description": "Interfere está construindo a camada autorreparadora da internet — software que detecta, classifica e corrige bugs automaticamente em tempo real sem intervenção humana. Apoiado por Y Combinator, Vercel e Hummingbird, monitora aplicações continuamente e identifica mudanças comportamentais antes que os usuários relatem problemas.",
+      "philosophy": "A identidade da Interfere reflete uma abordagem técnica e orientada à precisão para a qualidade de software. O logotipo geométrico — uma cascata de blocos progressivamente maiores convergindo para um ponto focal — incorpora a capacidade do produto de detectar e resolver problemas em qualquer escala. Uma combinação ousada de serif e sans-serif junto com uma paleta de gradientes vibrantes sinalizam autoridade e modernidade."
     }
   },
   "tags": {
@@ -412,7 +416,11 @@
     "food-and-drink": "Comida e Bebida",
     "soft-drinks": "Refrigerantes",
     "consumer-goods": "Bens de Consumo",
-    "meetings": "Reuniões"
+    "meetings": "Reuniões",
+    "debugging": "Depuração",
+    "automation": "Automação",
+    "monitoring": "Monitoramento",
+    "quality-assurance": "Garantia de Qualidade"
   },
   "tag": {
     "title": "Marcas com tag \"{tag}\"",
