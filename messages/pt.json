@@ -128,6 +128,10 @@
       "description": "Amazon é a maior varejista online e empresa de computação em nuvem do mundo, oferecendo desde e-commerce e streaming digital até inteligência artificial e logística. Fundada em 1994 por Jeff Bezos, a Amazon se tornou uma das empresas mais valiosas do mundo.",
       "philosophy": "A identidade da Amazon é ancorada pela icônica seta-sorriso — uma linha curva de A a Z que representa a promessa da empresa de entregar tudo, com um sorriso. O laranja quente e a marca tipográfica limpa transmitem acessibilidade e obsessão pelo cliente em grande escala."
     },
+    "bmw": {
+      "description": "A BMW (Bayerische Motoren Werke) é uma fabricante multinacional alemã de veículos de luxo e motocicletas, fundada em 1916 e sediada em Munique, Alemanha. Originalmente fabricante de motores de aviação, a BMW evoluiu para uma das principais marcas automotivas premium do mundo, celebrada pela excelência em engenharia, dinâmica de condução e inovação.",
+      "philosophy": "Através da precisão de engenharia e uma busca incansável pelo prazer de dirigir, a identidade da BMW está ancorada no icônico roundel — um símbolo inspirado na bandeira da Baviera que representa a excelência automotiva premium há mais de um século. O rebranding de 2020 pela BECC Agency simplificou o logotipo para um design plano e transparente, e um refinamento em 2025 para a era Neue Klasse removeu completamente os anéis cromados internos, alcançando uma expressão mais limpa e contemporânea."
+    },
     "discord": {
       "description": "Discord é uma plataforma de comunicação por voz, vídeo e texto criada para formar comunidades. Originalmente desenvolvida para gamers, ela se expandiu para atender comunidades de todos os tipos, de grupos de estudo a coletivos artísticos e projetos open source. A missão do Discord é criar um espaço onde todos possam sentir pertencimento.",
       "philosophy": "Divertida, acessível e inclusiva. A identidade do Discord equilibra energia jovem com a clareza necessária para uma plataforma de comunicação, usando o mascote Clyde e o Blurple como pontos de reconhecimento."
@@ -248,6 +252,10 @@
       "description": "Tesla é uma empresa global de veículos elétricos e energia limpa que projeta, fabrica e vende carros elétricos, sistemas de armazenamento de energia e produtos solares. Fundada em 2003, a Tesla redefiniu a indústria automotiva com foco em energia sustentável e tecnologia de ponta.",
       "philosophy": "A identidade da Tesla gira em torno do seu icônico emblema T — uma seção transversal estilizada do rotor de um motor elétrico — que sinaliza disrupção impulsionada pela tecnologia em vez de herança automotiva tradicional. A marca minimalista e geométrica posiciona a Tesla como uma empresa de tecnologia do Vale do Silício que também fabrica carros."
     },
+    "toyota": {
+      "description": "A Toyota Motor Corporation é a maior fabricante de automóveis do mundo, produzindo aproximadamente 10 milhões de veículos por ano. Fundada em 1937 por Kiichiro Toyoda, a empresa tem sede em Toyota City, Japão, e é reconhecida por ser pioneira em tecnologia híbrida e pelo Sistema de Produção Toyota.",
+      "philosophy": "A identidade da Toyota está ancorada em seu icônico emblema de três elipses sobrepostas, representando a unificação dos corações dos clientes e da Toyota, e as possibilidades ilimitadas da tecnologia. A marca limpa e geométrica transmite confiança, confiabilidade e unidade global — valores centrais da filosofia kaizen de melhoria contínua da Toyota."
+    },
     "x": {
       "description": "X (anteriormente Twitter) é uma plataforma global de mídia social para conversas em tempo real, notícias e discurso público. Fundada em 2006 por Jack Dorsey, Noah Glass, Biz Stone e Evan Williams, foi rebatizada como X em 2023 sob a propriedade de Elon Musk, sinalizando a visão de se tornar um super app.",
       "philosophy": "A identidade do X representa uma ruptura radical com o simpático pássaro azul do Twitter — um X austero e monocromático que sinaliza ambição além das redes sociais. A marca minimalista abraça ousadia e universalidade, projetada para ancorar uma visão de super app."
@@ -291,6 +299,10 @@
     "reddit": {
       "description": "Reddit é uma plataforma de agregação de notícias sociais e discussão organizada em comunidades chamadas subreddits. Os usuários compartilham conteúdo, votam em publicações e comentários e participam de conversas que abrangem praticamente qualquer tema. O Reddit se descreve como 'a página inicial da internet.'",
       "philosophy": "Focado na comunidade e acessível. A identidade do Reddit é centrada no mascote Snoo e na cor Orangered, equilibrando diversão com o papel da plataforma como um hub sério para conversas e descobertas autênticas."
+    },
+    "samsung": {
+      "description": "A Samsung é uma líder tecnológica global em eletrônicos de consumo, dispositivos móveis, semicondutores e displays. Fundada em 1969 na Coreia do Sul, a Samsung Electronics se tornou uma das empresas mais valiosas do mundo, impulsionando a inovação em smartphones, TVs, chips de memória e eletrodomésticos.",
+      "philosophy": "A identidade da Samsung é construída na crença de que a tecnologia deve servir a humanidade. O icônico logotipo azul — limpo, geométrico e universalmente reconhecível — incorpora confiabilidade, inovação e um espírito pioneiro incansável que impulsiona a empresa a superar barreiras e moldar um mundo melhor."
     },
     "nike": {
       "description": "Nike é a principal marca de vestuário esportivo do mundo, projetando e vendendo calçados, roupas e equipamentos esportivos para atletas em todos os níveis. Fundada em 1964 como Blue Ribbon Sports e renomeada em 1971, a Nike construiu um império global na crença de que se você tem um corpo, você é um atleta.",
@@ -473,6 +485,7 @@
     "meetings": "Reuniões",
     "debugging": "Depuração",
     "automation": "Automação",
+    "automotive": "Automotivo",
     "monitoring": "Monitoramento",
     "quality-assurance": "Garantia de Qualidade",
     "database": "Banco de dados",
@@ -491,7 +504,8 @@
     "framework": "Framework",
     "launcher": "Launcher",
     "macos": "macOS",
-    "keyboard-first": "Teclado em primeiro"
+    "keyboard-first": "Teclado em primeiro",
+    "luxury": "Luxo"
   },
   "tag": {
     "title": "Marcas com tag \"{tag}\"",

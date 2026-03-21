@@ -128,6 +128,10 @@
       "description": "Amazon est le plus grand détaillant en ligne et entreprise de cloud computing au monde, offrant du commerce électronique au streaming numérique en passant par l'intelligence artificielle et la logistique. Fondée en 1994 par Jeff Bezos, Amazon est devenue l'une des entreprises les plus précieuses au monde.",
       "philosophy": "L'identité d'Amazon est ancrée par l'iconique flèche-sourire — une ligne courbée de A à Z qui représente la promesse de l'entreprise de tout livrer, avec le sourire. L'orange chaleureux et le logotype épuré transmettent accessibilité et obsession du client à grande échelle."
     },
+    "bmw": {
+      "description": "BMW (Bayerische Motoren Werke) est un constructeur multinational allemand de véhicules de luxe et de motos, fondé en 1916 et dont le siège est à Munich, en Allemagne. À l'origine fabricant de moteurs d'avion, BMW est devenu l'une des principales marques automobiles premium au monde, célèbre pour son excellence en ingénierie, sa dynamique de conduite et son innovation.",
+      "philosophy": "Par la précision de l'ingénierie et une quête incessante du plaisir de conduire, l'identité de BMW est ancrée dans l'iconique roundel — un symbole inspiré du drapeau bavarois qui représente l'excellence automobile premium depuis plus d'un siècle. Le rebranding de 2020 par BECC Agency a réduit le logo à un design plat et transparent, et un raffinement en 2025 pour l'ère Neue Klasse a supprimé les anneaux chromés intérieurs, aboutissant à une expression plus épurée et contemporaine."
+    },
     "discord": {
       "description": "Discord est une plateforme de communication vocale, vidéo et textuelle conçue pour créer des communautés. Initialement conçu pour les joueurs, il s'est étendu pour servir des communautés de toutes sortes — des groupes d'étude aux collectifs artistiques en passant par les projets open source. La mission de Discord est de créer un espace où chacun peut trouver sa place.",
       "philosophy": "Ludique, accessible et inclusif. L'identité de Discord équilibre une énergie juvénile avec la clarté nécessaire pour une plateforme de communication, en utilisant l'emblématique mascotte Clyde et le Blurple comme repères de reconnaissance."
@@ -252,6 +256,10 @@
       "description": "Tesla est une entreprise mondiale de véhicules électriques et d'énergie propre qui conçoit, fabrique et vend des voitures électriques, des systèmes de stockage d'énergie et des produits solaires. Fondée en 2003, Tesla a redéfini l'industrie automobile en misant sur l'énergie durable et la technologie de pointe.",
       "philosophy": "L'identité de Tesla est centrée sur son emblème T iconique — une coupe transversale stylisée du rotor d'un moteur électrique — qui signale une disruption technologique plutôt qu'un héritage automobile traditionnel. La marque minimale et géométrique positionne Tesla comme une entreprise technologique de la Silicon Valley qui fabrique aussi des voitures."
     },
+    "toyota": {
+      "description": "Toyota Motor Corporation est le plus grand constructeur automobile au monde, produisant environ 10 millions de véhicules par an. Fondée en 1937 par Kiichiro Toyoda, l'entreprise a son siège dans la ville de Toyota, au Japon, et est reconnue pour avoir été pionnière de la technologie hybride et du Système de Production Toyota.",
+      "philosophy": "L'identité de Toyota repose sur son emblème iconique composé de trois ellipses entrelacées, symbolisant l'union des cœurs des clients et de Toyota, ainsi que les possibilités illimitées de la technologie. La marque épurée et géométrique évoque la confiance, la fiabilité et l'unité mondiale — au cœur de la philosophie kaizen d'amélioration continue de Toyota."
+    },
     "x": {
       "description": "X (anciennement Twitter) est une plateforme mondiale de médias sociaux dédiée aux conversations en temps réel, aux actualités et au débat public. Fondée en 2006 par Jack Dorsey, Noah Glass, Biz Stone et Evan Williams, elle a été rebaptisée X en 2023 sous la direction d'Elon Musk, signalant une vision de super application.",
       "philosophy": "L'identité de X représente une rupture radicale avec le sympathique oiseau bleu de Twitter — un X austère et monochrome qui signale une ambition au-delà des réseaux sociaux. La marque minimaliste embrasse l'audace et l'universalité, conçue pour ancrer une vision de super application."
@@ -291,6 +299,10 @@
     "reddit": {
       "description": "Reddit est une plateforme d'agrégation d'actualités sociales et de discussion organisée en communautés appelées subreddits. Les utilisateurs partagent du contenu, votent sur les publications et commentaires, et participent à des conversations couvrant pratiquement tous les sujets. Reddit se décrit comme 'la page d'accueil d'internet.'",
       "philosophy": "Axé sur la communauté et accessible. L'identité de Reddit est centrée sur la mascotte Snoo et la couleur Orangered, équilibrant le côté ludique avec le rôle de la plateforme en tant que hub sérieux pour la conversation et la découverte authentiques."
+    },
+    "samsung": {
+      "description": "Samsung est un leader technologique mondial dans l'électronique grand public, les appareils mobiles, les semi-conducteurs et les écrans. Fondée en 1969 en Corée du Sud, Samsung Electronics est devenue l'une des entreprises les plus précieuses au monde, stimulant l'innovation dans les smartphones, téléviseurs, puces mémoire et appareils électroménagers.",
+      "philosophy": "L'identité de Samsung repose sur la conviction que la technologie doit servir l'humanité. Le logotype bleu emblématique — épuré, géométrique et universellement reconnaissable — incarne la fiabilité, l'innovation et un esprit pionnier infatigable qui pousse l'entreprise à repousser les limites et façonner un monde meilleur."
     },
     "nike": {
       "description": "Nike est la première marque mondiale de vêtements de sport, concevant et vendant des chaussures, vêtements et équipements sportifs pour les athlètes à tous les niveaux. Fondée en 1964 sous le nom de Blue Ribbon Sports et rebaptisée en 1971, Nike a bâti un empire mondial sur la conviction que si vous avez un corps, vous êtes un athlète.",
@@ -473,6 +485,7 @@
     "meetings": "Réunions",
     "debugging": "Débogage",
     "automation": "Automatisation",
+    "automotive": "Automobile",
     "monitoring": "Surveillance",
     "quality-assurance": "Assurance Qualité",
     "database": "Base de données",
@@ -491,7 +504,8 @@
     "framework": "Framework",
     "launcher": "Lanceur",
     "macos": "macOS",
-    "keyboard-first": "Clavier d'abord"
+    "keyboard-first": "Clavier d'abord",
+    "luxury": "Luxe"
   },
   "tag": {
     "title": "Marques taguées \"{tag}\"",

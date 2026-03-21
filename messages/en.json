@@ -128,6 +128,10 @@
       "description": "Amazon is the world's largest online retailer and cloud computing company, offering everything from e-commerce and digital streaming to artificial intelligence and logistics. Founded in 1994 by Jeff Bezos, Amazon has grown into one of the most valuable companies in the world.",
       "philosophy": "Amazon's identity is anchored by the iconic smile arrow — a curved line from A to Z that represents the company's promise to deliver everything, with a smile. The warm orange and clean wordmark convey approachability and customer obsession at massive scale."
     },
+    "bmw": {
+      "description": "BMW (Bayerische Motoren Werke) is a German multinational manufacturer of luxury vehicles and motorcycles, founded in 1916 and headquartered in Munich, Germany. Originally an aircraft engine manufacturer, BMW has evolved into one of the world's leading premium automotive brands, celebrated for engineering excellence, driving dynamics, and innovation.",
+      "philosophy": "Through engineering precision and a relentless pursuit of driving pleasure, BMW's identity is anchored by the iconic roundel — a symbol inspired by the Bavarian flag that has represented premium automotive excellence for over a century. The 2020 rebrand by BECC Agency stripped the logo to a flat, transparent design, and a 2025 refinement for the Neue Klasse era removed inner chrome rings entirely, achieving a cleaner, more contemporary expression."
+    },
     "discord": {
       "description": "Discord is a voice, video, and text communication platform designed for creating communities. Originally built for gamers, it has expanded to serve communities of all kinds — from study groups to art collectives to open-source projects. Discord's mission is to create space for everyone to find belonging.",
       "philosophy": "Playful, approachable, and inclusive. Discord's identity balances youthful energy with the clarity needed for a communication platform, using the iconic Clyde mascot and Blurple as anchors of recognition."
@@ -252,6 +256,10 @@
       "description": "Tesla is a global electric vehicle and clean energy company that designs, manufactures, and sells electric cars, battery energy storage systems, and solar products. Founded in 2003, Tesla has redefined the automotive industry with its focus on sustainable energy and cutting-edge technology.",
       "philosophy": "Tesla's identity centers on its iconic T emblem — a stylized cross-section of an electric motor rotor — that signals technology-driven disruption over traditional automotive heritage. The minimal, geometric mark positions Tesla as a Silicon Valley tech company that happens to make cars."
     },
+    "toyota": {
+      "description": "Toyota Motor Corporation is the world's largest automobile manufacturer, producing approximately 10 million vehicles per year. Founded in 1937 by Kiichiro Toyoda, the company is headquartered in Toyota City, Japan, and is known for pioneering hybrid technology and the Toyota Production System.",
+      "philosophy": "Toyota's identity is anchored by its iconic three-overlapping-ellipses emblem, representing the unification of customer hearts and Toyota's heart, and the limitless possibilities of technology. The clean, geometric mark conveys trust, reliability, and global unity — core to Toyota's kaizen philosophy of continuous improvement."
+    },
     "x": {
       "description": "X (formerly Twitter) is a global social media platform for real-time conversation, news, and public discourse. Founded in 2006 by Jack Dorsey, Noah Glass, Biz Stone, and Evan Williams, it was rebranded to X in 2023 under Elon Musk's ownership, signaling a vision to become an everything app.",
       "philosophy": "X's identity represents a radical departure from Twitter's friendly blue bird — a stark, monochrome X that signals ambition beyond social media. The minimalist mark embraces boldness and universality, designed to anchor an everything-app vision."
@@ -291,6 +299,10 @@
     "reddit": {
       "description": "Reddit is a social news aggregation and discussion platform organized into communities called subreddits. Users share content, vote on posts and comments, and participate in conversations spanning virtually every topic. Reddit describes itself as 'the front page of the internet.'",
       "philosophy": "Community-first and accessible. Reddit's identity centers on the Snoo mascot and Orangered color, balancing playfulness with the platform's role as a serious hub for authentic conversation and discovery."
+    },
+    "samsung": {
+      "description": "Samsung is a global technology leader spanning consumer electronics, mobile devices, semiconductors, and displays. Founded in 1969 in South Korea, Samsung Electronics has grown into one of the world's most valuable companies, driving innovation across smartphones, TVs, memory chips, and home appliances.",
+      "philosophy": "Samsung's identity is built on the belief that technology should serve humanity. The iconic blue wordmark — clean, geometric, and universally recognizable — embodies reliability, innovation, and a relentless pioneering spirit that drives the company to defy barriers and shape a better world."
     },
     "nike": {
       "description": "Nike is the world's leading sportswear brand, designing and selling athletic footwear, apparel, and equipment for athletes at every level. Founded in 1964 as Blue Ribbon Sports and rebranded in 1971, Nike has built a global empire on the belief that if you have a body, you are an athlete — producing iconic products and campaigns that blend performance engineering with cultural relevance.",
@@ -473,6 +485,7 @@
     "meetings": "Meetings",
     "debugging": "Debugging",
     "automation": "Automation",
+    "automotive": "Automotive",
     "monitoring": "Monitoring",
     "quality-assurance": "Quality Assurance",
     "database": "Database",
@@ -491,7 +504,8 @@
     "billing": "Billing",
     "monetization": "Monetization",
     "css": "CSS",
-    "framework": "Framework"
+    "framework": "Framework",
+    "luxury": "Luxury"
   },
   "tag": {
     "title": "Brands tagged \"{tag}\"",

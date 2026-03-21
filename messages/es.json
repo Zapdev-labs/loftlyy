@@ -128,6 +128,10 @@
       "description": "Amazon es el mayor minorista en línea y empresa de computación en la nube del mundo, que ofrece desde comercio electrónico y streaming digital hasta inteligencia artificial y logística. Fundada en 1994 por Jeff Bezos, Amazon se ha convertido en una de las empresas más valiosas del mundo.",
       "philosophy": "La identidad de Amazon está anclada por la icónica flecha sonrisa — una línea curva de la A a la Z que representa la promesa de la empresa de entregar todo, con una sonrisa. El cálido naranja y la tipografía limpia transmiten accesibilidad y obsesión por el cliente a gran escala."
     },
+    "bmw": {
+      "description": "BMW (Bayerische Motoren Werke) es un fabricante multinacional alemán de vehículos de lujo y motocicletas, fundado en 1916 y con sede en Múnich, Alemania. Originalmente un fabricante de motores de aviación, BMW se ha convertido en una de las principales marcas automotrices premium del mundo, celebrada por su excelencia en ingeniería, dinámica de conducción e innovación.",
+      "philosophy": "A través de la precisión de ingeniería y una búsqueda incesante del placer de conducir, la identidad de BMW está anclada en el icónico roundel — un símbolo inspirado en la bandera bávara que ha representado la excelencia automotriz premium durante más de un siglo. El rediseño de 2020 por BECC Agency redujo el logotipo a un diseño plano y transparente, y un refinamiento en 2025 para la era Neue Klasse eliminó por completo los anillos cromados interiores, logrando una expresión más limpia y contemporánea."
+    },
     "discord": {
       "description": "Discord es una plataforma de comunicación por voz, video y texto diseñada para crear comunidades. Originalmente creada para jugadores, se ha expandido para servir a comunidades de todo tipo, desde grupos de estudio hasta colectivos artísticos y proyectos de código abierto. La misión de Discord es crear un espacio donde todos puedan encontrar su lugar.",
       "philosophy": "Juguetón, accesible e inclusivo. La identidad de Discord equilibra la energía juvenil con la claridad necesaria para una plataforma de comunicación, utilizando la icónica mascota Clyde y el Blurple como pilares de reconocimiento."
@@ -252,6 +256,10 @@
       "description": "Tesla es una empresa global de vehículos eléctricos y energía limpia que diseña, fabrica y vende autos eléctricos, sistemas de almacenamiento de energía y productos solares. Fundada en 2003, Tesla ha redefinido la industria automotriz con su enfoque en energía sostenible y tecnología de vanguardia.",
       "philosophy": "La identidad de Tesla se centra en su icónico emblema T — una sección transversal estilizada del rotor de un motor eléctrico — que señala disrupción impulsada por la tecnología sobre la herencia automotriz tradicional. La marca minimalista y geométrica posiciona a Tesla como una empresa tecnológica de Silicon Valley que además fabrica autos."
     },
+    "toyota": {
+      "description": "Toyota Motor Corporation es el mayor fabricante de automóviles del mundo, produciendo aproximadamente 10 millones de vehículos al año. Fundada en 1937 por Kiichiro Toyoda, la empresa tiene su sede en la ciudad de Toyota, Japón, y es conocida por ser pionera en tecnología híbrida y el Sistema de Producción Toyota.",
+      "philosophy": "La identidad de Toyota está anclada en su icónico emblema de tres elipses superpuestas, que representa la unificación de los corazones de los clientes y el corazón de Toyota, y las posibilidades ilimitadas de la tecnología. La marca limpia y geométrica transmite confianza, fiabilidad y unidad global — esencial en la filosofía kaizen de mejora continua de Toyota."
+    },
     "x": {
       "description": "X (anteriormente Twitter) es una plataforma global de redes sociales para conversaciones en tiempo real, noticias y discurso público. Fundada en 2006 por Jack Dorsey, Noah Glass, Biz Stone y Evan Williams, fue renombrada a X en 2023 bajo la propiedad de Elon Musk, señalando una visión de convertirse en una super app.",
       "philosophy": "La identidad de X representa una ruptura radical con el simpático pájaro azul de Twitter — una X austera y monocromática que señala ambición más allá de las redes sociales. La marca minimalista abraza la audacia y la universalidad, diseñada para anclar una visión de super app."
@@ -291,6 +299,10 @@
     "reddit": {
       "description": "Reddit es una plataforma de agregación de noticias sociales y discusión organizada en comunidades llamadas subreddits. Los usuarios comparten contenido, votan publicaciones y comentarios, y participan en conversaciones que abarcan prácticamente cualquier tema. Reddit se describe a sí mismo como 'la portada de internet.'",
       "philosophy": "Centrado en la comunidad y accesible. La identidad de Reddit se centra en la mascota Snoo y el color Orangered, equilibrando la diversión con el papel de la plataforma como un centro serio para la conversación y el descubrimiento auténticos."
+    },
+    "samsung": {
+      "description": "Samsung es un líder tecnológico global que abarca electrónica de consumo, dispositivos móviles, semiconductores y pantallas. Fundada en 1969 en Corea del Sur, Samsung Electronics se ha convertido en una de las empresas más valiosas del mundo, impulsando la innovación en smartphones, televisores, chips de memoria y electrodomésticos.",
+      "philosophy": "La identidad de Samsung se basa en la creencia de que la tecnología debe servir a la humanidad. El icónico logotipo azul — limpio, geométrico y universalmente reconocible — encarna fiabilidad, innovación y un espíritu pionero incansable que impulsa a la empresa a superar barreras y construir un mundo mejor."
     },
     "nike": {
       "description": "Nike es la marca líder mundial en ropa deportiva, que diseña y vende calzado, ropa y equipamiento atlético para atletas de todos los niveles. Fundada en 1964 como Blue Ribbon Sports y renombrada en 1971, Nike ha construido un imperio global sobre la creencia de que si tienes un cuerpo, eres un atleta.",
@@ -473,6 +485,7 @@
     "meetings": "Reuniones",
     "debugging": "Depuración",
     "automation": "Automatización",
+    "automotive": "Automotriz",
     "monitoring": "Monitoreo",
     "quality-assurance": "Control de Calidad",
     "database": "Base de datos",
@@ -491,7 +504,8 @@
     "framework": "Framework",
     "launcher": "Lanzador",
     "macos": "macOS",
-    "keyboard-first": "Teclado primero"
+    "keyboard-first": "Teclado primero",
+    "luxury": "Lujo"
   },
   "tag": {
     "title": "Marcas etiquetadas \"{tag}\"",

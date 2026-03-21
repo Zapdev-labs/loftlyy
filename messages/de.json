@@ -128,6 +128,10 @@
       "description": "Amazon ist der weltweit größte Online-Händler und Cloud-Computing-Anbieter, der alles von E-Commerce und digitalem Streaming bis hin zu künstlicher Intelligenz und Logistik anbietet. 1994 von Jeff Bezos gegründet, ist Amazon zu einem der wertvollsten Unternehmen der Welt gewachsen.",
       "philosophy": "Amazons Identität wird durch den ikonischen Smile-Pfeil verankert — eine geschwungene Linie von A bis Z, die das Versprechen des Unternehmens repräsentiert, alles mit einem Lächeln zu liefern. Das warme Orange und die klare Wortmarke vermitteln Zugänglichkeit und Kundenobsession in großem Maßstab."
     },
+    "bmw": {
+      "description": "BMW (Bayerische Motoren Werke) ist ein deutscher multinationaler Hersteller von Luxusfahrzeugen und Motorrädern, gegründet 1916 mit Hauptsitz in München. Ursprünglich ein Flugmotorenhersteller, hat sich BMW zu einer der weltweit führenden Premium-Automobilmarken entwickelt, gefeiert für technische Exzellenz, Fahrdynamik und Innovation.",
+      "philosophy": "Durch Ingenieurspräzision und das unermüdliche Streben nach Fahrfreude ist BMWs Identität im ikonischen Roundel verankert — einem Symbol, inspiriert von der bayerischen Flagge, das seit über einem Jahrhundert für automobile Premium-Exzellenz steht. Das Rebranding von 2020 durch BECC Agency reduzierte das Logo auf ein flaches, transparentes Design, und eine Verfeinerung 2025 für die Neue-Klasse-Ära entfernte die inneren Chromringe vollständig und erzielte einen saubereren, zeitgemäßeren Ausdruck."
+    },
     "discord": {
       "description": "Discord ist eine Sprach-, Video- und Textkommunikationsplattform, die für den Aufbau von Gemeinschaften entwickelt wurde. Ursprünglich für Gamer gebaut, hat sie sich erweitert, um Gemeinschaften aller Art zu bedienen — von Lerngruppen über Künstlerkollektive bis hin zu Open-Source-Projekten. Discords Mission ist es, einen Raum zu schaffen, in dem jeder seinen Platz finden kann.",
       "philosophy": "Verspielt, zugänglich und inklusiv. Discords Identität balanciert jugendliche Energie mit der Klarheit, die für eine Kommunikationsplattform erforderlich ist, wobei das ikonische Clyde-Maskottchen und Blurple als Ankerpunkte der Wiedererkennung dienen."
@@ -244,6 +248,10 @@
       "description": "Tesla ist ein globales Unternehmen für Elektrofahrzeuge und saubere Energie, das Elektroautos, Energiespeichersysteme und Solarprodukte entwirft, herstellt und vertreibt. 2003 gegründet, hat Tesla die Automobilindustrie mit seinem Fokus auf nachhaltige Energie und modernste Technologie neu definiert.",
       "philosophy": "Teslas Identität dreht sich um das ikonische T-Emblem — einen stilisierten Querschnitt eines Elektromotor-Rotors — das technologiegetriebene Disruption statt traditionelles Automobilerbe signalisiert. Die minimale, geometrische Marke positioniert Tesla als Silicon-Valley-Technologieunternehmen, das nebenbei auch Autos baut."
     },
+    "toyota": {
+      "description": "Die Toyota Motor Corporation ist der weltweit größte Automobilhersteller und produziert jährlich rund 10 Millionen Fahrzeuge. 1937 von Kiichiro Toyoda gegründet, hat das Unternehmen seinen Hauptsitz in Toyota City, Japan, und ist bekannt für die Pionierarbeit bei Hybridtechnologie und dem Toyota-Produktionssystem.",
+      "philosophy": "Toyotas Identität wird von seinem ikonischen Emblem mit drei überlappenden Ellipsen geprägt, das die Vereinigung der Herzen der Kunden und Toyotas sowie die grenzenlosen Möglichkeiten der Technologie symbolisiert. Die klare, geometrische Marke vermittelt Vertrauen, Zuverlässigkeit und globale Einheit — Kernwerte der Kaizen-Philosophie der kontinuierlichen Verbesserung."
+    },
     "x": {
       "description": "X (ehemals Twitter) ist eine globale Social-Media-Plattform für Echtzeitkommunikation, Nachrichten und öffentlichen Diskurs. 2006 von Jack Dorsey, Noah Glass, Biz Stone und Evan Williams gegründet, wurde sie 2023 unter Elon Musks Eigentümerschaft in X umbenannt — als Signal für die Vision einer Super-App.",
       "philosophy": "Die Identität von X stellt einen radikalen Bruch mit Twitters freundlichem blauen Vogel dar — ein schlichtes, monochromes X, das Ambitionen jenseits sozialer Medien signalisiert. Die minimalistische Marke verkörpert Kühnheit und Universalität, entworfen als Anker einer Super-App-Vision."
@@ -291,6 +299,10 @@
     "reddit": {
       "description": "Reddit ist eine soziale Nachrichtenaggregations- und Diskussionsplattform, die in Gemeinschaften namens Subreddits organisiert ist. Nutzer teilen Inhalte, stimmen über Beiträge und Kommentare ab und nehmen an Gesprächen teil, die praktisch jedes Thema abdecken. Reddit beschreibt sich selbst als 'die Startseite des Internets.'",
       "philosophy": "Gemeinschaftsorientiert und zugänglich. Reddits Identität konzentriert sich auf das Snoo-Maskottchen und die Orangered-Farbe und verbindet Verspieltheit mit der Rolle der Plattform als ernsthafter Knotenpunkt für authentische Gespräche und Entdeckungen."
+    },
+    "samsung": {
+      "description": "Samsung ist ein weltweit führendes Technologieunternehmen in den Bereichen Unterhaltungselektronik, Mobilgeräte, Halbleiter und Displays. Samsung Electronics wurde 1969 in Südkorea gegründet und hat sich zu einem der wertvollsten Unternehmen der Welt entwickelt, das Innovation bei Smartphones, Fernsehern, Speicherchips und Haushaltsgeräten vorantreibt.",
+      "philosophy": "Samsungs Identität basiert auf der Überzeugung, dass Technologie der Menschheit dienen soll. Das ikonische blaue Wortzeichen — klar, geometrisch und weltweit erkennbar — verkörpert Zuverlässigkeit, Innovation und einen unermüdlichen Pioniergeist, der das Unternehmen antreibt, Grenzen zu überwinden und eine bessere Welt zu gestalten."
     },
     "nike": {
       "description": "Nike ist die weltweit führende Sportbekleidungsmarke und entwirft sowie verkauft Sportschuhe, Bekleidung und Ausrüstung für Athleten auf allen Ebenen. 1964 als Blue Ribbon Sports gegründet und 1971 umbenannt, hat Nike ein globales Imperium auf der Überzeugung aufgebaut, dass jeder, der einen Körper hat, ein Athlet ist.",
@@ -473,6 +485,7 @@
     "meetings": "Meetings",
     "debugging": "Debugging",
     "automation": "Automatisierung",
+    "automotive": "Automobil",
     "monitoring": "Überwachung",
     "quality-assurance": "Qualitätssicherung",
     "database": "Datenbank",
@@ -491,7 +504,8 @@
     "framework": "Framework",
     "launcher": "Launcher",
     "macos": "macOS",
-    "keyboard-first": "Tastatur-zuerst"
+    "keyboard-first": "Tastatur-zuerst",
+    "luxury": "Luxus"
   },
   "tag": {
     "title": "Marken mit Tag \"{tag}\"",
