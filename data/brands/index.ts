@@ -1,6 +1,6 @@
 import type { Brand, SidebarBrand } from "@/lib/types"
 import { assetUrl } from "@/lib/assets"
-import { hexToColorFamily } from "@/lib/filters"
+import { hexToColorFamily, normalizeHex } from "@/lib/filters"
 import { twentyFirst } from "./21st"
 import { abode } from "./abode"
 import { adidas } from "./adidas"
@@ -127,6 +127,34 @@ const rawBrands: Brand[] = [
   zoom,
 ].sort((a, b) => a.name.localeCompare(b.name))
 
+const WHITESPACE_RE = /\s+/g
+
+function normalizeSearchText(values: Array<string | undefined>): string {
+  return values
+    .filter(Boolean)
+    .join(" ")
+    .trim()
+    .toLowerCase()
+    .replace(WHITESPACE_RE, " ")
+}
+
+function buildSidebarSearchIndex(brand: Brand): SidebarBrand["searchIndex"] {
+  return {
+    text: normalizeSearchText([
+      brand.name,
+      brand.description,
+      brand.industry,
+      ...brand.categories,
+      ...(brand.tags ?? []),
+      ...brand.colors.map((color) => color.name),
+      ...brand.typography.flatMap((font) => [font.name, font.category]),
+    ]),
+    hexes: brand.colors
+      .map((color) => normalizeHex(color.hex))
+      .filter((color): color is string => color !== null),
+  }
+}
+
 function withAssetUrls(brand: Brand): Brand {
   return {
     ...brand,
@@ -172,6 +200,8 @@ const sidebarBrands: SidebarBrand[] = brands.map((b) => ({
   slug: b.slug,
   name: b.name,
   industry: b.industry,
+  description: b.description,
+  categories: b.categories,
   thumbnail: {
     src: b.thumbnail.src,
     width: b.thumbnail.width,
@@ -187,7 +217,8 @@ const sidebarBrands: SidebarBrand[] = brands.map((b) => ({
     : undefined,
   tags: b.tags,
   colors: b.colors.map((c) => ({ hex: c.hex })),
-  typography: b.typography.map((t) => ({ category: t.category })),
+  typography: b.typography.map((t) => ({ name: t.name, category: t.category })),
+  searchIndex: buildSidebarSearchIndex(b),
 }))
 
 export function getAllSidebarBrands() {

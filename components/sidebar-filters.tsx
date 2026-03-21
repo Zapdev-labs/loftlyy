@@ -4,7 +4,11 @@ import { useMemo } from "react"
 import { useTranslations } from "next-intl"
 import { IconAdjustmentsHorizontal, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
-import { type FilterState, getAvailableFilters } from "@/lib/filters"
+import {
+  type FilterDimension,
+  type FilterState,
+  getAvailableFilters,
+} from "@/lib/filters"
 import type { Brand } from "@/lib/types"
 import {
   Dialog,
@@ -18,7 +22,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 interface SidebarFiltersProps {
   brands: Brand[]
   filters: FilterState
-  onToggle: (dimension: keyof FilterState, value: string) => void
+  onToggle: (dimension: FilterDimension, value: string) => void
   onClear: () => void
   hasActiveFilters: boolean
 }
@@ -34,6 +38,7 @@ export function SidebarFilters({
   const available = useMemo(() => getAvailableFilters(brands), [brands])
 
   const activeCount =
+    (filters.query ? 1 : 0) +
     filters.industries.length +
     filters.tags.length +
     filters.colorFamilies.length +

@@ -1,9 +1,13 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import { usePathname, useRouter } from "@/i18n/navigation"
-import { type FilterState, emptyFilters } from "@/lib/filters"
 import { useCallback, useMemo } from "react"
+import { usePathname, useRouter } from "@/i18n/navigation"
+import {
+  type FilterDimension,
+  type FilterState,
+  emptyFilters,
+} from "@/lib/filters"
 
 function parseParam(params: URLSearchParams, key: string): string[] {
   const val = params.get(key)
@@ -22,6 +26,7 @@ export function useBrandFilters() {
 
   const filters: FilterState = useMemo(
     () => ({
+      query: searchParams.get("q") ?? "",
       industries: parseParam(searchParams, "industry"),
       tags: parseParam(searchParams, "tag"),
       colorFamilies: parseParam(searchParams, "color"),
@@ -32,6 +37,7 @@ export function useBrandFilters() {
 
   const hasActiveFilters = useMemo(
     () =>
+      filters.query.length > 0 ||
       filters.industries.length > 0 ||
       filters.tags.length > 0 ||
       filters.colorFamilies.length > 0 ||
@@ -43,7 +49,14 @@ export function useBrandFilters() {
     (newFilters: FilterState) => {
       const params = new URLSearchParams(searchParams.toString())
 
-      const mapping: [keyof FilterState, string][] = [
+      const normalizedQuery = newFilters.query.trim()
+      if (normalizedQuery) {
+        params.set("q", normalizedQuery)
+      } else {
+        params.delete("q")
+      }
+
+      const mapping: [FilterDimension, string][] = [
         ["industries", "industry"],
         ["tags", "tag"],
         ["colorFamilies", "color"],
@@ -66,7 +79,7 @@ export function useBrandFilters() {
   )
 
   const toggleFilter = useCallback(
-    (dimension: keyof FilterState, value: string) => {
+    (dimension: FilterDimension, value: string) => {
       const current = [...filters[dimension]]
       const idx = current.indexOf(value)
       if (idx >= 0) {
@@ -83,5 +96,19 @@ export function useBrandFilters() {
     updateURL(emptyFilters)
   }, [updateURL])
 
-  return { filters, hasActiveFilters, toggleFilter, clearFilters }
+  const setQuery = useCallback(
+    (query: string) => {
+      updateURL({ ...filters, query })
+    },
+    [filters, updateURL]
+  )
+
+  return {
+    filters,
+    query: filters.query,
+    setQuery,
+    hasActiveFilters,
+    toggleFilter,
+    clearFilters,
+  }
 }

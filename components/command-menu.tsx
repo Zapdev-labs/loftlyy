@@ -1,7 +1,15 @@
 "use client"
 
-import { useEffect, useState, useMemo, useCallback } from "react"
+import {
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+  useState,
+} from "react"
 import Image from "next/image"
+import { useSearchParams } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Command } from "cmdk"
 import {
@@ -22,13 +30,19 @@ import { localeMetadata } from "@/i18n/locales"
 import { useRouter, usePathname } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { cn } from "@/lib/utils"
-import { getAvailableFilters, type FilterState } from "@/lib/filters"
+import {
+  filterBrands,
+  getAvailableFilters,
+  normalizeHex,
+  type FilterDimension,
+  type FilterState,
+} from "@/lib/filters"
 import type { SidebarBrand } from "@/lib/types"
 
 interface CommandMenuProps {
   brands: SidebarBrand[]
   filters: FilterState
-  onToggleFilter: (dimension: keyof FilterState, value: string) => void
+  onToggleFilter: (dimension: FilterDimension, value: string) => void
   onClearFilters: () => void
   hasActiveFilters: boolean
 }
@@ -44,6 +58,36 @@ const colorFamilyMap: Record<string, string> = {
   neutral: "#9CA3AF",
 }
 
+const WHITESPACE_RE = /\s+/g
+
+function getSearchHeadingKey(
+  query: string,
+  brands: SidebarBrand[]
+): "allBrands" | "colorResults" | "fontResults" | "keywordResults" {
+  const tokens = query.trim().toLowerCase().split(WHITESPACE_RE).filter(Boolean)
+
+  if (tokens.length === 0) return "allBrands"
+
+  const hexTokens = tokens.filter((token) => normalizeHex(token))
+  if (hexTokens.length === tokens.length) {
+    return "colorResults"
+  }
+
+  if (hexTokens.length === 0) {
+    const isFontSearch = tokens.every((token) =>
+      brands.some((brand) =>
+        brand.typography.some((font) => font.name.toLowerCase().includes(token))
+      )
+    )
+
+    if (isFontSearch) {
+      return "fontResults"
+    }
+  }
+
+  return "keywordResults"
+}
+
 export function CommandMenu({
   brands,
   filters,
@@ -52,12 +96,24 @@ export function CommandMenu({
   hasActiveFilters,
 }: CommandMenuProps) {
   const [open, setOpen] = useState(false)
+  const [query, setQuery] = useState("")
+  const listRef = useRef<HTMLDivElement>(null)
   const t = useTranslations("nav")
   const router = useRouter()
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   const currentLocale = useLocale()
   const { theme, setTheme } = useTheme()
   const available = useMemo(() => getAvailableFilters(brands), [brands])
+  const deferredQuery = useDeferredValue(query)
+  const filteredBrands = useMemo(
+    () => filterBrands(brands, { ...filters, query: deferredQuery }),
+    [brands, filters, deferredQuery]
+  )
+  const resultHeading = useMemo(
+    () => getSearchHeadingKey(query, brands),
+    [query, brands]
+  )
 
   const activeCount =
     filters.industries.length +
@@ -85,6 +141,22 @@ export function CommandMenu({
     [router]
   )
 
+  useEffect(() => {
+    if (!open && query) {
+      setQuery("")
+    }
+  }, [open, query])
+
+  useEffect(() => {
+    if (!open) return
+
+    const frame = requestAnimationFrame(() => {
+      listRef.current?.scrollTo({ top: 0 })
+    })
+
+    return () => cancelAnimationFrame(frame)
+  }, [open, query, filteredBrands.length])
+
   return (
     <>
       {/* Trigger button */}
@@ -93,7 +165,7 @@ export function CommandMenu({
         className="flex w-full items-center gap-2 rounded-lg bg-neutral-100/80 px-3 py-2 text-[13px] text-neutral-500 transition-colors hover:text-neutral-700 dark:bg-neutral-900 dark:hover:text-neutral-300"
       >
         <IconSearch className="size-3.5" aria-hidden="true" />
-        <span className="flex-1 text-left">{t("search")}</span>
+        <span className="flex-1 truncate text-left">{t("search")}</span>
         <kbd className="hidden rounded bg-neutral-200/80 px-1.5 py-0.5 font-mono text-[10px] font-medium text-neutral-400 sm:inline-block dark:bg-neutral-800">
           ⌘K
         </kbd>
@@ -144,57 +216,67 @@ export function CommandMenu({
             aria-label="Search brands and filters"
           >
             <Command
+              shouldFilter={false}
               onKeyDown={(e) => {
                 if (e.key === "Escape") setOpen(false)
               }}
             >
               <Command.Input
-                placeholder={t("search")}
+                value={query}
+                onValueChange={setQuery}
+                placeholder={t("searchPlaceholder")}
                 autoFocus
                 className="w-full border-b border-neutral-200 bg-transparent px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 dark:border-neutral-800 dark:text-neutral-100"
               />
-              <Command.List className="max-h-[360px] overflow-y-auto p-2">
-                <Command.Empty className="py-6 text-center text-sm text-neutral-400">
-                  {t("noBrandsFound")}
-                </Command.Empty>
+              <Command.List
+                ref={listRef}
+                className="max-h-[360px] overflow-y-auto p-2"
+              >
+                {filteredBrands.length === 0 && (
+                  <div className="py-6 text-center text-sm text-neutral-400">
+                    {t("noBrandsFound")}
+                  </div>
+                )}
 
                 {/* Brands */}
-                <Command.Group
-                  heading={t("allBrands")}
-                  className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
-                >
-                  {brands.map((brand) => (
-                    <Command.Item
-                      key={brand.slug}
-                      value={brand.name}
-                      onSelect={() => navigateToBrand(brand.slug)}
-                      className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
-                    >
-                      <div
-                        className={cn(
-                          "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]",
-                          /black|dark|slate|navy/i.test(brand.thumbnail.label)
-                            ? "dark:bg-neutral-200"
-                            : /ivory|white|light/i.test(brand.thumbnail.label)
-                              ? "bg-neutral-800"
-                              : ""
-                        )}
+                {filteredBrands.length > 0 && (
+                  <Command.Group
+                    heading={t(resultHeading)}
+                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                  >
+                    {filteredBrands.map((brand) => (
+                      <Command.Item
+                        key={brand.slug}
+                        value={brand.slug}
+                        onSelect={() => navigateToBrand(brand.slug)}
+                        className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
                       >
-                        <Image
-                          src={brand.thumbnail.src}
-                          alt={brand.name}
-                          width={36}
-                          height={36}
-                          className="size-full object-contain p-0.5"
-                        />
-                      </div>
-                      <span className="font-medium">{brand.name}</span>
-                      <span className="ml-auto text-[11px] text-neutral-400">
-                        {brand.industry}
-                      </span>
-                    </Command.Item>
-                  ))}
-                </Command.Group>
+                        <div
+                          className={cn(
+                            "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]",
+                            /black|dark|slate|navy/i.test(brand.thumbnail.label)
+                              ? "dark:bg-neutral-200"
+                              : /ivory|white|light/i.test(brand.thumbnail.label)
+                                ? "bg-neutral-800"
+                                : ""
+                          )}
+                        >
+                          <Image
+                            src={brand.thumbnail.src}
+                            alt={brand.name}
+                            width={36}
+                            height={36}
+                            className="size-full object-contain p-0.5"
+                          />
+                        </div>
+                        <span className="font-medium">{brand.name}</span>
+                        <span className="ml-auto text-[11px] text-neutral-400">
+                          {brand.industry}
+                        </span>
+                      </Command.Item>
+                    ))}
+                  </Command.Group>
+                )}
 
                 {/* Industry filters */}
                 {available.industries.length > 0 && (
@@ -317,7 +399,10 @@ export function CommandMenu({
                         key={loc}
                         value={`language ${localeMetadata[loc].displayName} ${localeMetadata[loc].nativeName} ${loc}`}
                         onSelect={() => {
-                          router.replace(pathname, { locale: loc })
+                          const qs = searchParams.toString()
+                          router.replace(qs ? `${pathname}?${qs}` : pathname, {
+                            locale: loc,
+                          })
                           setOpen(false)
                         }}
                         className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"

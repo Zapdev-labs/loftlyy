@@ -1,4 +1,4 @@
-import type { Brand, SidebarBrand, SimilarBrandCard } from "./types"
+import type { Brand, SimilarBrandCard } from "./types"
 
 /** Fields shared by Brand and SidebarBrand that filtering needs */
 type FilterableBrand = Pick<Brand, "name" | "industry" | "tags"> & {
@@ -6,18 +6,66 @@ type FilterableBrand = Pick<Brand, "name" | "industry" | "tags"> & {
   typography: { category?: string }[]
 }
 
+type SearchableBrand = FilterableBrand & {
+  searchIndex: {
+    text: string
+    hexes: string[]
+  }
+}
+
 export interface FilterState {
+  query: string
   industries: string[]
   tags: string[]
   colorFamilies: string[]
   typographyStyles: string[]
 }
 
+export type FilterDimension = Exclude<keyof FilterState, "query">
+
 export const emptyFilters: FilterState = {
+  query: "",
   industries: [],
   tags: [],
   colorFamilies: [],
   typographyStyles: [],
+}
+
+const HEX_TOKEN_RE = /^#?([\dA-Fa-f]{3}|[\dA-Fa-f]{6})$/
+const WHITESPACE_RE = /\s+/g
+
+function normalizeText(value: string): string {
+  return value.trim().toLowerCase().replace(WHITESPACE_RE, " ")
+}
+
+export function normalizeHex(input: string): string | null {
+  const match = input.trim().match(HEX_TOKEN_RE)
+  if (!match) return null
+
+  const value = match[1].toUpperCase()
+  if (value.length === 3) {
+    return `#${value
+      .split("")
+      .map((char) => char.repeat(2))
+      .join("")}`
+  }
+
+  return `#${value}`
+}
+
+function matchesQuery(brand: SearchableBrand, query: string): boolean {
+  const tokens = normalizeText(query).split(" ").filter(Boolean)
+
+  if (tokens.length === 0) return true
+
+  return tokens.every((token) => {
+    const normalizedHex = normalizeHex(token)
+    if (normalizedHex) {
+      return brand.searchIndex.hexes.includes(normalizedHex)
+    }
+
+    return brand.searchIndex.text.includes(token)
+  })
 }
 
 export function hexToColorFamily(hex: string): string {
@@ -81,15 +129,13 @@ export function getAvailableFilters(brands: FilterableBrand[]) {
   }
 }
 
-export function filterBrands<T extends FilterableBrand>(
+export function filterBrands<T extends SearchableBrand>(
   brands: T[],
-  filters: FilterState,
-  query: string
+  filters: FilterState
 ): T[] {
   return brands.filter((brand) => {
-    if (query) {
-      const q = query.toLowerCase()
-      if (!brand.name.toLowerCase().includes(q)) return false
+    if (filters.query) {
+      if (!matchesQuery(brand, filters.query)) return false
     }
 
     if (filters.industries.length > 0) {

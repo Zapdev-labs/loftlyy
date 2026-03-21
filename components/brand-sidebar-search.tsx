@@ -1,12 +1,11 @@
 "use client"
 
 import {
-  useDeferredValue,
-  useState,
   useRef,
   useEffect,
   useCallback,
   useMemo,
+  useState,
 } from "react"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -38,11 +37,14 @@ export function BrandSidebarSearch({
   brands: SidebarBrand[]
   onNavigate?: () => void
 }) {
-  const [query] = useState("")
   const pathname = usePathname()
   const t = useTranslations("nav")
-  const { filters, hasActiveFilters, toggleFilter, clearFilters } =
-    useBrandFilters()
+  const {
+    filters,
+    hasActiveFilters,
+    toggleFilter,
+    clearFilters,
+  } = useBrandFilters()
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollUp, setCanScrollUp] = useState(false)
   const [canScrollDown, setCanScrollDown] = useState(false)
@@ -72,8 +74,7 @@ export function BrandSidebarSearch({
     return mask ? { maskImage: mask, WebkitMaskImage: mask } : undefined
   }, [canScrollUp, canScrollDown])
 
-  const deferredQuery = useDeferredValue(query)
-  const filtered = filterBrands(brands, filters, deferredQuery)
+  const filtered = filterBrands(brands, { ...filters, query: "" })
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3 px-5 lg:px-0">
@@ -95,7 +96,7 @@ export function BrandSidebarSearch({
             {t("allBrands")}
           </span>
           <span className="text-[11px] font-medium text-neutral-400 dark:text-neutral-500">
-            {brands.length}
+            {filtered.length}
           </span>
         </div>
 

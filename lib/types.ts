@@ -67,11 +67,17 @@ export interface SidebarBrand {
   slug: string
   name: string
   industry: string
+  description: string
+  categories: string[]
   thumbnail: { src: string; width: number; height: number; label: string }
   thumbnailDark?: { src: string; width: number; height: number }
   tags?: string[]
   colors: { hex: string }[]
-  typography: { category?: string }[]
+  typography: { name: string; category?: string }[]
+  searchIndex: {
+    text: string
+    hexes: string[]
+  }
 }
 
 export interface Category {
