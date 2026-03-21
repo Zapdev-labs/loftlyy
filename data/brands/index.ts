@@ -8,6 +8,7 @@ import { adobe } from "./adobe"
 import { airbnb } from "./airbnb"
 import { amazon } from "./amazon"
 import { anthropic } from "./anthropic"
+import { bmw } from "./bmw"
 import { canva } from "./canva"
 import { clerk } from "./clerk"
 import { cocaCola } from "./coca-cola"
@@ -39,6 +40,7 @@ import { railway } from "./railway"
 import { raycast } from "./raycast"
 import { pinterest } from "./pinterest"
 import { reddit } from "./reddit"
+import { samsung } from "./samsung"
 import { scira } from "./scira"
 import { spotify } from "./spotify"
 import { shopify } from "./shopify"
@@ -48,6 +50,7 @@ import { stripe } from "./stripe"
 import { vercel } from "./vercel"
 import { vscode } from "./vscode"
 import { tesla } from "./tesla"
+import { toyota } from "./toyota"
 import { tiktok } from "./tiktok"
 import { uber } from "./uber"
 import { twitch } from "./twitch"
@@ -68,6 +71,7 @@ const rawBrands: Brand[] = [
   airbnb,
   amazon,
   anthropic,
+  bmw,
   canva,
   clerk,
   apple,
@@ -98,6 +102,7 @@ const rawBrands: Brand[] = [
   raycast,
   pinterest,
   reddit,
+  samsung,
   scira,
   spotify,
   shopify,
@@ -106,6 +111,7 @@ const rawBrands: Brand[] = [
   stripe,
   tailwindCss,
   tesla,
+  toyota,
   tiktok,
   twitch,
   uber,
