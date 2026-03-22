@@ -1,0 +1,8 @@
+[build]
+builder = "railpack"
+buildCommand = "cd .. && pnpm --prefix mcp-server install && pnpm --prefix mcp-server run build"
+
+[deploy]
+startCommand = "node mcp-server/dist/index.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 10
