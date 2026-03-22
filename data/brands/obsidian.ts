@@ -12,15 +12,15 @@ export const obsidian: Brand = {
   colors: [
     {
       name: "Obsidian Purple",
-      hex: "#7C3AED",
+      hex: "#6C31E3",
       usage:
-        "Primary brand color, used in logo gradient, accent elements, and interactive UI components.",
+        "Primary brand color used in the logo base fill and as the main accent across marketing and product UI.",
     },
     {
-      name: "Obsidian Indigo",
-      hex: "#4F46E5",
+      name: "Obsidian Lavender",
+      hex: "#A079FF",
       usage:
-        "Secondary brand color, used in logo gradient and complementary accent elements.",
+        "Secondary brand color used in the lockup icon and lighter accent elements.",
     },
     {
       name: "Dark Background",
@@ -42,19 +42,34 @@ export const obsidian: Brand = {
       category: "sans-serif",
       designer: "Rasmus Andersson",
       foundry: "Google Fonts",
+      fontUrl: "/brands/obsidian/fonts/inter-latin.woff2",
     },
   ],
   assets: [
     {
       label: "Obsidian Icon — Gradient",
-      src: "/brands/obsidian/logo-icon.svg",
+      src: "/brands/obsidian/obsidian-logo-gradient.svg",
       width: 512,
       height: 512,
       format: "svg",
     },
     {
-      label: "Obsidian Wordmark — White",
-      src: "/brands/obsidian/logo-wordmark-white.svg",
+      label: "Obsidian Lockup — Black",
+      src: "/brands/obsidian/obsidian-lockup-black.svg",
+      width: 143,
+      height: 25,
+      format: "svg",
+    },
+    {
+      label: "Obsidian Lockup — White",
+      src: "/brands/obsidian/obsidian-lockup-white.svg",
+      width: 143,
+      height: 25,
+      format: "svg",
+    },
+    {
+      label: "Obsidian Lockup — Purple",
+      src: "/brands/obsidian/obsidian-lockup-purple.svg",
       width: 143,
       height: 25,
       format: "svg",
@@ -62,7 +77,7 @@ export const obsidian: Brand = {
   ],
   thumbnail: {
     label: "Obsidian Icon — Gradient",
-    src: "/brands/obsidian/logo-icon.svg",
+    src: "/brands/obsidian/obsidian-logo-gradient.svg",
     width: 512,
     height: 512,
     format: "svg",
