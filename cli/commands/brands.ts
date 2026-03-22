@@ -44,6 +44,10 @@ interface LoadedCommandContext extends RuntimeContext {
   loaded: Awaited<ReturnType<typeof loadBrands>>
 }
 
+interface CommandActionContext {
+  command: Command
+}
+
 const parsePositiveInt = (value: string): number => {
   const parsed = Number.parseInt(value, 10)
   if (!Number.isInteger(parsed) || parsed <= 0) {
@@ -180,6 +184,10 @@ const printByMode = (
   writeStdout(tableOutput)
 }
 
+const getCommandActionContext = (context: unknown): CommandActionContext => ({
+  command: context as Command,
+})
+
 const registerListCommand = (target: Command): void => {
   target
     .command("list")
@@ -190,8 +198,9 @@ const registerListCommand = (target: Command): void => {
       "\nExamples:\n  loftlyy list\n  loftlyy list --limit 10 --output json"
     )
     .action(async function listAction(options: { limit?: number }) {
+      const { command } = getCommandActionContext(this)
       const context = await loadCommandContext(
-        this as Command,
+        command,
         "table",
         "Discovering brand files"
       )
@@ -219,7 +228,7 @@ const registerGetCommand = (target: Command): void => {
       "\nExamples:\n  loftlyy get apple\n  loftlyy get --slug stripe --output table"
     )
     .action(async function getAction(slugArg?: string) {
-      const command = this as Command
+      const { command } = getCommandActionContext(this)
       const options = command.opts<{ slug?: string }>()
       const slug = slugArg ?? options.slug
       if (!slug) {
@@ -247,7 +256,7 @@ const registerSearchCommand = (target: Command): void => {
       '\nExamples:\n  loftlyy search apple\n  loftlyy search "#ff0000 ai"\n  loftlyy search --q "design system"'
     )
     .action(async function searchAction(queryArgs?: string[]) {
-      const command = this as Command
+      const { command } = getCommandActionContext(this)
       const options = command.opts<{ q?: string }>()
       const positionalQuery = (queryArgs ?? []).join(" ").trim()
       const query = options.q?.trim() || positionalQuery
@@ -293,8 +302,9 @@ const registerFilterCommand = (target: Command): void => {
       tag: string[]
       typographyStyle: string[]
     }) {
+      const { command } = getCommandActionContext(this)
       const context = await loadCommandContext(
-        this as Command,
+        command,
         "table",
         "Applying brand filters"
       )
@@ -341,8 +351,9 @@ const registerSimilarCommand = (target: Command): void => {
       slug: string,
       options: { limit: number }
     ) {
+      const { command } = getCommandActionContext(this)
       const context = await loadCommandContext(
-        this as Command,
+        command,
         "table",
         "Calculating similar brands"
       )
@@ -379,8 +390,9 @@ const registerPaletteCommand = (target: Command): void => {
       "\nExamples:\n  loftlyy palette apple\n  loftlyy palette stripe --output table"
     )
     .action(async function paletteAction(slug: string) {
+      const { command } = getCommandActionContext(this)
       const context = await loadCommandContext(
-        this as Command,
+        command,
         "json",
         "Loading brand palette"
       )
@@ -407,8 +419,9 @@ const registerFacetsCommand = (target: Command): void => {
       "\nExamples:\n  loftlyy facets\n  loftlyy facets --output json"
     )
     .action(async function facetsAction() {
+      const { command } = getCommandActionContext(this)
       const context = await loadCommandContext(
-        this as Command,
+        command,
         "table",
         "Collecting brand facets"
       )

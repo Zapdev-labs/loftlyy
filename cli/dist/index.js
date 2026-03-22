@@ -932,13 +932,17 @@ var printByMode = (mode, value, tableOutput) => {
   }
   writeStdout(tableOutput);
 };
+var getCommandActionContext = (context) => ({
+  command: context
+});
 var registerListCommand = (target) => {
   target.command("list").description("Return all brands in summary view").option("--limit <n>", "Limit number of rows", parsePositiveInt).addHelpText(
     "after",
     "\nExamples:\n  loftlyy list\n  loftlyy list --limit 10 --output json"
   ).action(async function listAction(options) {
+    const { command } = getCommandActionContext(this);
     const context = await loadCommandContext(
-      this,
+      command,
       "table",
       "Discovering brand files"
     );
@@ -955,7 +959,7 @@ var registerGetCommand = (target) => {
     "after",
     "\nExamples:\n  loftlyy get apple\n  loftlyy get --slug stripe --output table"
   ).action(async function getAction(slugArg) {
-    const command = this;
+    const { command } = getCommandActionContext(this);
     const options = command.opts();
     const slug = slugArg ?? options.slug;
     if (!slug) {
@@ -975,7 +979,7 @@ var registerSearchCommand = (target) => {
     "after",
     '\nExamples:\n  loftlyy search apple\n  loftlyy search "#ff0000 ai"\n  loftlyy search --q "design system"'
   ).action(async function searchAction(queryArgs) {
-    const command = this;
+    const { command } = getCommandActionContext(this);
     const options = command.opts();
     const positionalQuery = (queryArgs ?? []).join(" ").trim();
     const query = options.q?.trim() || positionalQuery;
@@ -1002,8 +1006,9 @@ var registerFilterCommand = (target) => {
     "after",
     '\nExamples:\n  loftlyy filter --industry technology --tag innovation\n  loftlyy filter --color-family blue --typography-style sans-serif --q "ai"'
   ).action(async function filterAction(options) {
+    const { command } = getCommandActionContext(this);
     const context = await loadCommandContext(
-      this,
+      command,
       "table",
       "Applying brand filters"
     );
@@ -1038,8 +1043,9 @@ var registerSimilarCommand = (target) => {
     "after",
     "\nExamples:\n  loftlyy similar apple\n  loftlyy similar apple --limit 10 --output json"
   ).action(async function similarAction(slug, options) {
+    const { command } = getCommandActionContext(this);
     const context = await loadCommandContext(
-      this,
+      command,
       "table",
       "Calculating similar brands"
     );
@@ -1068,8 +1074,9 @@ var registerPaletteCommand = (target) => {
     "after",
     "\nExamples:\n  loftlyy palette apple\n  loftlyy palette stripe --output table"
   ).action(async function paletteAction(slug) {
+    const { command } = getCommandActionContext(this);
     const context = await loadCommandContext(
-      this,
+      command,
       "json",
       "Loading brand palette"
     );
@@ -1089,8 +1096,9 @@ var registerFacetsCommand = (target) => {
     "after",
     "\nExamples:\n  loftlyy facets\n  loftlyy facets --output json"
   ).action(async function facetsAction() {
+    const { command } = getCommandActionContext(this);
     const context = await loadCommandContext(
-      this,
+      command,
       "table",
       "Collecting brand facets"
     );
@@ -1219,4 +1227,3 @@ var main = async () => {
   }
 };
 await main();
-//# sourceMappingURL=index.js.map

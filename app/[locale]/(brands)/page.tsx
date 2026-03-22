@@ -1,7 +1,11 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { IconArrowRight, IconBrandGithub, IconTerminal2 } from "@tabler/icons-react"
+import {
+  IconArrowRight,
+  IconBrandGithub,
+  IconTerminal2,
+} from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { getAllSidebarBrands } from "@/data/brands"

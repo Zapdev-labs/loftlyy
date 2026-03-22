@@ -1,11 +1,11 @@
 {
   "name": "@loftlyy/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Loftlyy brand data CLI",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "loftlyy": "./dist/index.js"
+    "loftlyy": "dist/index.js"
   },
   "files": [
     "dist"
