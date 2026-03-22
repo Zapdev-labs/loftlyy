@@ -2,3 +2,5 @@ node_modules
 dist
 *.log
 .env*
+# Keep pnpm-lock.yaml local — Railway build uses npm to avoid aqua registry issues
+pnpm-lock.yaml
