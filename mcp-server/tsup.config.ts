@@ -1,4 +1,5 @@
 import { defineConfig } from "tsup"
+import path from "node:path"
 
 export default defineConfig({
   clean: true,
@@ -14,4 +15,10 @@ export default defineConfig({
   // Bundle runtime deps so dist/index.js is fully self-contained — no
   // node_modules needed at runtime, which simplifies Railway deployment.
   noExternal: ["@modelcontextprotocol/sdk", "zod"],
+  // Resolve TypeScript path aliases (@/*) to the parent directory (repo root)
+  esbuildOptions(options) {
+    options.alias = {
+      "@/*": path.resolve("../*"),
+    }
+  },
 })
