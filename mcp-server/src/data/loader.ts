@@ -1,5 +1,7 @@
-import { getAllBrands } from "@/data/brands"
-import type { Brand } from "@/lib/types"
+// Relative imports — avoids @/ alias resolution issues with esbuild/tsup
+// mcp-server/src/data/ → ../../.. → repo root
+import { getAllBrands } from "../../../data/brands/index.js"
+import type { Brand } from "../../../lib/types.js"
 
 export type { Brand }
 
