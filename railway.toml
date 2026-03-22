@@ -1,10 +1,9 @@
 [build]
 builder = "railpack"
-# Call next build directly to skip the prebuild asset-validator script,
-# which expects local SVG files that live in a CDN (not the git repo).
-buildCommand = "pnpm install && pnpm exec next build"
+# Build MCP server bundle first, then Next.js
+buildCommand = "pnpm install && npm --prefix mcp-server install && npm --prefix mcp-server run build && pnpm exec next build"
 
 [deploy]
-startCommand = "pnpm exec next start"
-healthcheckPath = "/"
+startCommand = "node server.mjs"
+healthcheckPath = "/mcp/health"
 healthcheckTimeout = 60

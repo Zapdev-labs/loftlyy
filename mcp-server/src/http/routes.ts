@@ -171,12 +171,12 @@ export async function handleNotFound(
     error: "NOT_FOUND",
     message: "Endpoint not found",
     endpoints: [
-      "GET /health",
-      "GET /api/brands",
-      "GET /api/brand/:slug/palette",
-      "GET /api/search",
-      "GET /sse  (MCP — SSE connection)",
-      "POST /messages  (MCP — send message)",
+      "GET /mcp/health",
+      "GET /mcp/brands",
+      "GET /mcp/brand/:slug/palette",
+      "GET /mcp/search",
+      "GET /mcp/sse  (MCP — SSE connection)",
+      "POST /mcp/messages  (MCP — send message)",
     ],
   })
 }
