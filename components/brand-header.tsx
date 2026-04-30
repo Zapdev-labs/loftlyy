@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
-import { IconArrowsShuffle2 } from "@tabler/icons-react"
+import { IconArrowsShuffle2, IconExternalLink } from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
-import { cn, buildUtmUrl } from "@/lib/utils"
+import { buildUtmUrl } from "@/lib/utils"
 import type { Brand } from "@/lib/types"
 
 export function BrandHeader({
@@ -19,71 +19,55 @@ export function BrandHeader({
   const t = useTranslations("brand")
 
   return (
-    <section className="flex flex-col gap-4">
-      <div className="flex items-start gap-4">
-        <div
-          className={cn(
-            "flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl shadow-[0_0_0_0.5px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.06)] dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)]",
-            /black|dark|slate|navy/i.test(brand.thumbnail.label)
-              ? "bg-neutral-100 dark:bg-neutral-200"
-              : /ivory|white|light/i.test(brand.thumbnail.label)
-                ? "bg-neutral-800 dark:bg-neutral-800"
-                : "bg-neutral-100 dark:bg-neutral-800"
-          )}
-        >
+    <section className="flex flex-col gap-5">
+      <div className="flex items-start gap-5">
+        <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-surface-muted">
           <Image
             src={brand.thumbnail.src}
             alt={`${brand.name} logo`}
             width={56}
             height={56}
-            className="h-full w-full object-contain p-2.5"
+            className="h-full w-full object-contain p-3"
             priority
           />
         </div>
-        <div className="flex min-w-0 flex-col gap-0.5">
-          <h1 className="text-xl font-semibold tracking-tight text-balance text-neutral-900 dark:text-neutral-100">
+        <div className="flex min-w-0 flex-col gap-1 pt-1">
+          <h1 className="text-2xl font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
             {brand.name}
           </h1>
-          <span className="text-[13px] text-neutral-500 dark:text-neutral-400">
+          <span className="text-[13px] text-muted-foreground">
             {translatedIndustry}
           </span>
         </div>
       </div>
 
-      <p className="max-w-2xl text-[14px] leading-relaxed text-neutral-500 dark:text-neutral-400">
+      <p className="max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
         {translatedDescription}
       </p>
 
-      <div className="flex flex-wrap items-center gap-1.5 text-[12.5px] text-neutral-500 dark:text-neutral-400">
-        {brand.tags?.map((tag, i) => (
-          <span key={tag} className="flex items-center gap-1.5">
-            {i > 0 && (
-              <span className="text-neutral-400 dark:text-neutral-600">
-                &middot;
-              </span>
-            )}
-            <span>{translatedTags[tag] ?? tag}</span>
+      <div className="flex flex-wrap items-center gap-2 text-[12.5px] text-muted-foreground">
+        {brand.tags?.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full bg-surface-muted px-2.5 py-1 text-foreground"
+          >
+            {translatedTags[tag] ?? tag}
           </span>
         ))}
         {brand.url && (
-          <>
-            <span className="text-neutral-400 dark:text-neutral-600">
-              &middot;
-            </span>
-            <a
-              href={buildUtmUrl(brand.url, brand.slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-900 underline decoration-neutral-400 underline-offset-2 transition-colors hover:decoration-neutral-500 dark:text-neutral-300 dark:decoration-neutral-600"
-            >
-              {t("visitWebsite")} <span aria-hidden="true">&rsaquo;</span>
-            </a>
-          </>
+          <a
+            href={buildUtmUrl(brand.url, brand.slug)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-full bg-foreground px-3 py-1 text-background transition-opacity duration-150 hover:opacity-90"
+          >
+            {t("visitWebsite")}
+            <IconExternalLink className="size-3" />
+          </a>
         )}
-        <span className="text-neutral-400 dark:text-neutral-600">&middot;</span>
         <Link
           href={`/compare?brands=${brand.slug}`}
-          className="flex items-center gap-1 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200"
+          className="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 transition-colors duration-150 hover:bg-accent hover:text-foreground"
         >
           <IconArrowsShuffle2 className="size-3" />
           <span>{t("compareBrand")}</span>

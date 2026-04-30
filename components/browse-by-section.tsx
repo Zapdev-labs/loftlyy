@@ -1,5 +1,4 @@
 import { Link } from "@/i18n/navigation"
-import { Badge } from "@/components/ui/badge"
 
 export function BrowseBySection({
   title,
@@ -12,23 +11,20 @@ export function BrowseBySection({
 
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {title}
       </h2>
       <div className="flex flex-wrap gap-2">
         {links.map((link) => (
-          <Link key={link.href} href={link.href}>
-            <Badge
-              variant="secondary"
-              className="cursor-pointer hover:bg-muted"
-            >
-              {link.label}
-              {link.count !== undefined && (
-                <span className="ml-1 text-muted-foreground">
-                  ({link.count})
-                </span>
-              )}
-            </Badge>
+          <Link
+            key={link.href}
+            href={link.href}
+            className="inline-flex items-center gap-1 rounded-full bg-surface-muted px-3 py-1.5 text-[12px] font-medium text-foreground transition-colors duration-150 hover:bg-accent"
+          >
+            {link.label}
+            {link.count !== undefined && (
+              <span className="text-muted-foreground">({link.count})</span>
+            )}
           </Link>
         ))}
       </div>

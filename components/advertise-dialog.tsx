@@ -18,6 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { cn } from "@/lib/utils"
 
 interface Ad {
   name: string
@@ -26,15 +27,7 @@ interface Ad {
   favicon: string
 }
 
-const ads: Ad[] = [
-  {
-    name: "TurboStarter",
-    description:
-      "Ship your SaaS startup today with web, mobile and extension starter.",
-    url: "https://turbostarter.dev",
-    favicon: "https://turbostarter.dev/favicon.ico",
-  },
-]
+const ads: Ad[] = []
 
 const TOTAL_SPOTS = 4
 const SPOTS_TAKEN = ads.length
@@ -59,6 +52,96 @@ const stats = [
   },
 ]
 
+function AdvertiseDialogBody() {
+  return (
+    <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md">
+      <DialogHeader>
+        <DialogTitle>Advertise on Loftlyy</DialogTitle>
+        <DialogDescription>
+          Get your product in front of designers, developers, and founders every
+          month.
+        </DialogDescription>
+      </DialogHeader>
+
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className={cn(
+              "flex flex-col items-center gap-1.5 rounded-2xl p-3",
+              stat.highlight ? "bg-destructive/15" : "bg-surface-muted"
+            )}
+          >
+            <stat.icon
+              size={18}
+              className={cn(
+                "shrink-0",
+                stat.highlight ? "text-destructive" : "text-muted-foreground"
+              )}
+            />
+            <span
+              className={cn(
+                "text-sm font-semibold",
+                stat.highlight ? "text-destructive" : "text-foreground"
+              )}
+            >
+              {stat.value}
+            </span>
+            <span className="text-center text-[10px] leading-tight text-muted-foreground">
+              {stat.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <h4 className="text-sm font-medium text-foreground">How it works</h4>
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          Your product appears in the sponsor slots on the Loftlyy homepage,
+          visible to every visitor across all pages. Spots are limited to ensure
+          maximum visibility for each advertiser.
+        </p>
+      </div>
+
+      <div className="rounded-2xl bg-surface-muted p-4">
+        <div className="flex items-center gap-2">
+          <p className="text-sm font-medium text-foreground">Pricing</p>
+          <span className="rounded-full bg-foreground px-2 py-0.5 text-[10px] font-semibold text-background">
+            60% OFF
+          </span>
+        </div>
+        <div className="mt-1.5 flex items-baseline gap-2">
+          <span className="text-lg font-semibold text-foreground">$199</span>
+          <span className="text-sm text-muted-foreground line-through">
+            $499
+          </span>
+          <span className="text-sm text-muted-foreground">/month</span>
+        </div>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {SPOTS_LEFT} spots available now. Cancel anytime.
+        </p>
+      </div>
+
+      <DialogFooter className="!flex-col gap-3">
+        <a
+          href="https://store.hextaui.com/checkout/buy/0fadcc42-8038-46e7-b0f8-5e3cae5d8935"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
+        >
+          Get started ($199/mo)
+          <IconExternalLink size={14} />
+        </a>
+        <p className="text-center text-xs text-muted-foreground">
+          Use code{" "}
+          <span className="font-semibold text-foreground">LAUNCH20</span> for
+          20% off — only for the first 4 sponsors.
+        </p>
+      </DialogFooter>
+    </DialogContent>
+  )
+}
+
 export function AdvertiseMarquee() {
   const items = [
     ...ads.map((ad) => ({ type: "ad" as const, ad })),
@@ -67,7 +150,6 @@ export function AdvertiseMarquee() {
       index: i,
     })),
   ]
-  // Duplicate for seamless loop
   const doubled = [...items, ...items]
 
   return (
@@ -81,7 +163,7 @@ export function AdvertiseMarquee() {
                 href={`${item.ad.url}?ref=loftlyy&utm_source=loftlyy&utm_medium=sponsorship&utm_campaign=ad_spot`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex shrink-0 flex-col items-center gap-2.5 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:bg-neutral-800"
+                className="flex shrink-0 flex-col items-center gap-2.5 rounded-2xl bg-surface-muted px-3.5 py-2.5 transition-colors duration-150 hover:bg-accent"
               >
                 <div className="flex items-center gap-2">
                   <Image
@@ -89,28 +171,24 @@ export function AdvertiseMarquee() {
                     alt={item.ad.name}
                     width={20}
                     height={20}
-                    className="rounded"
+                    className="rounded-md"
                     unoptimized
                   />
-                  <span className="text-xs font-medium whitespace-nowrap text-neutral-700 dark:text-neutral-300">
+                  <span className="text-xs font-medium whitespace-nowrap text-foreground">
                     {item.ad.name}
                   </span>
                 </div>
-
-                <span className="hidden text-[10px] whitespace-nowrap text-neutral-400 sm:inline dark:text-neutral-500">
+                <span className="hidden text-[10px] whitespace-nowrap text-muted-foreground sm:inline">
                   {item.ad.description}
                 </span>
               </a>
             ) : (
               <DialogTrigger
                 key={`marquee-empty-${i}`}
-                className="flex shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-dashed border-neutral-300 px-3 py-2 opacity-50 transition-all hover:opacity-80 dark:border-neutral-600"
+                className="flex shrink-0 cursor-pointer items-center gap-2 rounded-2xl bg-surface-muted px-3.5 py-2.5 text-muted-foreground opacity-70 transition-all duration-150 hover:bg-accent hover:opacity-100"
               >
-                <IconSpeakerphone
-                  size={16}
-                  className="text-neutral-400 dark:text-neutral-500"
-                />
-                <span className="text-xs font-medium whitespace-nowrap text-neutral-400 dark:text-neutral-500">
+                <IconSpeakerphone size={16} />
+                <span className="text-xs font-medium whitespace-nowrap">
                   Advertise
                 </span>
               </DialogTrigger>
@@ -119,104 +197,7 @@ export function AdvertiseMarquee() {
         </div>
       </div>
 
-      <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-lg">Advertise on Loftlyy</DialogTitle>
-          <DialogDescription>
-            Get your product in front of designers, developers, and founders
-            every month.
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-center gap-1 rounded-lg border p-2 sm:gap-1.5 sm:p-3 ${
-                stat.highlight
-                  ? "border-red-200 bg-red-50 dark:border-red-900 dark:bg-red-950"
-                  : "border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800"
-              }`}
-            >
-              <stat.icon
-                size={18}
-                className={`shrink-0 ${
-                  stat.highlight
-                    ? "text-red-500"
-                    : "text-neutral-500 dark:text-neutral-400"
-                }`}
-              />
-              <span
-                className={`text-xs font-semibold sm:text-sm ${
-                  stat.highlight
-                    ? "text-red-600 dark:text-red-400"
-                    : "text-neutral-900 dark:text-neutral-100"
-                }`}
-              >
-                {stat.value}
-              </span>
-              <span className="text-center text-[10px] leading-tight text-neutral-500 sm:text-xs dark:text-neutral-400">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="space-y-2">
-          <h4 className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-            How it works
-          </h4>
-          <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-            Your product appears in the sponsor slots on the Loftlyy homepage,
-            visible to every visitor across all pages. Spots are limited to
-            ensure maximum visibility for each advertiser.
-          </p>
-        </div>
-
-        <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <div className="flex items-center gap-2">
-            <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-              Pricing
-            </p>
-            <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700 dark:bg-green-900 dark:text-green-300">
-              60% OFF
-            </span>
-          </div>
-          <div className="mt-1.5 flex items-baseline gap-2">
-            <span className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-              $199
-            </span>
-            <span className="text-sm text-neutral-400 line-through dark:text-neutral-500">
-              $499
-            </span>
-            <span className="text-sm text-neutral-500 dark:text-neutral-400">
-              /month
-            </span>
-          </div>
-          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-            {SPOTS_LEFT} spots available now. Cancel anytime.
-          </p>
-        </div>
-
-        <DialogFooter className="!flex-col gap-3">
-          <a
-            href="https://store.hextaui.com/checkout/buy/0fadcc42-8038-46e7-b0f8-5e3cae5d8935"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
-          >
-            Get started ($199/mo)
-            <IconExternalLink size={14} />
-          </a>
-          <p className="text-center text-xs text-neutral-500 dark:text-neutral-400">
-            Use code{" "}
-            <span className="font-semibold text-neutral-900 dark:text-neutral-100">
-              LAUNCH20
-            </span>{" "}
-            for 20% off — only for the first 4 sponsors.
-          </p>
-        </DialogFooter>
-      </DialogContent>
+      <AdvertiseDialogBody />
     </Dialog>
   )
 }
@@ -232,7 +213,7 @@ export function AdvertiseSpots({
     <Dialog>
       <section
         className={
-          className ?? "grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4"
+          className ?? "grid w-full max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4"
         }
       >
         {ads.map((ad) => (
@@ -241,7 +222,10 @@ export function AdvertiseSpots({
             href={`${ad.url}?ref=loftlyy&utm_source=loftlyy&utm_medium=sponsorship&utm_campaign=ad_spot`}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 transition-all hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:border-neutral-600 dark:hover:bg-neutral-800 ${compact ? "px-3 py-4" : "aspect-[4/3]"}`}
+            className={cn(
+              "group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl bg-surface-muted transition-colors duration-150 hover:bg-accent",
+              compact ? "px-3 py-4" : "aspect-[4/3]"
+            )}
           >
             <Image
               src={ad.favicon}
@@ -251,10 +235,10 @@ export function AdvertiseSpots({
               className="rounded-md"
               unoptimized
             />
-            <span className="text-sm font-medium text-neutral-700 transition-colors group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100">
+            <span className="text-sm font-medium text-foreground">
               {ad.name}
             </span>
-            <span className="line-clamp-2 max-w-[90%] text-center text-[10px] leading-tight text-neutral-400 dark:text-neutral-500">
+            <span className="line-clamp-2 max-w-[90%] text-center text-[10px] leading-tight text-muted-foreground">
               {ad.description}
             </span>
           </a>
@@ -262,120 +246,21 @@ export function AdvertiseSpots({
         {Array.from({ length: SPOTS_LEFT }).map((_, i) => (
           <DialogTrigger
             key={`ad-spot-${i}`}
-            className={`group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-neutral-300 opacity-50 transition-all hover:border-neutral-400 hover:opacity-80 dark:border-neutral-600 dark:hover:border-neutral-500 ${compact ? "px-3 py-4" : "aspect-[4/3]"}`}
+            className={cn(
+              "group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl bg-surface-muted text-muted-foreground opacity-70 transition-all duration-150 hover:bg-accent hover:opacity-100",
+              compact ? "px-3 py-4" : "aspect-[4/3]"
+            )}
           >
-            <IconSpeakerphone
-              size={24}
-              className="text-neutral-400 transition-colors group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300"
-            />
-            <span className="text-sm font-medium text-neutral-400 transition-colors group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300">
-              Advertise
-            </span>
-            <span className="text-xs text-neutral-400 transition-colors group-hover:text-neutral-500 dark:text-neutral-500 dark:group-hover:text-neutral-400">
+            <IconSpeakerphone size={24} />
+            <span className="text-sm font-medium">Advertise</span>
+            <span className="text-xs">
               {SPOTS_LEFT}/{TOTAL_SPOTS} spots left
             </span>
           </DialogTrigger>
         ))}
       </section>
 
-      <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-lg">Advertise on Loftlyy</DialogTitle>
-          <DialogDescription>
-            Get your product in front of designers, developers, and founders
-            every month.
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-center gap-1 rounded-lg border p-2 sm:gap-1.5 sm:p-3 ${
-                stat.highlight
-                  ? "border-red-200 bg-red-50 dark:border-red-900 dark:bg-red-950"
-                  : "border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800"
-              }`}
-            >
-              <stat.icon
-                size={18}
-                className={`shrink-0 ${
-                  stat.highlight
-                    ? "text-red-500"
-                    : "text-neutral-500 dark:text-neutral-400"
-                }`}
-              />
-              <span
-                className={`text-xs font-semibold sm:text-sm ${
-                  stat.highlight
-                    ? "text-red-600 dark:text-red-400"
-                    : "text-neutral-900 dark:text-neutral-100"
-                }`}
-              >
-                {stat.value}
-              </span>
-              <span className="text-center text-[10px] leading-tight text-neutral-500 sm:text-xs dark:text-neutral-400">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="space-y-2">
-          <h4 className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-            How it works
-          </h4>
-          <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-            Your product appears in the sponsor slots on the Loftlyy homepage,
-            visible to every visitor across all pages. Spots are limited to
-            ensure maximum visibility for each advertiser.
-          </p>
-        </div>
-
-        <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <div className="flex items-center gap-2">
-            <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-              Pricing
-            </p>
-            <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700 dark:bg-green-900 dark:text-green-300">
-              60% OFF
-            </span>
-          </div>
-          <div className="mt-1.5 flex items-baseline gap-2">
-            <span className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-              $199
-            </span>
-            <span className="text-sm text-neutral-400 line-through dark:text-neutral-500">
-              $499
-            </span>
-            <span className="text-sm text-neutral-500 dark:text-neutral-400">
-              /month
-            </span>
-          </div>
-          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-            {SPOTS_LEFT} spots available now. Cancel anytime.
-          </p>
-        </div>
-
-        <DialogFooter className="!flex-col gap-3">
-          <a
-            href="https://store.hextaui.com/checkout/buy/0fadcc42-8038-46e7-b0f8-5e3cae5d8935"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
-          >
-            Get started ($199/mo)
-            <IconExternalLink size={14} />
-          </a>
-          <p className="text-center text-xs text-neutral-500 dark:text-neutral-400">
-            Use code{" "}
-            <span className="font-semibold text-neutral-900 dark:text-neutral-100">
-              LAUNCH20
-            </span>{" "}
-            for 20% off — only for the first 4 sponsors.
-          </p>
-        </DialogFooter>
-      </DialogContent>
+      <AdvertiseDialogBody />
     </Dialog>
   )
 }

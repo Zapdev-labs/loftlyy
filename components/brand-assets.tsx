@@ -67,12 +67,12 @@ export function BrandAssets({
   if (assets.length === 0) return null
 
   return (
-    <section className="flex flex-col gap-3">
-      <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <section className="flex flex-col gap-5">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {t("assets")}
       </h2>
 
-      <div className="grid grid-cols-1 gap-3 sm:auto-rows-[200px] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:auto-rows-[220px] sm:grid-cols-2 lg:grid-cols-3">
         {assets.map((asset) => {
           const span = getSpan(asset)
           return (
@@ -154,19 +154,19 @@ function AssetCard({
   return (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900",
+        "group relative flex flex-col overflow-hidden rounded-2xl bg-surface-muted",
         span === "wide" && "sm:col-span-2"
       )}
     >
       {/* Asset preview */}
       <div
         className={cn(
-          "flex flex-1 items-center justify-center p-8",
+          "flex flex-1 items-center justify-center p-8 transition-colors duration-150",
           needsDarkBg(asset.label)
-            ? "bg-neutral-800 dark:bg-neutral-800"
+            ? "bg-foreground"
             : needsLightBg(asset.label)
-              ? "bg-neutral-50 dark:bg-neutral-200"
-              : "bg-neutral-50 dark:bg-neutral-900"
+              ? "bg-background"
+              : "bg-surface-muted"
         )}
       >
         <Image
@@ -180,18 +180,18 @@ function AssetCard({
       </div>
 
       {/* Mobile: label + download below the image */}
-      <div className="flex items-center justify-between px-4 py-3 sm:hidden">
+      <div className="flex items-center justify-between bg-surface px-4 py-3 sm:hidden">
         <div className="flex flex-col">
-          <span className="text-[13px] font-medium text-neutral-800 dark:text-neutral-200">
+          <span className="text-[13px] font-medium text-foreground">
             {asset.label}
           </span>
-          <span className="text-[11px] text-neutral-500 uppercase dark:text-neutral-400">
+          <span className="text-[11px] text-muted-foreground uppercase">
             {asset.format}
           </span>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="inline-flex size-9 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-colors hover:bg-neutral-200 focus-visible:ring-2 focus-visible:ring-ring dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+            className="inline-flex size-9 items-center justify-center rounded-full bg-surface-muted text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={t("download")}
           >
             <IconDownload className="h-3.5 w-3.5" />
@@ -207,18 +207,14 @@ function AssetCard({
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={copyImage}>
-              {copied ? (
-                <span className="text-green-600">{t("copied")}</span>
-              ) : (
-                t("copyImage")
-              )}
+              {copied ? t("copied") : t("copyImage")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
       {/* Desktop: hover overlay */}
-      <div className="absolute inset-x-0 bottom-0 hidden h-full items-end justify-between bg-gradient-to-t from-black/50 via-black/15 to-transparent px-4 pb-3 transition-opacity duration-200 sm:flex sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100">
+      <div className="absolute inset-x-0 bottom-0 hidden h-full items-end justify-between bg-gradient-to-t from-black/55 via-black/15 to-transparent px-5 pb-4 transition-opacity duration-200 sm:flex sm:opacity-0 sm:group-focus-within:opacity-100 sm:group-hover:opacity-100">
         <div className="flex flex-col">
           <span className="text-[13px] font-medium text-white">
             {asset.label}
@@ -230,7 +226,7 @@ function AssetCard({
 
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="inline-flex size-11 items-center justify-center rounded-lg bg-white text-black backdrop-blur-sm transition-colors hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-10 items-center justify-center rounded-full bg-white text-black transition-colors duration-150 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={t("download")}
           >
             <IconDownload className="h-3.5 w-3.5" />
@@ -246,11 +242,7 @@ function AssetCard({
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={copyImage}>
-              {copied ? (
-                <span className="text-green-600">{t("copied")}</span>
-              ) : (
-                t("copyImage")
-              )}
+              {copied ? t("copied") : t("copyImage")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

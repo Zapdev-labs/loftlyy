@@ -11,27 +11,27 @@ export default function BrandsLayout({
   const sidebarBrands = getAllSidebarBrands()
 
   return (
-    <div className="flex h-dvh bg-white dark:bg-neutral-950">
+    <div className="flex h-dvh bg-background">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:shadow-lg dark:focus:bg-neutral-900"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-surface focus:px-5 focus:py-2.5 focus:text-sm focus:font-medium"
+        style={{ boxShadow: "var(--shadow-soft)" }}
       >
         Skip to content
       </a>
       <BrandSidebar />
-      <div className="flex flex-1 flex-col overflow-hidden border-l border-neutral-200 dark:border-neutral-800/50">
-        <header className="flex shrink-0 items-center p-2 lg:hidden">
-          <MobileSidebarToggle
-            brands={sidebarBrands}
-          />
+      <div className="flex min-w-0 flex-1 flex-col p-2 sm:p-3 lg:py-4 lg:pr-4 lg:pl-0">
+        <header className="flex shrink-0 items-center pb-2 lg:hidden">
+          <MobileSidebarToggle brands={sidebarBrands} />
         </header>
-        <main id="main-content" className="flex flex-1 overflow-y-auto">
-          <div className="flex min-w-0 flex-1 flex-col">
-            <div className="flex flex-col gap-4 px-4 pt-4 sm:px-6 lg:hidden">
-              <AdvertiseMarquee />
-            </div>
-            {children}
+        <main
+          id="main-content"
+          className="flex flex-1 flex-col overflow-y-auto rounded-3xl bg-surface"
+        >
+          <div className="flex flex-col gap-4 px-4 pt-4 sm:px-6 lg:hidden">
+            <AdvertiseMarquee />
           </div>
+          {children}
         </main>
       </div>
     </div>

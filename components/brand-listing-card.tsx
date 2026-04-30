@@ -1,15 +1,14 @@
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
-import { Badge } from "@/components/ui/badge"
 import type { Brand } from "@/lib/types"
 
 export function BrandListingCard({ brand }: { brand: Brand }) {
   return (
     <Link
       href={`/${brand.slug}`}
-      className="group flex flex-col gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-muted"
+      className="group flex flex-col gap-4 rounded-2xl bg-surface p-5 transition-colors duration-150 hover:bg-surface-muted"
     >
-      <div className="flex h-20 items-center justify-center rounded-md bg-neutral-200 p-3 dark:bg-neutral-800">
+      <div className="flex h-28 items-center justify-center rounded-xl bg-surface-muted p-5 transition-colors duration-150 group-hover:bg-accent">
         <Image
           src={brand.thumbnail.src}
           alt={brand.name}
@@ -19,13 +18,15 @@ export function BrandListingCard({ brand }: { brand: Brand }) {
         />
       </div>
       <div className="flex flex-col gap-1.5">
-        <h2 className="font-semibold">{brand.name}</h2>
-        <p className="line-clamp-2 text-sm text-muted-foreground">
+        <h2 className="text-[15px] font-semibold tracking-tight text-foreground">
+          {brand.name}
+        </h2>
+        <p className="line-clamp-2 text-[13.5px] leading-relaxed text-muted-foreground">
           {brand.description}
         </p>
-        <div className="flex flex-wrap gap-1.5">
-          <Badge variant="secondary">{brand.industry}</Badge>
-        </div>
+        <span className="mt-1 text-[11.5px] font-medium tracking-[0.08em] text-muted-foreground uppercase">
+          {brand.industry}
+        </span>
       </div>
     </Link>
   )

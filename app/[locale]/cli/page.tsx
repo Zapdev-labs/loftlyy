@@ -36,19 +36,19 @@ export const generateMetadata = async ({
 }
 
 const CodeBlock = ({ code, title }: { code: string; title?: string }) => (
-  <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-[#0A0A0A] shadow-sm dark:border-neutral-800">
+  <div className="overflow-hidden rounded-2xl bg-foreground">
     {title && (
-      <div className="flex items-center border-b border-neutral-800/80 bg-[#111111] px-4 py-2.5">
+      <div className="flex items-center bg-foreground/90 px-4 py-2.5">
         <div className="mr-4 flex gap-1.5">
-          <div className="h-2.5 w-2.5 rounded-full bg-neutral-700" />
-          <div className="h-2.5 w-2.5 rounded-full bg-neutral-700" />
-          <div className="h-2.5 w-2.5 rounded-full bg-neutral-700" />
+          <div className="h-2.5 w-2.5 rounded-full bg-background/30" />
+          <div className="h-2.5 w-2.5 rounded-full bg-background/30" />
+          <div className="h-2.5 w-2.5 rounded-full bg-background/30" />
         </div>
-        <span className="font-mono text-xs text-neutral-400">{title}</span>
+        <span className="font-mono text-xs text-background/70">{title}</span>
       </div>
     )}
     <div className="overflow-x-auto p-4 sm:p-5">
-      <pre className="font-mono text-[13px] leading-relaxed text-neutral-50 sm:text-sm">
+      <pre className="font-mono text-[13px] leading-relaxed text-background sm:text-sm">
         <code>{code}</code>
       </pre>
     </div>
@@ -66,25 +66,23 @@ const CommandCard = ({
   example: string
   icon: React.ElementType
 }) => (
-  <div className="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/40">
+  <div className="flex flex-col gap-4 rounded-2xl bg-surface p-6 transition-colors duration-150 hover:bg-surface-muted">
     <div className="flex items-start justify-between gap-4">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-muted text-foreground">
           <Icon size={20} stroke={1.5} />
         </div>
-        <code className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+        <code className="text-base font-semibold text-foreground">
           {command}
         </code>
       </div>
     </div>
-    <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+    <p className="text-sm leading-relaxed text-muted-foreground">
       {description}
     </p>
     <div className="mt-auto pt-2">
-      <div className="rounded-xl border border-neutral-100 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-900">
-        <code className="font-mono text-[13px] text-neutral-800 dark:text-neutral-300">
-          {example}
-        </code>
+      <div className="rounded-xl bg-surface-muted p-3">
+        <code className="font-mono text-[13px] text-foreground">{example}</code>
       </div>
     </div>
   </div>
@@ -95,14 +93,11 @@ const CliPage = async ({ params }: { params: Promise<{ locale: string }> }) => {
   setRequestLocale(locale)
 
   return (
-    <main className="relative mx-auto flex w-full max-w-5xl flex-col px-4 py-12 sm:px-6 lg:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.04),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_70%)]" />
-
-      {/* Header / Nav */}
+    <main className="relative mx-auto flex w-full max-w-5xl flex-col px-6 py-12 sm:px-10 lg:py-20">
       <div className="mb-16 flex flex-wrap items-center justify-between gap-4">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="group inline-flex items-center gap-2 rounded-full bg-surface-muted px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
         >
           <IconArrowLeft
             size={16}
@@ -114,37 +109,35 @@ const CliPage = async ({ params }: { params: Promise<{ locale: string }> }) => {
           href="https://www.npmjs.com/package/@loftlyy/cli"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800/80"
+          className="inline-flex items-center gap-2 rounded-full bg-surface-muted px-4 py-2 text-sm font-medium text-foreground transition-colors duration-150 hover:bg-accent"
         >
           <IconBrandNpm size={18} stroke={1.5} />
           View on npm
         </a>
       </div>
 
-      {/* Hero Section */}
       <div className="mb-20 max-w-3xl">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
-          <IconTerminal2 size={14} className="text-neutral-500" />
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-surface-muted px-3.5 py-1.5 text-xs font-medium text-foreground">
+          <IconTerminal2 size={14} className="text-muted-foreground" />
           <span>Loftlyy CLI</span>
         </div>
-        <h1 className="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl dark:text-white">
+        <h1 className="mb-6 text-4xl font-semibold tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
           Brand identity data,
           <br className="hidden sm:block" /> right in your terminal.
         </h1>
-        <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl dark:text-neutral-400">
+        <p className="text-lg leading-relaxed text-muted-foreground sm:text-xl">
           Access the world&apos;s most comprehensive brand design directory
           directly from your command line. Extract hex codes, query typography
           rules, and automate your design systems.
         </p>
       </div>
 
-      {/* Installation */}
       <section className="mb-20">
-        <h2 className="mb-6 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        <h2 className="mb-6 text-2xl font-semibold tracking-tight text-foreground">
           Installation
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="flex flex-col justify-center gap-4 text-neutral-600 dark:text-neutral-400">
+          <div className="flex flex-col justify-center gap-4 text-muted-foreground">
             <p>
               Getting started is as simple as installing the package globally
               via npm. Once installed, the <code>loftlyy</code> command will be
@@ -168,13 +161,12 @@ npx @loftlyy/cli search vercel`}
         </div>
       </section>
 
-      {/* Commands Reference */}
       <section className="mb-20">
         <div className="mb-8 max-w-2xl">
-          <h2 className="mb-3 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+          <h2 className="mb-3 text-2xl font-semibold tracking-tight text-foreground">
             Commands Reference
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-muted-foreground">
             A powerful suite of commands designed to seamlessly integrate with
             your workflow. All commands support short and descriptive arguments.
           </p>
@@ -220,16 +212,15 @@ npx @loftlyy/cli search vercel`}
         </div>
       </section>
 
-      {/* Automation & Architecture */}
-      <section className="grid gap-12 border-t border-neutral-200 pt-16 md:grid-cols-2 dark:border-neutral-800">
+      <section className="grid gap-12 pt-16 md:grid-cols-2">
         <div>
-          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100">
+          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-muted text-foreground">
             <IconCode size={24} stroke={1.5} />
           </div>
-          <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          <h3 className="mb-3 text-xl font-semibold text-foreground">
             Built for pipelines
           </h3>
-          <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+          <p className="mb-6 text-muted-foreground">
             Every command supports structured machine-readable outputs. Use the{" "}
             <code>--output json</code> or <code>--output ndjson</code> flags to
             pipe brand data directly into <code>jq</code>, build scripts, or
@@ -243,13 +234,13 @@ loftlyy get stripe --output json | jq -r '.colors[0].hex'
         </div>
 
         <div>
-          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100">
+          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-muted text-foreground">
             <IconServer size={24} stroke={1.5} />
           </div>
-          <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          <h3 className="mb-3 text-xl font-semibold text-foreground">
             Smart data routing
           </h3>
-          <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+          <p className="mb-6 text-muted-foreground">
             The CLI automatically adapts to your environment. By default, it
             fetches lightning-fast responses from the live Loftlyy API. If it
             detects you&apos;re inside the Loftlyy monorepo, it seamlessly

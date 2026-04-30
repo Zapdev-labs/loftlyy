@@ -8,17 +8,14 @@ import { Suspense, useState, useRef, useEffect, useCallback } from "react"
 import type { SidebarBrand } from "@/lib/types"
 
 import { LocaleSwitcher } from "./locale-switcher"
+import { Link } from "@/i18n/navigation"
 
 const BrandSidebarSearch = dynamic(
   () => import("./brand-sidebar-search").then((m) => m.BrandSidebarSearch),
   { ssr: false }
 )
 
-export function MobileSidebarToggle({
-  brands,
-}: {
-  brands: SidebarBrand[]
-}) {
+export function MobileSidebarToggle({ brands }: { brands: SidebarBrand[] }) {
   const [open, setOpen] = useState(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const sidebarRef = useRef<HTMLElement>(null)
@@ -28,7 +25,6 @@ export function MobileSidebarToggle({
     triggerRef.current?.focus()
   }, [])
 
-  // Close on Escape key
   useEffect(() => {
     if (!open) return
     function onKeyDown(e: KeyboardEvent) {
@@ -38,7 +34,6 @@ export function MobileSidebarToggle({
     return () => document.removeEventListener("keydown", onKeyDown)
   }, [open, close])
 
-  // Set inert on main content when sidebar is open
   useEffect(() => {
     if (!open) return
     const main =
@@ -52,9 +47,10 @@ export function MobileSidebarToggle({
   return (
     <>
       <button
+        type="button"
         ref={triggerRef}
         onClick={() => setOpen(true)}
-        className="inline-flex size-11 items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-ring dark:hover:bg-neutral-800"
+        className="inline-flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors duration-150 hover:bg-surface-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
         aria-label="Open sidebar"
       >
         <IconMenu2 className="h-5 w-5" />
@@ -72,27 +68,33 @@ export function MobileSidebarToggle({
             ref={sidebarRef}
             role="dialog"
             aria-modal="true"
-            className="fixed inset-y-0 left-0 z-50 flex w-[272px] animate-in flex-col gap-4 overflow-hidden overscroll-y-contain bg-white pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] shadow-xl duration-200 slide-in-from-left dark:bg-neutral-950"
+            style={{ boxShadow: "var(--shadow-soft)" }}
+            className="fixed inset-y-0 left-0 z-50 flex w-[300px] animate-in flex-col gap-4 overflow-hidden overscroll-y-contain rounded-r-3xl bg-sidebar pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] duration-200 slide-in-from-left"
           >
-            {/* Header */}
             <div className="flex shrink-0 items-center justify-between px-5 pt-5 lg:pt-0">
               <div className="flex items-center gap-2.5">
-                <Image
-                  src="/logo.webp"
-                  alt="Loftlyy"
-                  width={28}
-                  height={28}
-                  className="rounded-lg"
-                />
+                <Link href="/" aria-label="Loftlyy home" onClick={close}>
+                  <Image
+                    src="/logo.webp"
+                    alt="Loftlyy"
+                    width={32}
+                    height={32}
+                    className="rounded-xl"
+                  />
+                </Link>
                 <div className="flex flex-col">
-                  <span className="text-[15px] font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <Link
+                    href="/"
+                    onClick={close}
+                    className="text-[15px] font-semibold tracking-tight text-foreground"
+                  >
                     Loftlyy
-                  </span>
+                  </Link>
                   <a
                     href="https://hanoa.studio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[11px] font-medium text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300"
+                    className="text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
                     by Hanoa Studio
                   </a>
@@ -101,8 +103,9 @@ export function MobileSidebarToggle({
               <div className="flex items-center gap-2">
                 <LocaleSwitcher />
                 <button
+                  type="button"
                   onClick={close}
-                  className="inline-flex size-11 items-center justify-center rounded-lg text-neutral-500 hover:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-ring dark:hover:bg-neutral-800"
+                  className="inline-flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors duration-150 hover:bg-surface-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
                   aria-label="Close sidebar"
                 >
                   <IconX className="h-4 w-4" />
@@ -111,10 +114,7 @@ export function MobileSidebarToggle({
             </div>
             <div className="min-h-0 flex-1 px-0">
               <Suspense>
-                <BrandSidebarSearch
-                  brands={brands}
-                  onNavigate={close}
-                />
+                <BrandSidebarSearch brands={brands} onNavigate={close} />
               </Suspense>
             </div>
             <div className="shrink-0 px-5 pb-5">
@@ -122,7 +122,7 @@ export function MobileSidebarToggle({
                 href="https://github.com/sponsors/preetsuthar17"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-lg border border-neutral-200 px-3 py-2 text-[13px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+                className="flex items-center justify-center gap-2 rounded-full bg-surface-muted px-4 py-2.5 text-[13px] font-medium text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
               >
                 <IconHeart size={15} />
                 Support us

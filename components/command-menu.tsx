@@ -60,6 +60,12 @@ const colorFamilyMap: Record<string, string> = {
 const WHITESPACE_RE = /\s+/g
 const PLACEHOLDER_ROTATION_MS = 2200
 
+const GROUP_HEADING_CLASS =
+  "[&_[cmdk-group-heading]]:px-2.5 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[10.5px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:uppercase"
+
+const ITEM_CLASS =
+  "flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-[13.5px] text-foreground transition-colors duration-150 data-[selected=true]:bg-accent"
+
 function getSequentialSearchPrompts(
   searchPlaceholder: string,
   groups: Array<{ label: string; values: string[] }>
@@ -151,7 +157,6 @@ export function CommandMenu({
 
   const activeSearchPrompt = searchPrompts[placeholderIndex] ?? t("search")
 
-  // Keyboard shortcut
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -218,16 +223,15 @@ export function CommandMenu({
     <>
       {/* Trigger button */}
       <button
+        type="button"
         onClick={() => {
           setQuery("")
           setOpen(true)
         }}
         aria-label={t("search")}
         className={cn(
-          "flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-[13px] transition-colors",
-          hasActiveFilters
-            ? "border-neutral-300 bg-neutral-100 text-neutral-700 hover:border-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
-            : "border-neutral-200 bg-neutral-100/80 text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:text-neutral-300"
+          "flex w-full items-center gap-2.5 rounded-full bg-surface-muted px-4 py-2.5 text-[13px] text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring",
+          hasActiveFilters && "text-foreground"
         )}
       >
         <IconSearch className="size-3.5" aria-hidden="true" />
@@ -240,18 +244,11 @@ export function CommandMenu({
           </span>
         </span>
         {activeCount > 0 && (
-          <span
-            className={cn(
-              "flex size-4 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold",
-              hasActiveFilters
-                ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
-                : "bg-neutral-200 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
-            )}
-          >
+          <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground text-[10px] font-semibold text-background">
             {activeCount}
           </span>
         )}
-        <kbd className="hidden rounded bg-neutral-200/80 px-1.5 py-0.5 font-mono text-[10px] font-medium text-neutral-400 sm:inline-block dark:bg-neutral-800">
+        <kbd className="hidden rounded-md bg-background/60 px-1.5 py-0.5 font-mono text-[10px] font-medium text-muted-foreground sm:inline-block">
           ⌘K
         </kbd>
       </button>
@@ -259,9 +256,10 @@ export function CommandMenu({
       {/* Command dialog */}
       {open && (
         <div className="fixed inset-0 z-50">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 animate-in bg-black/10 backdrop-blur-xs duration-150 fade-in-0"
+          <button
+            type="button"
+            aria-label="Close search"
+            className="fixed inset-0 animate-in cursor-default bg-black/20 backdrop-blur-sm duration-150 fade-in-0"
             onClick={() => {
               setOpen(false)
               setQuery("")
@@ -274,11 +272,11 @@ export function CommandMenu({
             }}
           />
 
-          {/* Panel */}
           <div
-            className="fixed top-[20%] left-1/2 z-50 w-[95%] max-w-md -translate-x-1/2 animate-in overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-2xl duration-150 fade-in-0 zoom-in-95 slide-in-from-top-2 dark:border-neutral-800 dark:bg-neutral-950"
+            className="fixed top-[18%] left-1/2 z-50 w-[95%] max-w-md -translate-x-1/2 animate-in overflow-hidden rounded-3xl bg-surface duration-150 fade-in-0 zoom-in-95 slide-in-from-top-2"
             role="dialog"
             aria-label="Search brands and filters"
+            style={{ boxShadow: "var(--shadow-soft)" }}
           >
             <Command
               shouldFilter={false}
@@ -292,14 +290,15 @@ export function CommandMenu({
                 placeholder={activeSearchPrompt}
                 aria-label={t("searchPlaceholder")}
                 autoFocus
-                className="w-full border-b border-neutral-200 bg-transparent px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 dark:border-neutral-800 dark:text-neutral-100"
+                className="w-full bg-transparent px-5 py-4 text-[15px] text-foreground outline-none placeholder:text-muted-foreground"
               />
+              <div className="h-px bg-surface-muted" />
               <Command.List
                 ref={listRef}
-                className="max-h-[360px] overflow-y-auto p-2"
+                className="max-h-[400px] overflow-y-auto p-2"
               >
                 {filteredBrands.length === 0 && (
-                  <div className="py-6 text-center text-sm text-neutral-400">
+                  <div className="py-8 text-center text-sm text-muted-foreground">
                     {t("noBrandsFound")}
                   </div>
                 )}
@@ -308,25 +307,16 @@ export function CommandMenu({
                 {filteredBrands.length > 0 && (
                   <Command.Group
                     heading={t(resultHeading)}
-                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                    className={GROUP_HEADING_CLASS}
                   >
                     {filteredBrands.map((brand) => (
                       <Command.Item
                         key={brand.slug}
                         value={brand.slug}
                         onSelect={() => navigateToBrand(brand.slug)}
-                        className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                        className={ITEM_CLASS}
                       >
-                        <div
-                          className={cn(
-                            "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]",
-                            /black|dark|slate|navy/i.test(brand.thumbnail.label)
-                              ? "dark:bg-neutral-200"
-                              : /ivory|white|light/i.test(brand.thumbnail.label)
-                                ? "bg-neutral-800"
-                                : ""
-                          )}
-                        >
+                        <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface-muted">
                           <Image
                             src={brand.thumbnail.src}
                             alt={brand.name}
@@ -336,7 +326,7 @@ export function CommandMenu({
                           />
                         </div>
                         <span className="font-medium">{brand.name}</span>
-                        <span className="ml-auto text-[11px] text-neutral-400">
+                        <span className="ml-auto text-[11px] text-muted-foreground">
                           {brand.industry}
                         </span>
                       </Command.Item>
@@ -348,7 +338,7 @@ export function CommandMenu({
                 {available.industries.length > 0 && (
                   <Command.Group
                     heading={t("industry")}
-                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                    className={GROUP_HEADING_CLASS}
                   >
                     {available.industries.map((v) => {
                       const isActive = filters.industries.includes(v)
@@ -357,12 +347,12 @@ export function CommandMenu({
                           key={v}
                           value={`industry ${v}`}
                           onSelect={() => onToggleFilter("industries", v)}
-                          className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                          className={ITEM_CLASS}
                         >
-                          <IconCategory className="size-4 text-neutral-400" />
+                          <IconCategory className="size-4 text-muted-foreground" />
                           <span>{v}</span>
                           {isActive && (
-                            <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                            <span className="ml-auto size-2 rounded-full bg-foreground" />
                           )}
                         </Command.Item>
                       )
@@ -374,7 +364,7 @@ export function CommandMenu({
                 {available.tags.length > 0 && (
                   <Command.Group
                     heading={t("styleTags")}
-                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                    className={GROUP_HEADING_CLASS}
                   >
                     {available.tags.map((v) => {
                       const isActive = filters.tags.includes(v)
@@ -383,12 +373,12 @@ export function CommandMenu({
                           key={v}
                           value={`style ${v}`}
                           onSelect={() => onToggleFilter("tags", v)}
-                          className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                          className={ITEM_CLASS}
                         >
-                          <IconTag className="size-4 text-neutral-400" />
+                          <IconTag className="size-4 text-muted-foreground" />
                           <span>{v}</span>
                           {isActive && (
-                            <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                            <span className="ml-auto size-2 rounded-full bg-foreground" />
                           )}
                         </Command.Item>
                       )
@@ -400,7 +390,7 @@ export function CommandMenu({
                 {available.colorFamilies.length > 0 && (
                   <Command.Group
                     heading={t("colorFamily")}
-                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                    className={GROUP_HEADING_CLASS}
                   >
                     {available.colorFamilies.map((v) => {
                       const isActive = filters.colorFamilies.includes(v)
@@ -409,17 +399,17 @@ export function CommandMenu({
                           key={v}
                           value={`color ${v}`}
                           onSelect={() => onToggleFilter("colorFamilies", v)}
-                          className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                          className={ITEM_CLASS}
                         >
                           <span
-                            className="size-4 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.08)]"
+                            className="size-4 rounded-full"
                             style={{
                               backgroundColor: colorFamilyMap[v] ?? "#9CA3AF",
                             }}
                           />
                           <span>{v}</span>
                           {isActive && (
-                            <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                            <span className="ml-auto size-2 rounded-full bg-foreground" />
                           )}
                         </Command.Item>
                       )
@@ -431,7 +421,7 @@ export function CommandMenu({
                 {available.typographyStyles.length > 0 && (
                   <Command.Group
                     heading={t("typographyStyle")}
-                    className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                    className={GROUP_HEADING_CLASS}
                   >
                     {available.typographyStyles.map((v) => {
                       const isActive = filters.typographyStyles.includes(v)
@@ -440,12 +430,12 @@ export function CommandMenu({
                           key={v}
                           value={`typography ${v}`}
                           onSelect={() => onToggleFilter("typographyStyles", v)}
-                          className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                          className={ITEM_CLASS}
                         >
-                          <IconTypography className="size-4 text-neutral-400" />
+                          <IconTypography className="size-4 text-muted-foreground" />
                           <span>{v}</span>
                           {isActive && (
-                            <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                            <span className="ml-auto size-2 rounded-full bg-foreground" />
                           )}
                         </Command.Item>
                       )
@@ -456,7 +446,7 @@ export function CommandMenu({
                 {/* Language */}
                 <Command.Group
                   heading={t("language")}
-                  className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                  className={GROUP_HEADING_CLASS}
                 >
                   {routing.locales.map((loc) => {
                     const isActive = loc === currentLocale
@@ -476,15 +466,15 @@ export function CommandMenu({
                           )
                           setOpen(false)
                         }}
-                        className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                        className={ITEM_CLASS}
                       >
-                        <IconLanguage className="size-4 text-neutral-400" />
+                        <IconLanguage className="size-4 text-muted-foreground" />
                         <span>{localeMetadata[loc].nativeName}</span>
-                        <span className="text-[11px] text-neutral-400 uppercase">
+                        <span className="text-[11px] text-muted-foreground uppercase">
                           {loc}
                         </span>
                         {isActive && (
-                          <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                          <span className="ml-auto size-2 rounded-full bg-foreground" />
                         )}
                       </Command.Item>
                     )
@@ -494,7 +484,7 @@ export function CommandMenu({
                 {/* Theme */}
                 <Command.Group
                   heading={t("theme")}
-                  className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group-heading]]:uppercase"
+                  className={GROUP_HEADING_CLASS}
                 >
                   {(
                     [
@@ -510,12 +500,12 @@ export function CommandMenu({
                         setTheme(value)
                         setOpen(false)
                       }}
-                      className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-neutral-600 data-[selected=true]:bg-neutral-100 dark:text-neutral-400 dark:data-[selected=true]:bg-neutral-800/50"
+                      className={ITEM_CLASS}
                     >
-                      <Icon className="size-4 text-neutral-400" />
+                      <Icon className="size-4 text-muted-foreground" />
                       <span className="capitalize">{value}</span>
                       {theme === value && (
-                        <span className="ml-auto size-2 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                        <span className="ml-auto size-2 rounded-full bg-foreground" />
                       )}
                     </Command.Item>
                   ))}
@@ -529,7 +519,7 @@ export function CommandMenu({
                       onSelect={() => {
                         onClearFilters()
                       }}
-                      className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm text-red-500 data-[selected=true]:bg-red-50 dark:data-[selected=true]:bg-red-950/20"
+                      className="flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-[13.5px] text-destructive transition-colors duration-150 data-[selected=true]:bg-destructive/15"
                     >
                       <IconX className="size-4" />
                       <span>{t("clearFilters")}</span>

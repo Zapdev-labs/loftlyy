@@ -48,16 +48,16 @@ export function SidebarFilters({
     <Dialog>
       <DialogTrigger
         className={cn(
-          "flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] transition-colors",
+          "flex items-center gap-2 rounded-full px-3.5 py-2 text-[13px] transition-colors duration-150",
           hasActiveFilters
-            ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
-            : "bg-neutral-100/80 text-neutral-500 hover:text-neutral-700 dark:bg-neutral-900 dark:hover:text-neutral-300"
+            ? "bg-foreground text-background"
+            : "bg-surface-muted text-muted-foreground hover:bg-accent hover:text-foreground"
         )}
       >
         <IconAdjustmentsHorizontal className="size-3.5" />
         <span>{t("filters")}</span>
         {activeCount > 0 && (
-          <span className="flex size-4 items-center justify-center rounded-full bg-white/20 text-[10px] font-semibold dark:bg-black/20">
+          <span className="flex size-5 items-center justify-center rounded-full bg-sidebar/20 text-[10px] font-semibold">
             {activeCount}
           </span>
         )}
@@ -68,8 +68,9 @@ export function SidebarFilters({
             <DialogTitle>{t("filters")}</DialogTitle>
             {hasActiveFilters && (
               <button
+                type="button"
                 onClick={onClear}
-                className="flex items-center gap-1 text-[12px] text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-300"
+                className="flex items-center gap-1 rounded-full bg-surface-muted px-3 py-1.5 text-[12px] text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
               >
                 <IconX className="size-3" />
                 {t("clearFilters")}
@@ -79,7 +80,6 @@ export function SidebarFilters({
         </DialogHeader>
         <ScrollArea className="max-h-[60vh]">
           <div className="flex flex-col gap-5 pr-3">
-            {/* Industry */}
             {available.industries.length > 0 && (
               <FilterGroup
                 label={t("industry")}
@@ -89,7 +89,6 @@ export function SidebarFilters({
               />
             )}
 
-            {/* Style */}
             {available.tags.length > 0 && (
               <FilterGroup
                 label={t("styleTags")}
@@ -99,10 +98,9 @@ export function SidebarFilters({
               />
             )}
 
-            {/* Color */}
             {available.colorFamilies.length > 0 && (
-              <div className="flex flex-col gap-2">
-                <span className="text-[12px] font-medium text-neutral-500 dark:text-neutral-400">
+              <div className="flex flex-col gap-2.5">
+                <span className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
                   {t("colorFamily")}
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -110,18 +108,19 @@ export function SidebarFilters({
                     const isActive = filters.colorFamilies.includes(v)
                     return (
                       <button
+                        type="button"
                         key={v}
                         onClick={() => onToggle("colorFamilies", v)}
                         className={cn(
-                          "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[12px] transition-colors",
+                          "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] transition-colors duration-150",
                           isActive
-                            ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
-                            : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+                            ? "bg-foreground text-background"
+                            : "bg-surface-muted text-foreground hover:bg-accent"
                         )}
                         aria-pressed={isActive}
                       >
                         <span
-                          className="size-2.5 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.08)]"
+                          className="size-2.5 rounded-full"
                           style={{
                             backgroundColor: colorFamilyMap[v] ?? "#9CA3AF",
                           }}
@@ -134,7 +133,6 @@ export function SidebarFilters({
               </div>
             )}
 
-            {/* Typography */}
             {available.typographyStyles.length > 0 && (
               <FilterGroup
                 label={t("typographyStyle")}
@@ -162,23 +160,24 @@ function FilterGroup({
   onToggle: (value: string) => void
 }) {
   return (
-    <div className="flex flex-col gap-2">
-      <span className="text-[12px] font-medium text-neutral-500 dark:text-neutral-400">
+    <div className="flex flex-col gap-2.5">
+      <span className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {label}
       </span>
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-2">
         {values.map((v) => {
           const isActive = active.includes(v)
           return (
             <button
+              type="button"
               key={v}
               onClick={() => onToggle(v)}
               aria-pressed={isActive}
               className={cn(
-                "rounded-full px-2.5 py-1 text-[12px] font-medium transition-colors",
+                "rounded-full px-3 py-1.5 text-[12px] font-medium transition-colors duration-150",
                 isActive
-                  ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+                  ? "bg-foreground text-background"
+                  : "bg-surface-muted text-foreground hover:bg-accent"
               )}
             >
               {v}

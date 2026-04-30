@@ -158,7 +158,7 @@ export default async function BrandPage({
   })
 
   return (
-    <article className="flex flex-col gap-10 px-8 py-7">
+    <article className="mx-auto flex w-full max-w-4xl flex-col gap-14 px-6 py-6 lg:px-6 lg:py-14">
       <BrandStructuredData brand={brand} />
       <BrandPageStructuredData
         name={seo.title}
@@ -219,12 +219,12 @@ export default async function BrandPage({
         />
       </div>
       <BrandLegal brand={brand} />
-      <div className="flex justify-center pb-2">
+      <div className="flex justify-center pb-4">
         <a
           href={`https://www.ikiform.com/f/report-a-brand-issue-w93co6?brand_url=${encodeURIComponent(`${BASE_URL}/${locale}/${brand.slug}`)}&brand_name=${encodeURIComponent(brand.name)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+          className="rounded-full bg-surface-muted px-4 py-2 text-xs text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
         >
           Report an issue with this brand
         </a>

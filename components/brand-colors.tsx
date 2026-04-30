@@ -34,19 +34,20 @@ export function BrandColors({ colors }: { colors: BrandColor[] }) {
   }
 
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex flex-col gap-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+        <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
           {t("colors")}
         </h2>
         <button
+          type="button"
           onClick={copyPalette}
           aria-label={t("copyPaletteJson")}
-          className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-[12px] font-medium text-neutral-700 transition-colors hover:border-neutral-300 hover:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-ring dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
+          className="inline-flex items-center gap-1.5 rounded-full bg-surface-muted px-3 py-1.5 text-[12px] font-medium text-foreground transition-colors duration-150 hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring"
         >
           {paletteCopied ? (
             <>
-              <IconCheck className="h-3 w-3 text-green-600" />
+              <IconCheck className="h-3 w-3" />
               <span>{t("copied")}</span>
             </>
           ) : (
@@ -58,16 +59,16 @@ export function BrandColors({ colors }: { colors: BrandColor[] }) {
         </button>
       </div>
 
-      <div className="flex flex-col divide-y divide-neutral-100 dark:divide-neutral-800">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {colors.map((color, index) => (
-          <ColorRow key={`${color.hex}-${index}`} color={color} />
+          <ColorTile key={`${color.hex}-${index}`} color={color} />
         ))}
       </div>
     </section>
   )
 }
 
-function ColorRow({ color }: { color: BrandColor }) {
+function ColorTile({ color }: { color: BrandColor }) {
   const [copied, setCopied] = useState(false)
   const t = useTranslations("brand")
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null)
@@ -87,43 +88,31 @@ function ColorRow({ color }: { color: BrandColor }) {
   }
 
   return (
-    <div className="group flex items-center gap-4 py-3">
-      {/* Swatch */}
+    <button
+      type="button"
+      onClick={copyHex}
+      aria-label={t("copyHex")}
+      className="group flex flex-col gap-2.5 overflow-hidden rounded-2xl bg-surface-muted p-1 text-left transition-colors duration-150 hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring"
+    >
       <div
-        className="h-10 w-10 shrink-0 rounded-lg shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"
+        className="h-28 w-full rounded-[1.4rem]"
         style={{ backgroundColor: color.hex }}
       />
-
-      {/* Name + usage */}
-      <div className="flex min-w-0 flex-1 flex-col">
-        <span className="text-[13px] font-medium text-neutral-800 dark:text-neutral-200">
-          {color.name}
+      <div className="flex items-start justify-between gap-2 px-4 pb-2">
+        <div className="flex min-w-0 flex-1 flex-col">
+          <span className="truncate text-[13px] font-medium text-foreground">
+            {color.name}
+          </span>
+          {color.usage && (
+            <span className="truncate text-[11px] text-muted-foreground">
+              {color.usage}
+            </span>
+          )}
+        </div>
+        <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+          {copied ? t("copied") : color.hex.toUpperCase()}
         </span>
-        {color.usage && (
-          <p className="truncate text-xs text-neutral-400 dark:text-neutral-400">
-            {color.usage}
-          </p>
-        )}
       </div>
-
-      {/* Hex + copy */}
-      <button
-        onClick={copyHex}
-        aria-label={t("copyHex")}
-        className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-md px-2 font-mono text-xs text-neutral-500 transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-ring dark:text-neutral-400 dark:hover:bg-neutral-800"
-      >
-        {copied ? (
-          <>
-            <IconCheck className="h-3 w-3 text-green-600" />
-            <span>{t("copied")}</span>
-          </>
-        ) : (
-          <>
-            <IconCopy className="h-3 w-3" />
-            <span>{color.hex.toUpperCase()}</span>
-          </>
-        )}
-      </button>
-    </div>
+    </button>
   )
 }

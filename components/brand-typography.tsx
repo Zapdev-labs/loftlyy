@@ -40,11 +40,11 @@ export function BrandTypography({
   const t = useTranslations("brand")
 
   return (
-    <section className="flex flex-col gap-3">
-      <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <section className="flex flex-col gap-5">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {t("typography")}
       </h2>
-      <div className="flex flex-col gap-0 divide-y divide-neutral-100 dark:divide-neutral-800/60">
+      <div className="flex flex-col gap-3">
         {typography.map((font) => (
           <TypeSpecimen key={font.name} font={font} />
         ))}
@@ -74,45 +74,42 @@ function TypeSpecimen({ font }: { font: BrandTypographyType }) {
   }
 
   return (
-    <div className="group flex flex-col gap-4 py-6 first:pt-0 last:pb-0">
+    <div className="group flex flex-col gap-4 rounded-2xl bg-surface-muted p-6">
       {/* Header row */}
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <div className="flex items-center gap-2.5">
-          <h3 className="text-[14px] font-semibold text-neutral-800 dark:text-neutral-200">
+          <h3 className="text-[15px] font-semibold text-foreground">
             {font.name}
           </h3>
           {font.category && (
-            <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
+            <span className="rounded-full bg-surface-muted px-2.5 py-0.5 text-[10.5px] font-medium text-muted-foreground">
               {font.category}
             </span>
           )}
           <button
+            type="button"
             onClick={copyName}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded text-neutral-400 transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-ring dark:text-neutral-500 dark:hover:text-neutral-300"
+            className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors duration-150 hover:bg-surface-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={t("copyFontName")}
           >
             {copied ? (
-              <IconCheck className="h-3 w-3" />
+              <IconCheck className="h-3.5 w-3.5" />
             ) : (
-              <IconCopy className="h-3 w-3" />
+              <IconCopy className="h-3.5 w-3.5" />
             )}
           </button>
         </div>
-        <div className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500 dark:text-neutral-400">
+        <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
           <span>{font.role}</span>
           {font.designer && (
             <>
-              <span className="text-neutral-400 dark:text-neutral-600">
-                &middot;
-              </span>
+              <span className="opacity-60">&middot;</span>
               <span>{font.designer}</span>
             </>
           )}
           {font.foundry && (
             <>
-              <span className="text-neutral-400 dark:text-neutral-600">
-                &middot;
-              </span>
+              <span className="opacity-60">&middot;</span>
               <span>{font.foundry}</span>
             </>
           )}
@@ -124,13 +121,13 @@ function TypeSpecimen({ font }: { font: BrandTypographyType }) {
         className="flex min-w-0 flex-col gap-1 overflow-hidden"
         style={{ fontFamily }}
       >
-        <p className="text-[28px] leading-[1.1] tracking-tight text-neutral-800 sm:text-[36px] dark:text-neutral-200">
+        <p className="text-[28px] leading-[1.1] tracking-tight text-foreground sm:text-[36px]">
           The quick brown fox jumps
         </p>
-        <p className="text-[17px] leading-snug text-neutral-600 sm:text-[20px] dark:text-neutral-400">
+        <p className="text-[17px] leading-snug text-muted-foreground sm:text-[20px]">
           over the lazy dog. 0123456789
         </p>
-        <p className="text-[13px] leading-relaxed break-all text-neutral-500 sm:break-normal dark:text-neutral-400">
+        <p className="text-[13px] leading-relaxed break-all text-muted-foreground sm:break-normal">
           ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz !@#$%&amp;*()
         </p>
       </div>
@@ -141,7 +138,7 @@ function TypeSpecimen({ font }: { font: BrandTypographyType }) {
           {font.weights.map((w) => (
             <span
               key={w}
-              className="rounded-full bg-neutral-100 px-2 py-0.5 font-mono text-[10px] text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400"
+              className="rounded-full bg-surface-muted px-2.5 py-0.5 font-mono text-[10.5px] text-muted-foreground"
             >
               {w}
             </span>

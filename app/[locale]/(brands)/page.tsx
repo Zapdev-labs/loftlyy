@@ -1,12 +1,11 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { IconArrowRight } from "@tabler/icons-react"
+import { IconArrowRight, IconHeart } from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { getAllSidebarBrands } from "@/data/brands"
 import { AdvertiseSpots } from "@/components/advertise-dialog"
-import CarbonAds from "@/components/carbon-ad"
 import type { SidebarBrand } from "@/lib/types"
 
 export async function generateMetadata({
@@ -42,33 +41,34 @@ function BrandsLanding({ brands }: { brands: SidebarBrand[] }) {
   const t = useTranslations()
 
   return (
-    <div className="flex min-h-0 w-full flex-1 flex-col items-center overflow-hidden px-4 py-12 sm:px-6">
+    <div className="flex min-h-0 w-full flex-1 flex-col items-center overflow-hidden px-6 py-12 sm:px-10 sm:py-16">
       <div className="hidden w-full max-w-4xl lg:block">
         <AdvertiseSpots />
       </div>
-      {/* Hero + Marquee centered in remaining space */}
+
       <div className="flex w-full flex-1 flex-col items-center justify-center">
-        <section className="flex flex-col items-center gap-6 text-center">
-          <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
+        <section className="flex flex-col items-center gap-7 text-center">
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl bg-surface-muted">
             <Image
               src="/logo.webp"
-              alt="Loftly"
-              width={48}
-              height={48}
-              className="size-full rounded-xl object-contain"
+              alt="Loftlyy"
+              width={56}
+              height={56}
+              className="size-full rounded-2xl object-contain"
             />
           </div>
 
-          <h1 className="max-w-xl text-3xl font-semibold tracking-tighter text-neutral-900 sm:text-5xl dark:text-neutral-100">
+          <h1 className="max-w-2xl text-4xl font-semibold tracking-[-0.05em] text-foreground sm:text-6xl">
             {t("home.headline")}
           </h1>
-          <p className="max-w-md text-sm text-neutral-500 sm:text-base dark:text-neutral-400">
+          <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("home.subheadline")}
           </p>
-          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
+
+          <div className="mt-2 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
             <Link
               href={`/${brands[0].slug}`}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3.5 text-center font-semibold text-white transition-colors hover:bg-neutral-700 sm:w-fit sm:py-4 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-[15px] font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary/90 sm:w-fit"
             >
               {t("home.cta")}
               <IconArrowRight size={16} />
@@ -77,27 +77,27 @@ function BrandsLanding({ brands }: { brands: SidebarBrand[] }) {
               href="https://github.com/sponsors/preetsuthar17"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-neutral-100 px-6 py-3.5 text-center font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 sm:w-fit sm:py-4 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-surface-muted px-7 py-3.5 text-[15px] font-medium text-foreground transition-colors duration-150 hover:bg-accent sm:w-fit"
             >
-              {t("home.sponsor")} &nbsp;❤️
+              <IconHeart size={16} />
+              {t("home.sponsor")}
             </a>
           </div>
         </section>
 
-        {/* Forward marquee — below hero */}
         <div className="relative mt-24 w-full max-w-3xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex w-max animate-[marquee_50s_linear_infinite] gap-10">
+          <div className="flex w-max animate-[marquee_50s_linear_infinite] gap-12">
             {[...brands, ...brands].map((brand, i) => (
               <Link
                 key={`${brand.slug}-fwd-${i}`}
                 href={`/${brand.slug}`}
-                className="flex h-8 w-8 shrink-0 items-center justify-center transition-all hover:opacity-100 hover:grayscale-0"
+                className="flex h-10 w-10 shrink-0 items-center justify-center opacity-60 transition-opacity duration-150 hover:opacity-100"
               >
                 <Image
                   src={brand.thumbnail.src}
                   alt={brand.name}
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className="size-full object-contain"
                 />
               </Link>

@@ -11,35 +11,37 @@ export function BrandSidebar() {
 
   return (
     <aside
-      className="hidden h-full w-[272px] shrink-0 flex-col bg-white lg:flex dark:bg-neutral-950"
+      className="hidden h-full w-[280px] shrink-0 flex-col bg-sidebar lg:flex"
       id="brand-sidebar"
     >
       {/* Header — fixed top */}
-      <div className="shrink-0 p-4 pb-0">
+      <div className="shrink-0 px-5 pt-5">
         <div className="flex items-center justify-between">
-          <div className="flex w-fit items-center justify-between gap-3">
-            <Link href="/" className="flex w-fit items-center gap-2.5">
+          <div className="flex items-center gap-2.5">
+            <Link href="/" aria-label="Loftlyy home">
               <Image
                 src="/logo.webp"
                 alt="Loftlyy"
-                width={28}
-                height={28}
-                className="rounded-lg"
+                width={32}
+                height={32}
+                className="rounded-xl"
               />
             </Link>
             <div className="flex flex-col">
-              <span className="text-[15px] font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-                Loftlyy
-              </span>
               <Link
+                href="/"
+                className="text-[15px] font-semibold tracking-tight text-foreground"
+              >
+                Loftlyy
+              </Link>
+              <a
                 href="https://hanoa.studio"
                 target="_blank"
-                className="flex w-fit items-center gap-2.5"
+                rel="noopener noreferrer"
+                className="text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
-                <span className="text-[11px] font-medium text-neutral-500 dark:text-neutral-400">
-                  by Hanoa Studio
-                </span>
-              </Link>
+                by Hanoa Studio
+              </a>
             </div>
           </div>
 
@@ -48,19 +50,19 @@ export function BrandSidebar() {
       </div>
 
       {/* Brand list — scrollable middle */}
-      <div className="min-h-0 flex-1 px-4 pt-4">
+      <div className="min-h-0 flex-1 pt-5">
         <Suspense>
           <BrandSidebarSearch brands={brands} />
         </Suspense>
       </div>
 
       {/* Sponsor — fixed bottom */}
-      <div className="shrink-0 p-4 pt-2">
+      <div className="shrink-0 px-5 pt-2 pb-5">
         <a
           href="https://github.com/sponsors/preetsuthar17"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg border border-neutral-200 px-3 py-2 text-[13px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+          className="flex items-center justify-center gap-2 rounded-full bg-surface-muted px-4 py-2.5 text-[13px] font-medium text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
         >
           <IconHeart size={15} />
           Support us

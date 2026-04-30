@@ -53,27 +53,27 @@ export function SimilarBrands({ brands }: { brands: SimilarBrandCard[] }) {
   if (brands.length === 0) return null
 
   return (
-    <section className="flex flex-col gap-3">
-      <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <section className="flex flex-col gap-5">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {t("similarBrands")}
       </h2>
 
-      <div className="-mx-8" style={maskStyle}>
+      <div className="-mx-6 sm:-mx-10" style={maskStyle}>
         <div
           ref={scrollRef}
           role="region"
           aria-label={t("similarBrands")}
           tabIndex={0}
-          className="scrollbar-none flex gap-3 overflow-x-auto px-8 pb-2 focus-visible:outline-2 focus-visible:outline-ring"
+          className="scrollbar-none flex gap-3 overflow-x-auto px-6 pb-2 focus-visible:outline-2 focus-visible:outline-ring sm:px-10"
           style={{ scrollbarWidth: "none" }}
         >
           {brands.map((brand) => (
             <Link
               key={brand.slug}
               href={`/${brand.slug}`}
-              className="flex w-[200px] shrink-0 flex-col gap-2.5 rounded-xl bg-neutral-50 p-4 transition-colors hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              className="flex w-[200px] shrink-0 flex-col gap-3 rounded-2xl bg-surface-muted p-5 transition-colors duration-150 hover:bg-accent"
             >
-              <div className="flex h-12 items-center justify-center">
+              <div className="flex h-14 items-center justify-center">
                 <Image
                   src={brand.thumbnail.src}
                   alt={brand.name}
@@ -84,17 +84,17 @@ export function SimilarBrands({ brands }: { brands: SimilarBrandCard[] }) {
                 />
               </div>
               <div className="flex flex-col items-center gap-1.5">
-                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-300">
+                <span className="text-[13.5px] font-medium text-foreground">
                   {brand.name}
                 </span>
-                <span className="text-[11px] text-neutral-500 dark:text-neutral-400">
+                <span className="text-[11px] text-muted-foreground">
                   {brand.industry}
                 </span>
                 <div className="flex gap-1">
                   {brand.colors.map((c) => (
                     <div
                       key={c.hex}
-                      className="h-3 w-3 rounded-full shadow-[0_0_0_0.5px_rgba(0,0,0,0.08)]"
+                      className="h-3 w-3 rounded-full"
                       style={{ backgroundColor: c.hex }}
                       aria-hidden="true"
                     />

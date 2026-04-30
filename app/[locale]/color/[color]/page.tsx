@@ -122,7 +122,7 @@ export default async function ColorPage({
         <div className="flex items-center gap-3">
           {colorFamily && (
             <div
-              className="size-8 rounded-full border border-border"
+              className="size-8 rounded-full"
               style={{ backgroundColor: colorFamily.hex }}
             />
           )}
@@ -136,17 +136,17 @@ export default async function ColorPage({
       </div>
       <Link
         href={`/colors?family=${color}`}
-        className="group inline-flex items-center justify-between gap-4 rounded-[24px] border border-neutral-200 bg-neutral-50 p-5 transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
+        className="group inline-flex items-center justify-between gap-4 rounded-3xl bg-surface-muted p-5 transition-colors duration-150 hover:bg-accent"
       >
         <div className="flex min-w-0 flex-col gap-1">
-          <span className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+          <span className="text-sm font-semibold text-foreground">
             {t("exploreFamily")}
           </span>
-          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          <span className="text-sm text-muted-foreground">
             {tExplorer("ctaDescription", { color: colorName })}
           </span>
         </div>
-        <span className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors group-hover:bg-neutral-900 group-hover:text-white dark:bg-neutral-950 dark:text-neutral-200 dark:group-hover:bg-neutral-100 dark:group-hover:text-neutral-950">
+        <span className="rounded-full bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors duration-150 group-hover:bg-foreground group-hover:text-background">
           {tExplorer("ctaLabel")}
         </span>
       </Link>

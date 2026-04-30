@@ -33,19 +33,19 @@ export function BrandStory({
   ].filter(Boolean) as { label: string; value: string }[]
 
   return (
-    <section className="flex min-w-0 flex-1 flex-col gap-3">
-      <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <section className="flex min-w-0 flex-1 flex-col gap-5">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {t("brandStory")}
       </h2>
 
       {meta.length > 0 && (
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-wrap gap-x-8 gap-y-4 rounded-2xl bg-surface-muted p-5">
           {meta.map((item) => (
-            <div key={item.label} className="flex flex-col gap-0.5">
-              <span className="text-[11px] text-neutral-500 dark:text-neutral-400">
+            <div key={item.label} className="flex flex-col gap-1">
+              <span className="text-[11px] tracking-[0.08em] text-muted-foreground uppercase">
                 {item.label}
               </span>
-              <span className="text-[13.5px] font-medium text-neutral-700 dark:text-neutral-300">
+              <span className="text-[14px] font-medium text-foreground">
                 {item.value}
               </span>
             </div>
@@ -54,7 +54,7 @@ export function BrandStory({
       )}
 
       {brand.philosophy && (
-        <p className="max-w-2xl text-[13.5px] leading-relaxed text-neutral-500 italic dark:text-neutral-400">
+        <p className="max-w-2xl text-[15px] leading-relaxed text-muted-foreground italic">
           &ldquo;{translatedPhilosophy ?? brand.philosophy}&rdquo;
         </p>
       )}

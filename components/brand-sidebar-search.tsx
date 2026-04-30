@@ -74,7 +74,7 @@ export function BrandSidebarSearch({
   const isCompareActive = pathname.endsWith("/compare")
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-3 px-5 lg:px-0">
+    <div className="flex h-full min-h-0 flex-col gap-4 px-5 lg:px-5">
       {/* Command menu trigger + filters */}
       <div className="flex flex-col gap-2">
         <CommandMenu
@@ -87,10 +87,10 @@ export function BrandSidebarSearch({
       </div>
 
       {/* Brand list */}
-      <div className="flex min-h-0 flex-1 flex-col gap-4">
-        <div className="flex min-h-0 flex-col gap-0.5">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[11px] font-medium tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
+      <div className="flex min-h-0 flex-1 flex-col gap-5">
+        <div className="flex min-h-0 flex-col gap-1">
+          <div className="flex items-center gap-1.5 px-2 pb-1">
+            <span className="text-[10.5px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
               {t("explore")}
             </span>
           </div>
@@ -99,28 +99,24 @@ export function BrandSidebarSearch({
             href="/compare"
             onClick={onNavigate}
             className={cn(
-              "flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
-              isCompareActive
-                ? "bg-neutral-100/70 dark:bg-neutral-800/50"
-                : "hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
+              "group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150",
+              isCompareActive ? "bg-surface-muted" : "hover:bg-surface-muted"
             )}
           >
             <span
               className={cn(
-                "flex size-7 shrink-0 items-center justify-center rounded-[10px]",
+                "flex size-7 shrink-0 items-center justify-center rounded-lg transition-colors duration-150",
                 isCompareActive
-                  ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950"
-                  : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
+                  ? "bg-foreground text-background"
+                  : "bg-surface-muted text-muted-foreground group-hover:bg-accent"
               )}
             >
               <IconArrowsShuffle2 className="size-4" />
             </span>
             <span
               className={cn(
-                "min-w-0 flex-1 truncate text-sm font-medium",
-                isCompareActive
-                  ? "text-neutral-900 dark:text-neutral-100"
-                  : "text-neutral-600 dark:text-neutral-400"
+                "min-w-0 flex-1 truncate text-[13.5px] font-medium",
+                isCompareActive ? "text-foreground" : "text-muted-foreground"
               )}
             >
               {t("compareBrands")}
@@ -132,12 +128,12 @@ export function BrandSidebarSearch({
             target="_blank"
             rel="noopener noreferrer"
             onClick={onNavigate}
-            className="group flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
+            className="group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-surface-muted"
           >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-[10px] bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-muted-foreground transition-colors duration-150 group-hover:bg-accent">
               <IconTerminal2 className="size-4" />
             </span>
-            <span className="min-w-0 flex-1 truncate text-sm font-medium text-neutral-600 transition-colors group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
+            <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
               CLI
             </span>
           </a>
@@ -147,12 +143,12 @@ export function BrandSidebarSearch({
             target="_blank"
             rel="noopener noreferrer"
             onClick={onNavigate}
-            className="group flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
+            className="group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-surface-muted"
           >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-[10px] bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-muted-foreground transition-colors duration-150 group-hover:bg-accent">
               <IconPlugConnected className="size-4" />
             </span>
-            <span className="min-w-0 flex-1 truncate text-sm font-medium text-neutral-600 transition-colors group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
+            <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
               MCP
             </span>
           </a>
@@ -162,22 +158,22 @@ export function BrandSidebarSearch({
             target="_blank"
             rel="noopener noreferrer"
             onClick={onNavigate}
-            className="group flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
+            className="group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-surface-muted"
           >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-[10px] bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-muted-foreground transition-colors duration-150 group-hover:bg-accent">
               <IconBrandGithub className="size-4" />
             </span>
-            <span className="min-w-0 flex-1 truncate text-sm font-medium text-neutral-600 transition-colors group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
+            <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
               GitHub
             </span>
           </a>
         </div>
-        <div className="flex min-h-0 flex-1 flex-col gap-0.5">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[11px] font-medium tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
+        <div className="flex min-h-0 flex-1 flex-col gap-1">
+          <div className="flex items-center gap-1.5 px-2 pb-1">
+            <span className="text-[10.5px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
               {t("allBrands")}
             </span>
-            <span className="text-[11px] font-medium text-neutral-400 dark:text-neutral-500">
+            <span className="text-[10.5px] font-medium text-muted-foreground/70">
               {filtered.length}
             </span>
           </div>
@@ -188,7 +184,7 @@ export function BrandSidebarSearch({
               className="h-full overflow-y-auto"
               style={{ scrollbarWidth: "none" }}
             >
-              <nav className="flex flex-col gap-px">
+              <nav className="flex flex-col gap-0.5">
                 {filtered.map((brand) => {
                   const isActive = pathname.endsWith(`/${brand.slug}`)
                   return (
@@ -197,10 +193,8 @@ export function BrandSidebarSearch({
                       href={`/${brand.slug}`}
                       onClick={onNavigate}
                       className={cn(
-                        "flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
-                        isActive
-                          ? "bg-neutral-100/70 dark:bg-neutral-800/50"
-                          : "hover:bg-neutral-50 dark:hover:bg-neutral-800/30"
+                        "flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150",
+                        isActive ? "bg-surface-muted" : "hover:bg-surface-muted"
                       )}
                       style={{
                         contentVisibility: "auto",
@@ -209,11 +203,11 @@ export function BrandSidebarSearch({
                     >
                       <div
                         className={cn(
-                          "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-[10px]",
+                          "flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface",
                           /black|dark|slate|navy/i.test(brand.thumbnail.label)
-                            ? "dark:bg-neutral-200"
+                            ? "dark:bg-surface-muted"
                             : /ivory|white|light/i.test(brand.thumbnail.label)
-                              ? "bg-neutral-800"
+                              ? "bg-foreground"
                               : ""
                         )}
                       >
@@ -225,30 +219,14 @@ export function BrandSidebarSearch({
                           quality={75}
                           loading="lazy"
                           className={cn(
-                            "h-full w-full scale-80 object-contain",
-                            brand.thumbnail.width / brand.thumbnail.height < 0.7
-                              ? "p-1"
-                              : brand.thumbnail.width / brand.thumbnail.height <
-                                  0.85
-                                ? "p-1"
-                                : brand.thumbnail.width /
-                                      brand.thumbnail.height >
-                                    1.5
-                                  ? "p-0.5"
-                                  : brand.thumbnail.width /
-                                        brand.thumbnail.height >
-                                      1.1
-                                    ? "p-1"
-                                    : "p-1"
+                            "h-full w-full scale-80 object-contain p-1"
                           )}
                         />
                       </div>
                       <span
                         className={cn(
-                          "truncate text-sm font-medium",
-                          isActive
-                            ? "font-medium text-neutral-900 dark:text-neutral-100"
-                            : "text-neutral-600 dark:text-neutral-400"
+                          "truncate text-[13.5px] font-medium",
+                          isActive ? "text-foreground" : "text-muted-foreground"
                         )}
                       >
                         {brand.name}
@@ -257,14 +235,15 @@ export function BrandSidebarSearch({
                   )
                 })}
                 {filtered.length === 0 && (
-                  <div className="flex flex-col items-center gap-2 py-4 text-center">
-                    <p className="text-[13px] text-neutral-500">
+                  <div className="flex flex-col items-center gap-2 py-6 text-center">
+                    <p className="text-[13px] text-muted-foreground">
                       {t("noBrandsFound")}
                     </p>
                     {hasActiveFilters && (
                       <button
+                        type="button"
                         onClick={clearFilters}
-                        className="text-xs text-neutral-500 underline underline-offset-2 transition-colors hover:text-neutral-700 dark:hover:text-neutral-300"
+                        className="text-xs text-muted-foreground underline underline-offset-2 transition-colors duration-150 hover:text-foreground"
                       >
                         {t("clearFilters")}
                       </button>

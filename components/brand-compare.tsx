@@ -86,27 +86,28 @@ export function BrandCompare({
   const emptySlots = MAX_COMPARE_BRANDS - selectedBrands.length
 
   return (
-    <div className="flex flex-col gap-8 px-6 md:px-10">
+    <div className="flex flex-col gap-10 px-6 py-12 sm:px-10 sm:py-16">
       {/* Header */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800">
-              <IconArrowsShuffle2 className="size-4.5 text-neutral-600 dark:text-neutral-300" />
+            <div className="flex size-11 items-center justify-center rounded-2xl bg-surface-muted">
+              <IconArrowsShuffle2 className="size-5 text-foreground" />
             </div>
-            <h1 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+            <h1 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {copy.title}
             </h1>
           </div>
           {selectedBrands.length > 0 && (
             <div className="flex items-center gap-2">
               <button
+                type="button"
                 onClick={copyLink}
-                className="flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1.5 text-[12px] font-medium text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
+                className="flex items-center gap-1.5 rounded-full bg-surface-muted px-3.5 py-1.5 text-[12px] font-medium text-foreground transition-colors duration-150 hover:bg-accent"
               >
                 {linkCopied ? (
                   <>
-                    <IconCheck className="size-3 text-green-600" />
+                    <IconCheck className="size-3" />
                     <span>{copy.linkCopied}</span>
                   </>
                 ) : (
@@ -117,8 +118,9 @@ export function BrandCompare({
                 )}
               </button>
               <button
+                type="button"
                 onClick={clearAll}
-                className="flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1.5 text-[12px] font-medium text-red-500 transition-colors hover:border-red-200 hover:bg-red-50 dark:border-neutral-700 dark:hover:border-red-900 dark:hover:bg-red-950/20"
+                className="flex items-center gap-1.5 rounded-full bg-destructive/15 px-3.5 py-1.5 text-[12px] font-medium text-destructive transition-colors duration-150 hover:bg-destructive/25"
               >
                 <IconX className="size-3" />
                 <span>{copy.clearAll}</span>
@@ -126,7 +128,7 @@ export function BrandCompare({
             </div>
           )}
         </div>
-        <p className="text-[14px] text-neutral-500 dark:text-neutral-400">
+        <p className="text-[15px] leading-relaxed text-muted-foreground">
           {copy.description}
         </p>
       </div>
@@ -141,14 +143,15 @@ export function BrandCompare({
         >
           {Array.from({ length: MAX_COMPARE_BRANDS }).map((_, i) => (
             <button
+              type="button"
               key={i}
               onClick={() => setPickerOpen(true)}
-              className="group flex min-h-[200px] flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-900/50"
+              className="group flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-2xl bg-surface-muted transition-colors duration-150 hover:bg-accent"
             >
-              <div className="flex size-10 items-center justify-center rounded-full bg-neutral-100 transition-colors group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
-                <IconPlus className="size-4.5 text-neutral-400 dark:text-neutral-500" />
+              <div className="flex size-11 items-center justify-center rounded-full bg-surface text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
+                <IconPlus className="size-5" />
               </div>
-              <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500">
+              <span className="text-sm font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
                 {i < 2
                   ? copy.addBrand
                   : `${copy.addAnother} (${copy.optional})`}
@@ -179,16 +182,16 @@ export function BrandCompare({
             />
           ))}
 
-          {/* Empty slots for adding more brands */}
           {emptySlots > 0 && (
             <button
+              type="button"
               onClick={() => setPickerOpen(true)}
-              className="group flex min-h-[200px] flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-neutral-200 transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-900/50"
+              className="group flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-2xl bg-surface-muted transition-colors duration-150 hover:bg-accent"
             >
-              <div className="flex size-10 items-center justify-center rounded-full bg-neutral-100 transition-colors group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
-                <IconPlus className="size-4.5 text-neutral-400 dark:text-neutral-500" />
+              <div className="flex size-11 items-center justify-center rounded-full bg-surface text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
+                <IconPlus className="size-5" />
               </div>
-              <span className="text-sm font-medium text-neutral-400 dark:text-neutral-500">
+              <span className="text-sm font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
                 {copy.addAnother}
               </span>
             </button>
@@ -196,7 +199,6 @@ export function BrandCompare({
         </div>
       )}
 
-      {/* Brand picker */}
       <CompareBrandPicker
         brands={sidebarBrands}
         selectedSlugs={selectedSlugs}
@@ -224,19 +226,9 @@ function CompareColumn({
   onRemove: () => void
 }) {
   return (
-    <div className="flex flex-col gap-6 rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
-      {/* Brand header */}
+    <div className="flex flex-col gap-6 rounded-2xl bg-surface p-5">
       <div className="flex items-start gap-3">
-        <div
-          className={cn(
-            "flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-[0_0_0_0.5px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.06)] dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.06)]",
-            /black|dark|slate|navy/i.test(brand.thumbnail.label)
-              ? "bg-neutral-100 dark:bg-neutral-200"
-              : /ivory|white|light/i.test(brand.thumbnail.label)
-                ? "bg-neutral-800 dark:bg-neutral-800"
-                : "bg-neutral-100 dark:bg-neutral-800"
-          )}
-        >
+        <div className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-surface-muted">
           <Image
             src={brand.thumbnail.src}
             alt={`${brand.name} logo`}
@@ -246,23 +238,23 @@ function CompareColumn({
           />
         </div>
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-          <h2 className="text-[15px] font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+          <h2 className="text-[15px] font-semibold tracking-tight text-foreground">
             {brand.name}
           </h2>
-          <span className="text-[12px] text-neutral-500 dark:text-neutral-400">
+          <span className="text-[12px] text-muted-foreground">
             {translatedIndustry}
           </span>
         </div>
         <button
+          type="button"
           onClick={onRemove}
           aria-label={copy.removeBrand}
-          className="flex size-7 shrink-0 items-center justify-center rounded-lg text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors duration-150 hover:bg-surface-muted hover:text-foreground"
         >
           <IconX className="size-3.5" />
         </button>
       </div>
 
-      {/* Quick stats */}
       <div className="flex flex-wrap gap-2">
         <StatBadge
           label={copy.colorsCount.replace(
@@ -282,10 +274,7 @@ function CompareColumn({
         {brand.headquarters && <StatBadge label={brand.headquarters} />}
       </div>
 
-      {/* Colors */}
       <BrandColors colors={brand.colors} />
-
-      {/* Typography */}
       <BrandTypography typography={brand.typography} />
     </div>
   )
@@ -293,7 +282,7 @@ function CompareColumn({
 
 function StatBadge({ label }: { label: string }) {
   return (
-    <span className="rounded-full bg-neutral-100 px-2.5 py-1 text-[11px] font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
+    <span className="rounded-full bg-surface-muted px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
       {label}
     </span>
   )

@@ -12,15 +12,15 @@ export function BrandSeoSummary({
   }
 
   return (
-    <section className="flex max-w-3xl flex-col gap-2">
-      <h2 className="text-[13px] font-bold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <section className="flex max-w-3xl flex-col gap-3">
+      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
         {title}
       </h2>
-      <ul className="flex flex-col gap-1.5">
+      <ul className="flex flex-col gap-2">
         {items.map((item) => (
           <li
             key={item.kind}
-            className="text-[13.5px] leading-relaxed text-neutral-500 dark:text-neutral-400"
+            className="text-[14px] leading-relaxed text-muted-foreground"
           >
             {item.text}
           </li>
