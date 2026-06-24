@@ -229,6 +229,10 @@
       "description": "OnlyFans is a subscription-based content platform where creators earn directly from their fans through monthly subscriptions, tips, and pay-per-view content. Founded in 2016, it has grown to over 4 million creators and 370 million users, becoming a defining platform in the creator economy.",
       "philosophy": "OnlyFans' identity centers on a clean, two-tone blue wordmark that conveys trust, accessibility, and modernity. The light-to-dark blue gradient across the logotype symbolizes the connection between creators and their audiences, while the minimal aesthetic reflects the platform's focus on putting creators first."
     },
+    "orchid": {
+      "description": "Orchid is an AI executive assistant that lives in your iMessage. It texts you a brief each morning, drafts your replies, books your meetings, and quietly handles the administrative busywork by connecting to the tools you already use. You approve, and Orchid takes care of the rest across web, iOS, and macOS.",
+      "philosophy": "Calm, warm, and quietly capable. Orchid pairs a bone-and-ink palette with the geometric TWK Lausanne and a soft orchid-petal mark to feel like a personal assistant that is human and unobtrusive — present when needed, invisible when not."
+    },
     "openai": {
       "description": "OpenAI is an AI research and deployment company dedicated to ensuring that artificial general intelligence benefits all of humanity. Known for creating GPT and ChatGPT, it leads the development of large language models and AI systems.",
       "philosophy": "Minimal, authoritative, and forward-looking. OpenAI's 2025 rebrand introduced OpenAI Sans, a bespoke typeface by ABC Dinamo, alongside a palette of greys and blues evoking openness and possibility — communicating technological sophistication while feeling distinctly human."
@@ -604,6 +608,10 @@
     "platform": "Platform",
     "playlists": "Playlists",
     "podcasts": "Podcasts",
+    "executive-assistant": "Executive Assistant",
+    "personal-assistant": "Personal Assistant",
+    "imessage": "iMessage",
+    "ai-agent": "AI Agent",
     "productivity": "Productivity",
     "project-management": "Project Management",
     "prototyping": "Prototyping",

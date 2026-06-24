@@ -229,6 +229,10 @@
       "description": "OnlyFans est une plateforme de contenu par abonnement où les créateurs gagnent directement auprès de leurs fans grâce à des abonnements mensuels, des pourboires et du contenu à la demande. Fondée en 2016, elle compte désormais plus de 4 millions de créateurs et 370 millions d'utilisateurs, devenant une plateforme emblématique de l'économie des créateurs.",
       "philosophy": "L'identité d'OnlyFans repose sur un logotype épuré en deux tons de bleu qui évoque confiance, accessibilité et modernité. Le dégradé du bleu clair au bleu foncé symbolise le lien entre les créateurs et leur public, tandis que l'esthétique minimaliste reflète l'engagement de la plateforme à placer les créateurs au premier plan."
     },
+    "orchid": {
+      "description": "Orchid est un assistant exécutif IA qui vit dans votre iMessage. Chaque matin, il vous envoie un récapitulatif, rédige vos réponses, organise vos réunions et gère discrètement les tâches administratives en se connectant aux outils que vous utilisez déjà. Vous approuvez, et Orchid s'occupe du reste sur le web, iOS et macOS.",
+      "philosophy": "Calme, chaleureux et discrètement compétent. Orchid associe une palette os et encre à la TWK Lausanne géométrique et à une douce marque en pétale d'orchidée pour évoquer un assistant personnel humain et discret : présent quand il le faut, invisible sinon."
+    },
     "openai": {
       "description": "OpenAI est une entreprise de recherche et de déploiement d'IA dédiée à garantir que l'intelligence artificielle générale profite à toute l'humanité. Connue pour avoir créé GPT et ChatGPT, elle est à la pointe du développement de grands modèles de langage et de systèmes d'IA.",
       "philosophy": "Minimaliste, autoritaire et tournée vers l'avenir. Le rebranding d'OpenAI en 2025 a introduit OpenAI Sans, une police exclusive d'ABC Dinamo, accompagnée d'une palette de gris et de bleus évoquant ouverture et possibilité — communiquant une sophistication technologique tout en dégageant une sensibilité résolument humaine."
@@ -606,6 +610,10 @@
     "platform": "Plateforme",
     "playlists": "Playlists",
     "podcasts": "Podcasts",
+    "executive-assistant": "Assistant exécutif",
+    "personal-assistant": "Assistant personnel",
+    "imessage": "iMessage",
+    "ai-agent": "Agent IA",
     "productivity": "Productivité",
     "project-management": "Gestion de Projets",
     "prototyping": "Prototypage",

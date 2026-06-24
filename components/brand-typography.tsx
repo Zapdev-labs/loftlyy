@@ -46,7 +46,7 @@ export function BrandTypography({
       </h2>
       <div className="flex flex-col gap-3">
         {typography.map((font) => (
-          <TypeSpecimen key={font.name} font={font} />
+          <TypeSpecimen key={`${font.name}-${font.role}`} font={font} />
         ))}
       </div>
     </section>

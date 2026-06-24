@@ -229,6 +229,10 @@
       "description": "OnlyFans是一个基于订阅的内容平台，创作者通过月度订阅、打赏和付费内容直接从粉丝处获得收入。该平台成立于2016年，已发展到拥有超过400万创作者和3.7亿用户，成为创作者经济的标志性平台。",
       "philosophy": "OnlyFans的品牌标识以简洁的双色调蓝色文字标识为核心，传达信任、可及性和现代感。从浅蓝到深蓝的渐变象征着创作者与受众之间的联系，而极简的美学风格则体现了平台以创作者为中心的理念。"
     },
+    "orchid": {
+      "description": "Orchid 是一款生活在你 iMessage 中的 AI 高管助理。它每天早晨给你发送简报、起草回复、预订会议，并通过连接你已在使用的工具，悄无声息地处理行政杂务。你只需批准，其余的事 Orchid 会在网页、iOS 和 macOS 上一并搞定。",
+      "philosophy": "沉静、温暖、低调而能干。Orchid 将骨白与墨黑的配色、几何感的 TWK Lausanne 字体和柔和的兰花花瓣标志结合在一起，让它如同一位有人情味又不张扬的私人助理——需要时在身边，不需要时则隐于无形。"
+    },
     "openai": {
       "description": "OpenAI 是一家致力于确保通用人工智能造福全人类的 AI 研究与部署公司。它因创建 GPT 和 ChatGPT 而闻名，并在大型语言模型和 AI 系统的发展中处于领先地位。",
       "philosophy": "极简、权威并面向未来。OpenAI 2025年的品牌焕新推出了由 ABC Dinamo 打造的专属字体 OpenAI Sans，搭配灰色与蓝色构成的色彩体系，唤起开放与可能的意象——在传达技术精致感的同时，呈现出鲜明的人文温度。"
@@ -606,6 +610,10 @@
     "platform": "平台",
     "playlists": "播放列表",
     "podcasts": "播客",
+    "executive-assistant": "高管助理",
+    "personal-assistant": "私人助理",
+    "imessage": "iMessage",
+    "ai-agent": "AI 智能体",
     "productivity": "生产力",
     "project-management": "项目管理",
     "prototyping": "原型设计",

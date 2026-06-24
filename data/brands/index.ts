@@ -40,6 +40,7 @@ import { netflix } from "./netflix"
 import { nike } from "./nike"
 import { obsidian } from "./obsidian"
 import { onlyfans } from "./onlyfans"
+import { orchid } from "./orchid"
 import { openai } from "./openai"
 import { planetscale } from "./planetscale"
 import { polar } from "./polar"
@@ -115,6 +116,7 @@ const rawBrands: Brand[] = [
   notion,
   obsidian,
   onlyfans,
+  orchid,
   openai,
   planetscale,
   polar,

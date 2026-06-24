@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl"
 import {
   IconArrowsShuffle2,
   IconBrandGithub,
-  IconPlugConnected,
   IconTerminal2,
 } from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
@@ -75,15 +74,26 @@ export function BrandSidebarSearch({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-4 px-5 lg:px-5">
-      {/* Command menu trigger + filters */}
-      <div className="flex flex-col gap-2">
-        <CommandMenu
-          brands={brands}
-          filters={filters}
-          onToggleFilter={toggleFilter}
-          onClearFilters={clearFilters}
-          hasActiveFilters={hasActiveFilters}
-        />
+      {/* Command menu trigger + GitHub */}
+      <div className="flex items-center gap-2">
+        <div className="min-w-0 flex-1">
+          <CommandMenu
+            brands={brands}
+            filters={filters}
+            onToggleFilter={toggleFilter}
+            onClearFilters={clearFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </div>
+        <a
+          href="https://github.com/preetsuthar17/loftlyy"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-muted text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
+        >
+          <IconBrandGithub className="size-4" />
+        </a>
       </div>
 
       {/* Brand list */}
@@ -124,7 +134,7 @@ export function BrandSidebarSearch({
           </Link>
 
           <a
-            href="https://docs.loftlyy.com/cli"
+            href="https://docs.loftlyy.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onNavigate}
@@ -134,37 +144,7 @@ export function BrandSidebarSearch({
               <IconTerminal2 className="size-4" />
             </span>
             <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
-              CLI
-            </span>
-          </a>
-
-          <a
-            href="https://docs.loftlyy.com/mcp-guide"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onNavigate}
-            className="group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-surface-muted"
-          >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-muted-foreground transition-colors duration-150 group-hover:bg-accent">
-              <IconPlugConnected className="size-4" />
-            </span>
-            <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
-              MCP
-            </span>
-          </a>
-
-          <a
-            href="https://github.com/preetsuthar17/loftlyy"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onNavigate}
-            className="group flex items-center gap-2.5 rounded-xl px-2 py-1.5 transition-colors duration-150 hover:bg-surface-muted"
-          >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-muted-foreground transition-colors duration-150 group-hover:bg-accent">
-              <IconBrandGithub className="size-4" />
-            </span>
-            <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
-              GitHub
+              CLI & MCP
             </span>
           </a>
         </div>

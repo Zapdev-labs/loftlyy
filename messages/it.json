@@ -229,6 +229,10 @@
       "description": "OnlyFans è una piattaforma di contenuti in abbonamento dove i creatori guadagnano direttamente dai loro fan tramite abbonamenti mensili, mance e contenuti pay-per-view. Fondata nel 2016, è cresciuta fino a superare i 4 milioni di creatori e 370 milioni di utenti, diventando una piattaforma di riferimento nella creator economy.",
       "philosophy": "L'identità di OnlyFans si basa su un logotipo pulito in due tonalità di blu che trasmette fiducia, accessibilità e modernità. Il gradiente dal blu chiaro al blu scuro simboleggia il legame tra i creatori e il loro pubblico, mentre l'estetica minimalista riflette l'impegno della piattaforma nel mettere i creatori al primo posto."
     },
+    "orchid": {
+      "description": "Orchid è un assistente esecutivo basato sull'IA che vive nel tuo iMessage. Ogni mattina ti invia un riepilogo, redige le tue risposte, prenota le tue riunioni e gestisce con discrezione il lavoro amministrativo collegandosi agli strumenti che usi già. Tu approvi e Orchid pensa al resto su web, iOS e macOS.",
+      "philosophy": "Calmo, caldo e silenziosamente capace. Orchid abbina una palette osso e inchiostro al geometrico TWK Lausanne e a un morbido segno a petalo d'orchidea per dare la sensazione di un assistente personale umano e discreto: presente quando serve, invisibile quando non serve."
+    },
     "openai": {
       "description": "OpenAI è un'azienda di ricerca e distribuzione sull'IA dedicata a garantire che l'intelligenza artificiale generale porti benefici a tutta l'umanità. Nota per aver creato GPT e ChatGPT, guida lo sviluppo di modelli linguistici di grandi dimensioni e sistemi di IA.",
       "philosophy": "Minimalista, autorevole e proiettata al futuro. Il rebranding di OpenAI del 2025 ha introdotto OpenAI Sans, un carattere esclusivo di ABC Dinamo, affiancato da una palette di grigi e blu che evoca apertura e possibilità — comunicando sofisticazione tecnologica con una sensibilità spiccatamente umana."
@@ -606,6 +610,10 @@
     "platform": "Piattaforma",
     "playlists": "Playlist",
     "podcasts": "Podcast",
+    "executive-assistant": "Assistente esecutivo",
+    "personal-assistant": "Assistente personale",
+    "imessage": "iMessage",
+    "ai-agent": "Agente IA",
     "productivity": "Produttività",
     "project-management": "Project management",
     "prototyping": "Prototipazione",

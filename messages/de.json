@@ -229,6 +229,10 @@
       "description": "OnlyFans ist eine abonnementbasierte Content-Plattform, auf der Creator direkt von ihren Fans durch monatliche Abonnements, Trinkgelder und Pay-per-View-Inhalte verdienen. 2016 gegründet, ist sie auf über 4 Millionen Creator und 370 Millionen Nutzer angewachsen und zu einer prägenden Plattform der Creator Economy geworden.",
       "philosophy": "Die Identität von OnlyFans basiert auf einem klaren, zweifarbigen blauen Schriftzug, der Vertrauen, Zugänglichkeit und Modernität vermittelt. Der Hell-zu-Dunkelblau-Verlauf symbolisiert die Verbindung zwischen Creatorn und ihrem Publikum, während die minimalistische Ästhetik den Fokus der Plattform auf die Creator widerspiegelt."
     },
+    "orchid": {
+      "description": "Orchid ist ein KI-Chefassistent, der in deinem iMessage lebt. Jeden Morgen schickt er dir eine Zusammenfassung, formuliert deine Antworten, plant deine Termine und erledigt unauffällig die administrative Routinearbeit, indem er sich mit den Tools verbindet, die du bereits nutzt. Du bestätigst, und Orchid übernimmt den Rest – im Web, auf iOS und macOS.",
+      "philosophy": "Ruhig, warm und unaufdringlich leistungsstark. Orchid verbindet eine Knochen-und-Tinte-Palette mit der geometrischen TWK Lausanne und einer sanften Orchideenblüten-Marke, um sich wie ein menschlicher, zurückhaltender persönlicher Assistent anzufühlen – präsent, wenn er gebraucht wird, unsichtbar, wenn nicht."
+    },
     "openai": {
       "description": "OpenAI ist ein KI-Forschungs- und Einsatzunternehmen, das sich dafür einsetzt, dass künstliche allgemeine Intelligenz der gesamten Menschheit zugutekommt. Bekannt für die Entwicklung von GPT und ChatGPT, führt es die Entwicklung großer Sprachmodelle und KI-Systeme an.",
       "philosophy": "Minimalistisch, autoritativ und zukunftsorientiert. Das Rebranding von OpenAI im Jahr 2025 führte OpenAI Sans ein — eine exklusive Schrift von ABC Dinamo — sowie eine Palette aus Grau- und Blautönen, die Offenheit und Möglichkeit evoziert. Die Identität vermittelt technologische Raffinesse und wirkt dabei zutiefst menschlich."
@@ -606,6 +610,10 @@
     "platform": "Plattform",
     "playlists": "Playlists",
     "podcasts": "Podcasts",
+    "executive-assistant": "Chefassistent",
+    "personal-assistant": "Persönlicher Assistent",
+    "imessage": "iMessage",
+    "ai-agent": "KI-Agent",
     "productivity": "Produktivität",
     "project-management": "Projektmanagement",
     "prototyping": "Prototyping",
