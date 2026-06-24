@@ -99,8 +99,11 @@ function AssetCard({
   span: "wide" | "normal"
 }) {
   const [copied, setCopied] = useState(false)
+  const [copiedSvg, setCopiedSvg] = useState(false)
   const t = useTranslations("brand")
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null)
+  const svgTimerRef = useRef<ReturnType<typeof setTimeout>>(null)
+  const svgMarkupRef = useRef<string | null>(null)
   const filename = `${brandName}-${asset.label}`
     .toLowerCase()
     .replace(WHITESPACE_RE, "-")
@@ -109,9 +112,27 @@ function AssetCard({
   useEffect(
     () => () => {
       if (timerRef.current) clearTimeout(timerRef.current)
+      if (svgTimerRef.current) clearTimeout(svgTimerRef.current)
     },
     []
   )
+
+  useEffect(() => {
+    if (!isSvg) return
+    let active = true
+    const src = asset.srcFull ?? asset.src
+    fetch(src)
+      .then((r) => r.text())
+      .then((markup) => {
+        if (active) svgMarkupRef.current = markup
+      })
+      .catch(() => {
+        if (active) svgMarkupRef.current = null
+      })
+    return () => {
+      active = false
+    }
+  }, [isSvg, asset.src, asset.srcFull])
 
   async function downloadAs(format: "svg" | "png") {
     const src = asset.srcFull ?? asset.src
@@ -149,6 +170,29 @@ function AssetCard({
     } catch {
       // clipboard write failed
     }
+  }
+
+  function flagCopiedSvg() {
+    setCopiedSvg(true)
+    if (svgTimerRef.current) clearTimeout(svgTimerRef.current)
+    svgTimerRef.current = setTimeout(() => setCopiedSvg(false), 1500)
+  }
+
+  function copySvg() {
+    const cached = svgMarkupRef.current
+    if (cached !== null) {
+      navigator.clipboard.writeText(cached).then(flagCopiedSvg).catch(() => {})
+      return
+    }
+    const src = asset.srcFull ?? asset.src
+    fetch(src)
+      .then((r) => r.text())
+      .then((markup) => {
+        svgMarkupRef.current = markup
+        return navigator.clipboard.writeText(markup)
+      })
+      .then(flagCopiedSvg)
+      .catch(() => {})
   }
 
   return (
@@ -209,6 +253,16 @@ function AssetCard({
             <DropdownMenuItem onClick={copyImage}>
               {copied ? t("copied") : t("copyImage")}
             </DropdownMenuItem>
+            {isSvg && (
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault()
+                  copySvg()
+                }}
+              >
+                {copiedSvg ? t("copied") : t("copySvg")}
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -244,6 +298,16 @@ function AssetCard({
             <DropdownMenuItem onClick={copyImage}>
               {copied ? t("copied") : t("copyImage")}
             </DropdownMenuItem>
+            {isSvg && (
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault()
+                  copySvg()
+                }}
+              >
+                {copiedSvg ? t("copied") : t("copySvg")}
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
