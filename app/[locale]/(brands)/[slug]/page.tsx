@@ -5,6 +5,7 @@ import { getAllBrands, getBrandBySlug } from "@/data/brands"
 import { routing } from "@/i18n/routing"
 import { BrandHeader } from "@/components/brand-header"
 import { BrandColors } from "@/components/brand-colors"
+import CarbonAds from "@/components/carbon-ad"
 import { BrandTypography } from "@/components/brand-typography"
 import {
   BrandStructuredData,
@@ -179,6 +180,7 @@ export default async function BrandPage({
         ]}
       />
       <FAQStructuredData questions={seo.faqQuestions} />
+      <CarbonAds />
       <BrandHeader
         brand={brand}
         translatedDescription={translatedDescription}

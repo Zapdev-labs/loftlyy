@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { getAllSidebarBrands } from "@/data/brands"
 import { AdvertiseSpots } from "@/components/advertise-dialog"
+import CarbonAds from "@/components/carbon-ad"
 import type { SidebarBrand } from "@/lib/types"
 
 export async function generateMetadata({
@@ -41,9 +42,13 @@ function BrandsLanding({ brands }: { brands: SidebarBrand[] }) {
   const t = useTranslations()
 
   return (
-    <div className="flex min-h-0 w-full flex-1 flex-col items-center overflow-hidden px-6 py-12 sm:px-10 sm:py-16">
+    <div className="relative flex min-h-0 w-full flex-1 flex-col items-center overflow-hidden px-6 py-12 sm:px-10 sm:py-16">
       <div className="hidden w-full max-w-4xl lg:block">
         <AdvertiseSpots />
+      </div>
+
+      <div className="absolute right-4 bottom-4 z-10 max-w-[calc(100vw-2rem)]">
+        <CarbonAds />
       </div>
 
       <div className="flex w-full flex-1 flex-col items-center justify-center">
