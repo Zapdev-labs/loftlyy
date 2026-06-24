@@ -22,6 +22,7 @@ import { discord } from "./discord"
 import { duolingo } from "./duolingo"
 import { elevenlabs } from "./elevenlabs"
 import { ethereum } from "./ethereum"
+import { facebook } from "./facebook"
 import { notra } from "./notra"
 import { notion } from "./notion"
 import { figma } from "./figma"
@@ -98,6 +99,7 @@ const rawBrands: Brand[] = [
   duolingo,
   elevenlabs,
   ethereum,
+  facebook,
   figma,
   github,
   interfere,
