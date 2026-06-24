@@ -67,7 +67,8 @@
     "typography": "타이포그래피",
     "viewGuidelines": "공식 브랜드 가이드라인 보기",
     "visitWebsite": "웹사이트 방문",
-    "compareBrand": "비교"
+    "compareBrand": "비교",
+    "copyMarkdown": ".md 복사"
   },
   "brands": {
     "21st": {

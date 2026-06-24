@@ -67,7 +67,8 @@
     "typography": "字体",
     "viewGuidelines": "查看官方品牌指南",
     "visitWebsite": "访问网站",
-    "compareBrand": "比较"
+    "compareBrand": "比较",
+    "copyMarkdown": "复制 .md"
   },
   "brands": {
     "21st": {

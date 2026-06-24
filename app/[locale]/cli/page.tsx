@@ -9,6 +9,7 @@ import {
   IconServer,
   IconTerminal,
   IconCpu,
+  IconMarkdown,
 } from "@tabler/icons-react"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
@@ -253,6 +254,51 @@ loftlyy list --source remote --base-url https://loftlyy.com
 # Force local file system scanning
 loftlyy list --source local`}
           />
+        </div>
+      </section>
+
+      <section className="mt-20 rounded-2xl bg-surface p-8 sm:p-10">
+        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-muted text-foreground">
+          <IconMarkdown size={24} stroke={1.5} />
+        </div>
+        <h2 className="mb-3 text-2xl font-semibold tracking-tight text-foreground">
+          Markdown for AI agents
+        </h2>
+        <p className="mb-6 max-w-2xl text-muted-foreground">
+          Append <code>.md</code> to any brand URL to get a clean, machine-readable
+          style reference — colors with hex values, a ready-to-paste CSS variables
+          block, typography, logo asset URLs, and usage guidelines. Drop it straight
+          into an AI coding or branding agent. Discover every brand&apos;s file via{" "}
+          <a
+            href="/llms.txt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-4 hover:no-underline"
+          >
+            /llms.txt
+          </a>
+          .
+        </p>
+        <div className="grid gap-6 md:grid-cols-2">
+          <CodeBlock
+            title="Browser"
+            code={`# View any brand as Markdown
+https://loftlyy.com/en/nike.md`}
+          />
+          <CodeBlock
+            title="Terminal"
+            code={`# Pipe a brand's style guide into an agent
+curl https://loftlyy.com/en/stripe.md`}
+          />
+        </div>
+        <div className="mt-6">
+          <Link
+            href="/nike.md"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity duration-150 hover:opacity-90"
+          >
+            <IconMarkdown size={16} stroke={1.5} />
+            View an example .md
+          </Link>
         </div>
       </section>
     </main>

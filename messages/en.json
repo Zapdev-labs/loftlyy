@@ -67,7 +67,8 @@
     "typography": "Typography",
     "viewGuidelines": "View official brand guidelines",
     "visitWebsite": "Visit Website",
-    "compareBrand": "Compare"
+    "compareBrand": "Compare",
+    "copyMarkdown": "Copy .md"
   },
   "brands": {
     "21st": {

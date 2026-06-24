@@ -4,6 +4,7 @@ import { IconArrowsShuffle2, IconExternalLink } from "@tabler/icons-react"
 import { Link } from "@/i18n/navigation"
 import { buildUtmUrl } from "@/lib/utils"
 import type { Brand } from "@/lib/types"
+import { CopyMarkdownButton } from "@/components/copy-markdown-button"
 
 export function BrandHeader({
   brand,
@@ -72,6 +73,7 @@ export function BrandHeader({
           <IconArrowsShuffle2 className="size-3" />
           <span>{t("compareBrand")}</span>
         </Link>
+        <CopyMarkdownButton slug={brand.slug} />
       </div>
     </section>
   )

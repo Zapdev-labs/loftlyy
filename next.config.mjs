@@ -31,6 +31,14 @@ const nextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: "/:locale/:slug.md",
+        destination: "/api/brand-md/:locale/:slug",
+      },
+    ]
+  },
 }
 
 export default withNextIntl(nextConfig)

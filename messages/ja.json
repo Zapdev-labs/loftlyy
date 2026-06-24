@@ -67,7 +67,8 @@
     "typography": "タイポグラフィ",
     "viewGuidelines": "公式ブランドガイドラインを見る",
     "visitWebsite": "ウェブサイトを訪問",
-    "compareBrand": "比較"
+    "compareBrand": "比較",
+    "copyMarkdown": ".md をコピー"
   },
   "brands": {
     "21st": {
