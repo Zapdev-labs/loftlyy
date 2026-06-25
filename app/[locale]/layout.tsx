@@ -10,6 +10,7 @@ import {
 import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
+import { ListCompanyButton } from "@/components/list-company-button"
 import { SiteStructuredData } from "@/components/structured-data"
 import { routing } from "@/i18n/routing"
 import { getStaticLocales } from "@/lib/static-params"
@@ -92,6 +93,7 @@ export default async function LocaleLayout({
         strategy="afterInteractive"
       />
       <div lang={locale}>
+        <ListCompanyButton />
         <NuqsAdapter>
           <NextIntlClientProvider
             key={locale}
