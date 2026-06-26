@@ -131,6 +131,10 @@
       "description": "Cluely ist ein KI-Overlay in Echtzeit, das Live-Antworten und Vorschläge bei Meetings, Vorstellungsgesprächen, Verkaufsgesprächen, beim Programmieren und Schreiben liefert. Entwickelt für entscheidende Momente, arbeitet es unsichtbar auf dem Bildschirm und wird von großen Sprachmodellen angetrieben, um Nutzern zu Höchstleistungen zu verhelfen.",
       "philosophy": "Sauber, professionell und leise selbstbewusst. Cluelys Identität verbindet sanfte Lavendeltöne mit tiefem Anthrazit und vermittelt Vertrauenswürdigkeit und Diskretion für ein Werkzeug, das bei wichtigen Gesprächen unsichtbar assistiert."
     },
+    "cred": {
+      "description": "CRED ist eine indische Fintech-Plattform, die als exklusiver Mitglieder-Club konzipiert ist und kreditwürdige Personen dafür belohnt, ihre Kreditkartenrechnungen pünktlich zu bezahlen. Gegründet von Kunal Shah, vereint die App Rechnungszahlungen, UPI, Bonitäts-Tracking und kuratierte Lifestyle-Prämien in einem Premium-Erlebnis nur auf Einladung. Ihre Identität setzt auf kompromisslosen Schwarz-Weiß-Minimalismus und das markante Garuda-Wappen.",
+      "philosophy": "Vertrauen belohnen. CRED versteht finanzielle Verantwortung als Privileg und verbindet zurückhaltenden Schwarz-Weiß-Minimalismus mit einer exklusiven Premium-Anmutung, die das Bezahlen von Rechnungen erstrebenswert statt alltäglich wirken lässt."
+    },
     "coca-cola": {
       "description": "Coca-Cola ist das weltweit bekannteste Erfrischungsgetränk, das 1886 von Dr. John Pemberton in Atlanta, Georgia, kreiert wurde und heute in mehr als 200 Ländern und Gebieten verkauft wird. The Coca-Cola Company liefert täglich über 2,2 Milliarden Getränkeportionen über ein Portfolio von mehr als 200 Marken durch sein globales Netzwerk von Abfüllpartnern. Seine ikonische Konturfl asche, der Schriftzug in Spencerianischer Schrift und das charakteristische Rot gehören zu den am häufigsten reproduzierten visuellen Elementen der Wirtschaftsgeschichte.",
       "philosophy": "Das Ziel von Coca-Cola ist es, die Welt zu erfrischen und einen Unterschied zu machen — eine Philosophie, die das schlichte Vergnügen eines eiskalten Getränks mit der Überzeugung verbindet, dass kleine Momente des Glücks kollektive globale Wirkung haben. Die Marke verdient ihren Ikonenstatus durch unerschütterliche Konsistenz, Freude und kulturelle Relevanz in jedem Markt, den sie berührt."
@@ -162,6 +166,10 @@
     "figma": {
       "description": "Figma ist ein kollaboratives Interface-Design-Tool, das es Teams ermöglicht, Produkte gemeinsam in Echtzeit zu entwerfen, zu prototypen und zu entwickeln. Als unabhängiges Unternehmen mit Sitz in San Francisco ist Figma zum Industriestandard für UI/UX-Design geworden.",
       "philosophy": "Figmas Identität feiert die kollaborative und kreative Natur des Designs durch ein lebhaftes, mehrfarbiges Logo, das die vielfältigen Werkzeuge und Perspektiven repräsentiert, die im Designprozess zusammenkommen."
+    },
+    "framer": {
+      "description": "Framer ist ein KI-gestützter Website-Baukasten, mit dem Designer und Teams professionelle, responsive Websites ohne Code erstellen, verwalten und veröffentlichen können. 2014 in Amsterdam von Koen Bok und Jorn van Dijk gegründet, entwickelte es sich von einem Design-Prototyping-Tool zu einer vollständigen Publishing-Plattform mit freiem Canvas, CMS und Hochleistungs-Hosting.",
+      "philosophy": "Markant, geometrisch und designorientiert. Framers Identität dreht sich um die dreieckige blaue Bildmarke und eine selbstbewusste elektrisch-blaue Palette und steht für ein Werkzeug, das Designern volle kreative Freiheit gibt – klar, modern und unverkennbar sorgfältig gestaltet."
     },
     "github": {
       "description": "GitHub ist die weltweit führende Softwareentwicklungsplattform und bietet cloudbasiertes Git-Repository-Hosting, Kollaborationstools und CI/CD-Workflows. GitHub wurde 2008 gegründet und 2018 von Microsoft übernommen. Die Plattform ist Heimat von über 100 Millionen Entwicklern und treibt das Open-Source-Ökosystem an.",
@@ -214,6 +222,10 @@
     "nike": {
       "description": "Nike ist die weltweit führende Sportbekleidungsmarke und entwirft sowie verkauft Sportschuhe, Bekleidung und Ausrüstung für Athleten auf allen Ebenen. 1964 als Blue Ribbon Sports gegründet und 1971 umbenannt, hat Nike ein globales Imperium auf der Überzeugung aufgebaut, dass jeder, der einen Körper hat, ein Athlet ist.",
       "philosophy": "Just Do It. Nikes Identität ist im Swoosh verankert — einem der bekanntesten Symbole der Welt — der Bewegung, Geschwindigkeit und sportliche Aspiration verkörpert. Die klare Schwarz-Weiß-Palette beseitigt Ablenkungen und lässt Leistung und Zweck für sich selbst sprechen."
+    },
+    "nothing": {
+      "description": "Nothing ist ein in London ansässiges Unternehmen für Unterhaltungselektronik, gegründet von Carl Pei, das Smartphones, Kopfhörer und Audioprodukte mit transparentem Gehäuse und der charakteristischen Glyph-LED-Schnittstelle entwirft. Die Marke verbindet eine reduzierte, designorientierte Philosophie mit einer unverwechselbaren retro-digitalen Bildsprache, die von der Computertechnik der 1980er inspiriert ist.",
+      "philosophy": "Reduziert, transparent und unverkennbar digital. Nothing baut seine Identität auf einem Punktmatrix-Schriftsystem und durchsichtiger Hardware auf und verwandelt Zurückhaltung und die Nostalgie der 80er-Jahre-Computertechnik in ein selbstbewusstes, designorientiertes Statement."
     },
     "notion": {
       "description": "Notion ist ein All-in-One-Arbeitsbereich, der Notizen, Dokumente, Wikis, Projektmanagement und Datenbanken in einer einzigen vernetzten Plattform vereint. 2013 in San Francisco gegründet, ermöglicht Notion Teams und Einzelpersonen, ihre Arbeitsabläufe mit modularen Bausteinen anzupassen.",
@@ -278,6 +290,10 @@
     "reddit": {
       "description": "Reddit ist eine soziale Nachrichtenaggregations- und Diskussionsplattform, die in Gemeinschaften namens Subreddits organisiert ist. Nutzer teilen Inhalte, stimmen über Beiträge und Kommentare ab und nehmen an Gesprächen teil, die praktisch jedes Thema abdecken. Reddit beschreibt sich selbst als 'die Startseite des Internets.'",
       "philosophy": "Gemeinschaftsorientiert und zugänglich. Reddits Identität konzentriert sich auf das Snoo-Maskottchen und die Orangered-Farbe und verbindet Verspieltheit mit der Rolle der Plattform als ernsthafter Knotenpunkt für authentische Gespräche und Entdeckungen."
+    },
+    "replit": {
+      "description": "Replit ist eine KI-gestützte Softwareentwicklungsplattform, mit der jeder Full-Stack-Web- und Mobil-Apps aus einem einzigen Browser-Tab erstellen, bereitstellen und hosten kann. Der Agent verwandelt Anweisungen in natürlicher Sprache in produktionsreifen Code und übernimmt die Infrastruktur wie Datenbanken, Authentifizierung und Hosting. 2016 von Amjad Masad, Haya Odeh und Faris Masad gegründet, will Replit die nächste Milliarde Software-Schaffender befähigen.",
+      "philosophy": "Warm, verspielt und auf Macher ausgerichtet. Replits Identität verbindet ein energiegeladenes Orange mit der weichen, blockigen Drei-Quadrat-Bildmarke und der scharfen, zugleich freundlichen Grotesk Diatype – ein kreatives Werkzeug, das ernsthafte Software für alle zugänglich macht."
     },
     "samsung": {
       "description": "Samsung ist ein weltweit führendes Technologieunternehmen in den Bereichen Unterhaltungselektronik, Mobilgeräte, Halbleiter und Displays. Samsung Electronics wurde 1969 in Südkorea gegründet und hat sich zu einem der wertvollsten Unternehmen der Welt entwickelt, das Innovation bei Smartphones, Fernsehern, Speicherchips und Haushaltsgeräten vorantreibt.",
@@ -374,6 +390,14 @@
     "zoom": {
       "description": "Zoom ist eine Kommunikationsplattform, die Teams mit Videokonferenzen, Chat, Telefonie und Kollaborationstools zusammenbringt. 2011 gegründet, wurde Zoom zur weltweit führenden Plattform für virtuelle Kommunikation und bedient Hunderte Millionen Nutzer in Unternehmen, Schulen und persönlichen Verbindungen.",
       "philosophy": "Zooms Identität basiert auf Einfachheit und Verbindung, mit einem markanten blauen Schriftzug, der Vertrauen und Klarheit vermittelt. Das Rebranding 2022 führte die maßgeschneiderten Schriften Happy Display und Almaden Sans ein und entwickelte Zoom von einer Video-App zu einer einheitlichen Kommunikationsplattform. 2024 strich das Unternehmen „Video” aus seinem offiziellen Namen — und heißt seither Zoom Communications Inc. — ein Ausdruck des KI-getriebenen, produktübergreifenden Anspruchs."
+    },
+    "posthog": {
+      "description": "PostHog ist eine Open-Source-Plattform für Produktanalyse, die Produktanalyse, Session-Replay, Feature Flags, A/B-Tests und Umfragen in einer einzigen, für Entwickler gebauten Suite vereint. 2020 von James Hawkins und Tim Glaser gegründet und von Y Combinator unterstützt, können Teams die Software selbst hosten oder in der Cloud nutzen, um zu verstehen, wie ihre Produkte genutzt werden, und bessere Software zu liefern. PostHog ist für seinen entwicklerorientierten Ansatz und seine unverwechselbare, freche Igel-Marke bekannt.",
+      "philosophy": "Handgemacht, etwas schräg und unverkennbar menschlich. Die Identität von PostHog lehnt die polierte Gleichförmigkeit von Konzernen ab und setzt stattdessen auf eigene Igel-Illustrationen, eine bewusst begrenzte Palette rund um sein charakteristisches Rot-Orange und eine verspielte, freche Stimme — der Maßstab ist, dass es sich selbst ohne Logo noch nach PostHog anfühlt."
+    },
+    "webflow": {
+      "description": "Webflow ist ein visueller Website-Builder, mit dem Designer und Teams responsive, produktionsreife Websites ohne Programmierung gestalten, erstellen und veröffentlichen können. 2013 von Vlad Magdalin, Sergie Magdalin und Bryant Chou gegründet, verbindet die Plattform eine freie visuelle Arbeitsfläche mit einem integrierten CMS, Hosting und Interaktionen, um Kreativen die volle Kontrolle über das Web zu geben.",
+      "philosophy": "Einprägsam, kohärent und konsistent. Die Identität von Webflow basiert auf ihrem geometrischen W-Zeichen – drei Formen, die die drei Säulen des Webs (HTML, CSS und JavaScript) darstellen – kombiniert mit einer selbstbewussten Palette aus Blau, Schwarz und Weiß, die auf Zurückhaltung setzt und zugleich kräftigen Sekundärfarben Persönlichkeit verleiht."
     }
   },
   "browseBy": {
@@ -667,7 +691,16 @@
     "wallet": "Wallet",
     "web3": "Web3",
     "workplace": "Arbeitsplatz",
-    "workspace": "Arbeitsbereich"
+    "workspace": "Arbeitsbereich",
+    "product-analytics": "Produktanalyse",
+    "analytics": "Analytik",
+    "session-replay": "Session-Replay",
+    "feature-flags": "Feature Flags",
+    "website-builder": "Website-Builder",
+    "web-design": "Webdesign",
+    "cms": "CMS",
+    "credit-cards": "Kreditkarten",
+    "rewards": "Prämien"
   },
   "typographyPage": {
     "description": "Erkunde {count} Marken mit {style}-Schriften",

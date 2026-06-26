@@ -131,6 +131,10 @@
       "description": "Cluely is a real-time AI overlay that provides live answers and suggestions across meetings, interviews, sales calls, coding, and writing. Built for high-stakes moments, it operates invisibly on screen and is powered by large language models to help users perform at their best.",
       "philosophy": "Clean, professional, and quietly confident. Cluely's identity pairs soft lavender tones with deep charcoal, projecting trustworthiness and discretion for a tool designed to assist invisibly during high-stakes conversations."
     },
+    "cred": {
+      "description": "CRED is an Indian fintech platform built as a members-only club that rewards creditworthy individuals for paying their credit card bills on time. Founded by Kunal Shah, the app combines bill payments, UPI, credit tracking, and curated lifestyle rewards behind a premium, invite-led experience. Its identity leans on stark black-and-white minimalism and the distinctive garuda shield mark.",
+      "philosophy": "Reward trust. CRED frames financial responsibility as a privilege, pairing restrained black-and-white minimalism with a premium, members-only sensibility that makes paying bills feel aspirational rather than mundane."
+    },
     "coca-cola": {
       "description": "Coca-Cola is the world's most recognized sparkling beverage, created in 1886 by Dr. John Pemberton in Atlanta, Georgia, and now sold in more than 200 countries and territories. The Coca-Cola Company delivers over 2.2 billion drink servings daily across a portfolio of 200+ brands through its global network of bottling partners. Its iconic contour bottle, Spencerian-script wordmark, and signature red are among the most reproduced visual assets in commercial history.",
       "philosophy": "Coca-Cola's purpose is to refresh the world and make a difference — a philosophy that fuses the simple pleasure of an ice-cold drink with the belief that small moments of happiness have collective global impact. The brand earns its iconic status through unwavering consistency, joy, and cultural relevance across every market it touches."
@@ -162,6 +166,10 @@
     "figma": {
       "description": "Figma is a collaborative interface design tool that enables teams to design, prototype, and develop products together in real time. An independent company headquartered in San Francisco, Figma has become the industry standard for UI/UX design, replacing traditional desktop tools with a browser-based platform.",
       "philosophy": "Figma's identity celebrates the collaborative and creative nature of design through a vibrant, multi-colored logo that represents the diverse tools and perspectives that come together in the design process."
+    },
+    "framer": {
+      "description": "Framer is an AI-powered website builder that lets designers and teams create, manage, and publish professional, responsive sites without writing code. Founded in Amsterdam in 2014 by Koen Bok and Jorn van Dijk, it evolved from a design prototyping tool into a full publishing platform combining a freeform canvas, CMS, and high-performance hosting.",
+      "philosophy": "Bold, geometric, and design-led. Framer's identity centers on its triangular blue mark and a confident electric-blue palette, signalling a tool that gives designers total creative freedom while keeping things sharp, modern, and unmistakably crafted."
     },
     "github": {
       "description": "GitHub is the world's leading software development platform, providing cloud-based Git repository hosting, collaboration tools, and CI/CD workflows. Founded in 2008 and acquired by Microsoft in 2018, GitHub is home to over 100 million developers and powers the open-source ecosystem.",
@@ -214,6 +222,10 @@
     "nike": {
       "description": "Nike is the world's leading sportswear brand, designing and selling athletic footwear, apparel, and equipment for athletes at every level. Founded in 1964 as Blue Ribbon Sports and rebranded in 1971, Nike has built a global empire on the belief that if you have a body, you are an athlete — producing iconic products and campaigns that blend performance engineering with cultural relevance.",
       "philosophy": "Just Do It. Nike's identity is anchored by the Swoosh — one of the most recognized symbols on earth — embodying motion, speed, and athletic aspiration. The stark black-and-white palette strips away distraction, letting performance and purpose speak for themselves."
+    },
+    "nothing": {
+      "description": "Nothing is a London-based consumer technology company founded by Carl Pei that designs smartphones, earbuds, and audio products defined by transparent hardware and the signature Glyph LED interface. The brand pairs a stripped-back, design-led philosophy with a distinctive retro-digital visual identity inspired by 1980s computing.",
+      "philosophy": "Stripped back, transparent, and unmistakably digital. Nothing builds its identity around a dot-matrix typographic system and see-through hardware, turning restraint and 1980s computing nostalgia into a confident, design-first statement."
     },
     "notion": {
       "description": "Notion is an all-in-one workspace that combines notes, docs, wikis, project management, and databases into a single connected platform. Founded in 2013 in San Francisco, Notion empowers teams and individuals to customize their workflows using modular building blocks.",
@@ -274,6 +286,10 @@
     "reddit": {
       "description": "Reddit is a social news aggregation and discussion platform organized into communities called subreddits. Users share content, vote on posts and comments, and participate in conversations spanning virtually every topic. Reddit describes itself as 'the front page of the internet.'",
       "philosophy": "Community-first and accessible. Reddit's identity centers on the Snoo mascot and Orangered color, balancing playfulness with the platform's role as a serious hub for authentic conversation and discovery."
+    },
+    "replit": {
+      "description": "Replit is an AI-powered software development platform that lets anyone build, deploy, and host full-stack web and mobile apps from a single browser tab. Its Agent turns natural-language prompts into production-ready code and handles infrastructure like databases, auth, and hosting. Founded in 2016 by Amjad Masad, Haya Odeh, and Faris Masad, it aims to empower the next billion software creators.",
+      "philosophy": "Warm, playful, and builder-first. Replit's identity pairs an energetic orange with the soft, blocky three-square logomark and the sharp-yet-friendly Diatype grotesque, signalling a creative tool that makes serious software feel approachable to everyone."
     },
     "samsung": {
       "description": "Samsung is a global technology leader spanning consumer electronics, mobile devices, semiconductors, and displays. Founded in 1969 in South Korea, Samsung Electronics has grown into one of the world's most valuable companies, driving innovation across smartphones, TVs, memory chips, and home appliances.",
@@ -374,6 +390,14 @@
     "phantom": {
       "description": "Phantom is a multichain crypto wallet designed to make cryptocurrency safe and easy-to-use for everyone. Founded in 2021 by Brandon Millman, Chris Kalani, and Francesco Agosti, Phantom supports Solana, Ethereum, Bitcoin, Base, Polygon, and Sui, serving over 20 million users with an intuitive interface for managing digital assets, NFTs, and DeFi.",
       "philosophy": "Phantom's identity centers on making crypto accessible and friendly for everyone. The signature ghost mascot and vibrant purple palette convey approachability in a space often perceived as complex, while the custom F37-designed typeface reinforces confidence and clarity across every touchpoint."
+    },
+    "posthog": {
+      "description": "PostHog is an open-source product analytics platform that bundles product analytics, session replay, feature flags, A/B testing, and surveys into a single suite built for engineers. Founded in 2020 by James Hawkins and Tim Glaser and backed by Y Combinator, it lets teams self-host or use the cloud to understand how people use their products and ship better software. PostHog is known for its developer-first approach and its distinctive, irreverent hedgehog-led brand.",
+      "philosophy": "Handcrafted, slightly weird, and unmistakably human. PostHog's identity rejects polished corporate sameness in favor of custom hedgehog illustrations, a deliberately limited palette anchored by its signature red-orange, and a playful, irreverent voice — the guiding test being that even with the logo removed, it should still feel like PostHog."
+    },
+    "webflow": {
+      "description": "Webflow is a visual website builder that lets designers and teams design, build, and launch responsive, production-ready websites without writing code. Founded in 2013 by Vlad Magdalin, Sergie Magdalin, and Bryant Chou, it combines a freeform visual canvas with a built-in CMS, hosting, and interactions to give creators full control over the web.",
+      "philosophy": "Memorable, coherent, and consistent. Webflow's identity centers on its geometric W mark — three shapes representing the three pillars of the web (HTML, CSS, and JavaScript) — paired with a confident blue, black, and white palette that leads with restraint while letting punchy secondary colors add personality."
     }
   },
   "browseBy": {
@@ -667,7 +691,16 @@
     "workspace": "Workspace",
     "answer-engine": "Answer Engine",
     "wallet": "Wallet",
-    "multichain": "Multichain"
+    "multichain": "Multichain",
+    "product-analytics": "Product Analytics",
+    "analytics": "Analytics",
+    "session-replay": "Session Replay",
+    "feature-flags": "Feature Flags",
+    "website-builder": "Website Builder",
+    "web-design": "Web Design",
+    "cms": "CMS",
+    "credit-cards": "Credit Cards",
+    "rewards": "Rewards"
   },
   "typographyPage": {
     "description": "Explore {count} brands that use {style} fonts in their identity",

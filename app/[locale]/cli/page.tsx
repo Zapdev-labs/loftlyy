@@ -265,10 +265,11 @@ loftlyy list --source local`}
           Markdown for AI agents
         </h2>
         <p className="mb-6 max-w-2xl text-muted-foreground">
-          Append <code>.md</code> to any brand URL to get a clean, machine-readable
-          style reference — colors with hex values, a ready-to-paste CSS variables
-          block, typography, logo asset URLs, and usage guidelines. Drop it straight
-          into an AI coding or branding agent. Discover every brand&apos;s file via{" "}
+          Append <code>.md</code> to any brand URL to get a clean,
+          machine-readable style reference — colors with hex values, a
+          ready-to-paste CSS variables block, typography, logo asset URLs, and
+          usage guidelines. Drop it straight into an AI coding or branding
+          agent. Discover every brand&apos;s file via{" "}
           <a
             href="/llms.txt"
             target="_blank"

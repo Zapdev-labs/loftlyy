@@ -64,7 +64,7 @@ export function SimilarBrands({ brands }: { brands: SimilarBrandCard[] }) {
           role="region"
           aria-label={t("similarBrands")}
           tabIndex={0}
-          className="scrollbar-none flex gap-3 overflow-x-auto px-6 pb-2 focus-visible:outline-2 focus-visible:outline-ring sm:px-10"
+          className="flex scrollbar-none gap-3 overflow-x-auto px-6 pb-2 focus-visible:outline-2 focus-visible:outline-ring sm:px-10"
           style={{ scrollbarWidth: "none" }}
         >
           {brands.map((brand) => (

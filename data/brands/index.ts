@@ -16,6 +16,7 @@ import { clerk } from "./clerk"
 import { cloudflare } from "./cloudflare"
 import { cocaCola } from "./coca-cola"
 import { cluely } from "./cluely"
+import { cred } from "./cred"
 import { cursor } from "./cursor"
 import { apple } from "./apple"
 import { discord } from "./discord"
@@ -23,7 +24,9 @@ import { duolingo } from "./duolingo"
 import { elevenlabs } from "./elevenlabs"
 import { ethereum } from "./ethereum"
 import { facebook } from "./facebook"
+import { framer } from "./framer"
 import { notra } from "./notra"
+import { nothing } from "./nothing"
 import { notion } from "./notion"
 import { figma } from "./figma"
 import { github } from "./github"
@@ -45,6 +48,7 @@ import { orchid } from "./orchid"
 import { openai } from "./openai"
 import { planetscale } from "./planetscale"
 import { polar } from "./polar"
+import { posthog } from "./posthog"
 import { pumpFun } from "./pump-fun"
 import { railway } from "./railway"
 import { raycast } from "./raycast"
@@ -52,6 +56,7 @@ import { phantom } from "./phantom"
 import { perplexity } from "./perplexity"
 import { pinterest } from "./pinterest"
 import { reddit } from "./reddit"
+import { replit } from "./replit"
 import { samsung } from "./samsung"
 import { scira } from "./scira"
 import { spotify } from "./spotify"
@@ -63,6 +68,7 @@ import { stripe } from "./stripe"
 import { supabase } from "./supabase"
 import { vercel } from "./vercel"
 import { vscode } from "./vscode"
+import { webflow } from "./webflow"
 import { tesla } from "./tesla"
 import { toyota } from "./toyota"
 import { tiktok } from "./tiktok"
@@ -94,12 +100,14 @@ const rawBrands: Brand[] = [
   cloudflare,
   apple,
   cluely,
+  cred,
   cursor,
   discord,
   duolingo,
   elevenlabs,
   ethereum,
   facebook,
+  framer,
   figma,
   github,
   interfere,
@@ -115,6 +123,7 @@ const rawBrands: Brand[] = [
   nike,
   nvidia,
   notra,
+  nothing,
   notion,
   obsidian,
   onlyfans,
@@ -122,6 +131,7 @@ const rawBrands: Brand[] = [
   openai,
   planetscale,
   polar,
+  posthog,
   pumpFun,
   railway,
   raycast,
@@ -129,6 +139,7 @@ const rawBrands: Brand[] = [
   perplexity,
   pinterest,
   reddit,
+  replit,
   samsung,
   scira,
   spotify,
@@ -147,6 +158,7 @@ const rawBrands: Brand[] = [
   uniswap,
   vercel,
   vscode,
+  webflow,
   cocaCola,
   mcdonalds,
   starbucks,

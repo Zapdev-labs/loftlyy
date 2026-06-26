@@ -181,7 +181,10 @@ function AssetCard({
   function copySvg() {
     const cached = svgMarkupRef.current
     if (cached !== null) {
-      navigator.clipboard.writeText(cached).then(flagCopiedSvg).catch(() => {})
+      navigator.clipboard
+        .writeText(cached)
+        .then(flagCopiedSvg)
+        .catch(() => {})
       return
     }
     const src = asset.srcFull ?? asset.src

@@ -7,8 +7,19 @@ export const facebook: Brand = {
     "Facebook is the world's largest social network, connecting billions of people to share updates, photos, and messages, join communities, and discover content. Launched in 2004 by Mark Zuckerberg and his Harvard roommates, it grew from a college directory into a global platform and the flagship product of Meta. Its instantly recognizable blue 'f' is one of the most ubiquitous logos on the internet.",
   url: "https://facebook.com",
   industry: "social-media",
-  categories: ["social-media", "technology", "wordmark-logos", "geometric-logos"],
-  tags: ["social-network", "messaging", "community", "advertising", "marketplace"],
+  categories: [
+    "social-media",
+    "technology",
+    "wordmark-logos",
+    "geometric-logos",
+  ],
+  tags: [
+    "social-network",
+    "messaging",
+    "community",
+    "advertising",
+    "marketplace",
+  ],
   colors: [
     {
       name: "Facebook Blue",
@@ -18,7 +29,8 @@ export const facebook: Brand = {
     {
       name: "Vivid Blue",
       hex: "#0866FF",
-      usage: "Refreshed 2023 accent blue used for emphasis and interactive states.",
+      usage:
+        "Refreshed 2023 accent blue used for emphasis and interactive states.",
     },
     {
       name: "Black",

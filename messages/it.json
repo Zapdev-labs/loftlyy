@@ -131,6 +131,10 @@
       "description": "Cluely è un overlay AI in tempo reale che fornisce risposte e suggerimenti dal vivo durante riunioni, colloqui, chiamate di vendita, programmazione e scrittura. Progettato per i momenti cruciali, opera in modo invisibile sullo schermo ed è alimentato da modelli linguistici avanzati per aiutare gli utenti a dare il meglio di sé.",
       "philosophy": "Pulito, professionale e discretamente sicuro. L'identità di Cluely abbina toni lavanda morbidi con carbone profondo, proiettando affidabilità e discrezione per uno strumento progettato per assistere invisibilmente durante conversazioni importanti."
     },
+    "cred": {
+      "description": "CRED è una piattaforma fintech indiana pensata come un club riservato ai soci che premia le persone affidabili che pagano puntualmente le bollette della carta di credito. Fondata da Kunal Shah, l'app riunisce pagamento delle bollette, UPI, monitoraggio del credito e premi lifestyle selezionati in un'esperienza premium su invito. La sua identità si basa su un minimalismo deciso in bianco e nero e sull'inconfondibile emblema del garuda.",
+      "philosophy": "Premiare la fiducia. CRED interpreta la responsabilità finanziaria come un privilegio, unendo un minimalismo sobrio in bianco e nero a una sensibilità premium ed esclusiva che rende il pagamento delle bollette aspirazionale anziché banale."
+    },
     "coca-cola": {
       "description": "Coca-Cola è la bevanda gassata più riconosciuta al mondo, creata nel 1886 dal Dr. John Pemberton ad Atlanta, in Georgia, e ora venduta in più di 200 paesi e territori. The Coca-Cola Company distribuisce oltre 2,2 miliardi di porzioni di bevande al giorno attraverso un portafoglio di oltre 200 marchi tramite la sua rete globale di partner imbottigliatori. La sua iconica bottiglia sagomata, il wordmark in scrittura Spenceriana e il rosso caratteristico figurano tra gli asset visivi più riprodotti nella storia commerciale.",
       "philosophy": "Lo scopo di Coca-Cola è di rinfrescare il mondo e fare la differenza — una filosofia che fonde il semplice piacere di una bevanda ghiacciata con la convinzione che i piccoli momenti di felicità abbiano un impatto globale collettivo. Il marchio guadagna il suo status iconico attraverso una coerenza incrollabile, la gioia e la rilevanza culturale in ogni mercato che tocca."
@@ -162,6 +166,10 @@
     "figma": {
       "description": "Figma è uno strumento collaborativo per il design di interfacce che permette ai team di progettare, prototipare e sviluppare prodotti insieme in tempo reale. Azienda indipendente con sede a San Francisco, Figma è diventata lo standard del settore per il design UI/UX.",
       "philosophy": "L'identità di Figma celebra la natura collaborativa e creativa del design attraverso un logo vivace e multicolore che rappresenta i diversi strumenti e punti di vista che si incontrano nel processo progettuale."
+    },
+    "framer": {
+      "description": "Framer è un website builder basato sull'IA che consente a designer e team di creare, gestire e pubblicare siti professionali e responsive senza scrivere codice. Fondata ad Amsterdam nel 2014 da Koen Bok e Jorn van Dijk, è passata da strumento di prototipazione del design a una piattaforma di pubblicazione completa che unisce un canvas libero, un CMS e un hosting ad alte prestazioni.",
+      "philosophy": "Audace, geometrica e orientata al design. L'identità di Framer ruota attorno al suo marchio triangolare blu e a una decisa palette di blu elettrico, evocando uno strumento che offre ai designer totale libertà creativa restando nitido, moderno e inconfondibilmente curato."
     },
     "github": {
       "description": "GitHub è la piattaforma leader mondiale per lo sviluppo software, con hosting cloud di repository Git, strumenti di collaborazione e workflow CI/CD. Fondata nel 2008 e acquisita da Microsoft nel 2018, GitHub ospita oltre 100 milioni di sviluppatori e alimenta l'ecosistema open source.",
@@ -214,6 +222,10 @@
     "nike": {
       "description": "Nike è il principale marchio di abbigliamento sportivo al mondo, che progetta e vende calzature atletiche, abbigliamento e attrezzature per atleti di ogni livello. Fondata nel 1964 come Blue Ribbon Sports e rinominata nel 1971, Nike ha costruito un impero globale sulla convinzione che se hai un corpo, sei un atleta.",
       "philosophy": "Just Do It. L'identità di Nike è ancorata allo Swoosh — uno dei simboli più riconosciuti al mondo — che incarna movimento, velocità e aspirazione atletica. La palette bianco e nero elimina le distrazioni, lasciando che performance e scopo parlino da soli."
+    },
+    "nothing": {
+      "description": "Nothing è un'azienda di tecnologia di consumo con sede a Londra, fondata da Carl Pei, che progetta smartphone, auricolari e prodotti audio caratterizzati da hardware trasparente e dalla caratteristica interfaccia LED Glyph. Il marchio unisce una filosofia essenziale e incentrata sul design a un'identità visiva retro-digitale distintiva, ispirata all'informatica degli anni '80.",
+      "philosophy": "Essenziale, trasparente e inconfondibilmente digitale. Nothing costruisce la propria identità attorno a un sistema tipografico a matrice di punti e a un hardware traslucido, trasformando la sobrietà e la nostalgia per l'informatica degli anni '80 in una dichiarazione sicura e orientata al design."
     },
     "notion": {
       "description": "Notion è uno spazio di lavoro all in one che combina note, documenti, wiki, project management e database in un'unica piattaforma connessa. Fondata nel 2013 a San Francisco, permette a team e individui di personalizzare i propri flussi di lavoro con blocchi modulari.",
@@ -278,6 +290,10 @@
     "reddit": {
       "description": "Reddit è una piattaforma di aggregazione di notizie sociali e discussione organizzata in comunità chiamate subreddit. Gli utenti condividono contenuti, votano post e commenti e partecipano a conversazioni che coprono praticamente ogni argomento. Reddit si descrive come 'la prima pagina di internet.'",
       "philosophy": "Incentrato sulla comunità e accessibile. L'identità di Reddit è centrata sulla mascotte Snoo e sul colore Orangered, bilanciando la giocosità con il ruolo della piattaforma come hub serio per conversazioni e scoperte autentiche."
+    },
+    "replit": {
+      "description": "Replit è una piattaforma di sviluppo software basata sull'IA che consente a chiunque di creare, distribuire e ospitare app web e mobile full-stack da una singola scheda del browser. Il suo Agent trasforma le istruzioni in linguaggio naturale in codice pronto per la produzione e gestisce l'infrastruttura come database, autenticazione e hosting. Fondata nel 2016 da Amjad Masad, Haya Odeh e Faris Masad, punta a dare potere al prossimo miliardo di creatori di software.",
+      "philosophy": "Calda, giocosa e pensata per chi crea. L'identità di Replit unisce un arancione energico al morbido logo a tre quadrati e al grottesco Diatype, nitido ma amichevole, evocando uno strumento creativo che rende il software serio accessibile a tutti."
     },
     "samsung": {
       "description": "Samsung è un leader tecnologico globale nell'elettronica di consumo, dispositivi mobili, semiconduttori e display. Fondata nel 1969 in Corea del Sud, Samsung Electronics è diventata una delle aziende di maggior valore al mondo, guidando l'innovazione in smartphone, televisori, chip di memoria ed elettrodomestici.",
@@ -374,6 +390,14 @@
     "zoom": {
       "description": "Zoom è una piattaforma di comunicazione che riunisce i team con videoconferenze, chat, telefono e strumenti di collaborazione. Fondata nel 2011, Zoom è diventata la piattaforma di riferimento mondiale per la comunicazione virtuale, servendo centinaia di milioni di utenti tra aziende, scuole e connessioni personali.",
       "philosophy": "L'identità di Zoom si basa sulla semplicità e la connessione, utilizzando un logotipo blu audace che trasmette fiducia e chiarezza. Il rebranding del 2022 ha introdotto i caratteri personalizzati Happy Display e Almaden Sans, trasformando Zoom da un'app video in una piattaforma di comunicazione unificata. Nel 2024 l'azienda ha rimosso «Video» dalla propria ragione sociale — diventando Zoom Communications Inc. — a riflettere la sua ambizione multi-prodotto guidata dall'IA."
+    },
+    "posthog": {
+      "description": "PostHog è una piattaforma open source di analisi di prodotto che riunisce analisi di prodotto, replay delle sessioni, feature flags, test A/B e sondaggi in un'unica suite pensata per gli ingegneri. Fondata nel 2020 da James Hawkins e Tim Glaser e supportata da Y Combinator, consente ai team di fare self-hosting o usare il cloud per capire come vengono usati i loro prodotti e creare software migliore. PostHog è nota per il suo approccio orientato agli sviluppatori e per il suo brand irriverente con protagonista un riccio.",
+      "philosophy": "Artigianale, un po' bizzarra e inconfondibilmente umana. L'identità di PostHog rifiuta l'uniformità aziendale levigata a favore di illustrazioni personalizzate di ricci, di una palette volutamente limitata incentrata sul suo caratteristico rosso-arancio e di una voce giocosa e irriverente — il criterio è che, anche senza logo, debba comunque sembrare PostHog."
+    },
+    "webflow": {
+      "description": "Webflow è un costruttore visivo di siti web che consente a designer e team di progettare, creare e pubblicare siti responsivi e pronti per la produzione senza scrivere codice. Fondata nel 2013 da Vlad Magdalin, Sergie Magdalin e Bryant Chou, combina una tela visiva libera con un CMS integrato, hosting e interazioni per offrire ai creatori il pieno controllo sul web.",
+      "philosophy": "Memorabile, coerente e uniforme. L'identità di Webflow ruota attorno al suo marchio geometrico a forma di W — tre forme che rappresentano i tre pilastri del web (HTML, CSS e JavaScript) — abbinato a una sicura palette di blu, nero e bianco che punta sulla sobrietà lasciando che vivaci colori secondari aggiungano personalità."
     }
   },
   "browseBy": {
@@ -667,7 +691,16 @@
     "wallet": "Portafoglio",
     "web3": "Web3",
     "workplace": "Posto di Lavoro",
-    "workspace": "Workspace"
+    "workspace": "Workspace",
+    "product-analytics": "Analisi di Prodotto",
+    "analytics": "Analisi",
+    "session-replay": "Replay delle Sessioni",
+    "feature-flags": "Feature Flags",
+    "website-builder": "Costruttore di Siti Web",
+    "web-design": "Web Design",
+    "cms": "CMS",
+    "credit-cards": "Carte di credito",
+    "rewards": "Premi"
   },
   "typographyPage": {
     "description": "Esplora {count} brand che usano font {style}",
