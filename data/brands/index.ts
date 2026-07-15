@@ -70,6 +70,7 @@ import { vercel } from "./vercel"
 import { vscode } from "./vscode"
 import { webflow } from "./webflow"
 import { tesla } from "./tesla"
+import { toolfolio } from "./toolfolio"
 import { toyota } from "./toyota"
 import { tiktok } from "./tiktok"
 import { uber } from "./uber"
@@ -151,6 +152,7 @@ const rawBrands: Brand[] = [
   supabase,
   tailwindCss,
   tesla,
+  toolfolio,
   toyota,
   tiktok,
   twitch,
