@@ -1,4 +1,3 @@
-import { AdvertiseMarquee } from "@/components/advertise-dialog"
 import { BrandSidebar } from "@/components/brand-sidebar"
 import { MobileSidebarToggle } from "@/components/mobile-sidebar-toggle"
 import { getAllSidebarBrands } from "@/data/brands"
@@ -28,9 +27,6 @@ export default function BrandsLayout({
           id="main-content"
           className="flex flex-1 flex-col overflow-y-auto rounded-3xl bg-surface"
         >
-          <div className="flex flex-col gap-4 px-4 pt-4 sm:px-6 lg:hidden">
-            <AdvertiseMarquee />
-          </div>
           {children}
         </main>
       </div>

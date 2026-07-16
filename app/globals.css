@@ -192,7 +192,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-
-.carbon-text {
-  word-wrap: break-word;
-}
