@@ -5,6 +5,7 @@
   },
   "home": {
     "browseAll": "Nutzen Sie die Seitenleiste, um {count} Marken zu suchen und zu filtern",
+    "brandCount": "{count} Marken",
     "cta": "Jetzt entdecken",
     "cliDocs": "CLI-Dokumentation",
     "cliTooltip": "Loftlyy CLI auf npm öffnen",

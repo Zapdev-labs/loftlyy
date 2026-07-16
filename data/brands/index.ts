@@ -1,6 +1,6 @@
 import { assetUrl } from "@/lib/assets"
 import { hexToColorFamily, normalizeHex } from "@/lib/filters"
-import type { Brand, SidebarBrand } from "@/lib/types"
+import type { Brand, HomeBrand, SidebarBrand } from "@/lib/types"
 import { twentyFirst } from "./21st"
 import { abode } from "./abode"
 import { adidas } from "./adidas"
@@ -267,6 +267,37 @@ const sidebarBrands: SidebarBrand[] = brands.map((b) => ({
 
 export function getAllSidebarBrands() {
   return sidebarBrands
+}
+
+const homeBrands: HomeBrand[] = brands.map((b) => ({
+  slug: b.slug,
+  name: b.name,
+  description: b.description,
+  industry: b.industry,
+  thumbnail: {
+    src: b.thumbnail.src,
+    width: b.thumbnail.width,
+    height: b.thumbnail.height,
+    label: b.thumbnail.label,
+  },
+  thumbnailDark: b.thumbnailDark
+    ? {
+        src: b.thumbnailDark.src,
+        width: b.thumbnailDark.width,
+        height: b.thumbnailDark.height,
+      }
+    : undefined,
+  assets: b.assets.map((a) => ({
+    label: a.label,
+    src: a.src,
+    width: a.width,
+    height: a.height,
+    format: a.format,
+  })),
+}))
+
+export function getAllHomeBrands() {
+  return homeBrands
 }
 
 export function getBrandBySlug(slug: string) {

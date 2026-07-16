@@ -5,6 +5,7 @@
   },
   "home": {
     "browseAll": "サイドバーで{count}ブランドを検索・フィルタリング",
+    "brandCount": "{count}ブランド",
     "cta": "探索を始める",
     "cliDocs": "CLIドキュメント",
     "cliTooltip": "npmでLoftlyy CLIを開く",

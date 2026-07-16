@@ -8,14 +8,17 @@ import { cn } from "@/lib/utils"
 const LIST_COMPANY_URL =
   "https://store.hextaui.com/checkout/buy/8491b3e3-a959-4294-8e6f-5518488f5242"
 
-export function ListCompanyButton() {
+export function ListCompanyButton({ inline = false }: { inline?: boolean }) {
   return (
     <a
       href={LIST_COMPANY_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(buttonVariants({ size: "sm" }), "fixed top-8 right-8 z-50")}
-      style={{ boxShadow: "var(--shadow-soft)" }}
+      className={cn(
+        buttonVariants({ size: "sm" }),
+        !inline && "fixed top-8 right-8 z-50"
+      )}
+      style={inline ? undefined : { boxShadow: "var(--shadow-soft)" }}
     >
       List your company
       <IconArrowUpRight className="size-4" />

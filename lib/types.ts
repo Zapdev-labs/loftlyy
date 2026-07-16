@@ -84,3 +84,20 @@ export interface Category {
   slug: string
   type: "industry" | "style" | "attribute"
 }
+
+/** Slim brand data for the home card grid (avoids serializing full Brand to client) */
+export interface HomeBrand {
+  slug: string
+  name: string
+  description: string
+  industry: string
+  thumbnail: { src: string; width: number; height: number; label: string }
+  thumbnailDark?: { src: string; width: number; height: number }
+  assets: {
+    label: string
+    src: string
+    width: number
+    height: number
+    format: string
+  }[]
+}

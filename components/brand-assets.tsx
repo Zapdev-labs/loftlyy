@@ -12,19 +12,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
+import { needsDarkBg, needsLightBg } from "@/lib/asset-theme"
 import type { BrandAsset } from "@/lib/types"
 
 const WHITESPACE_RE = /\s+/g
-const LIGHT_ASSET_RE = /ivory|white|light/i
-const DARK_ASSET_RE = /black|dark|slate|navy/i
-
-function needsDarkBg(label: string): boolean {
-  return LIGHT_ASSET_RE.test(label)
-}
-
-function needsLightBg(label: string): boolean {
-  return DARK_ASSET_RE.test(label)
-}
 
 function getSpan(asset: BrandAsset): "wide" | "normal" {
   return asset.width / asset.height > 2.5 ? "wide" : "normal"

@@ -1,5 +1,6 @@
 import { AdvertiseMarquee } from "@/components/advertise-dialog"
 import { BrandSidebar } from "@/components/brand-sidebar"
+import { ListCompanyButton } from "@/components/list-company-button"
 import { MobileSidebarToggle } from "@/components/mobile-sidebar-toggle"
 import { getAllSidebarBrands } from "@/data/brands"
 
@@ -12,6 +13,7 @@ export default function BrandsLayout({
 
   return (
     <div className="flex h-dvh bg-background">
+      <ListCompanyButton />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-surface focus:px-5 focus:py-2.5 focus:text-sm focus:font-medium"

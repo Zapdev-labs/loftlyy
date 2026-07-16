@@ -5,6 +5,7 @@
   },
   "home": {
     "browseAll": "Use a barra lateral para pesquisar e filtrar {count} marcas",
+    "brandCount": "{count} marcas",
     "cta": "Começar a explorar",
     "cliDocs": "Docs da CLI",
     "cliTooltip": "Abrir Loftlyy CLI no npm",

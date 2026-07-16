@@ -5,6 +5,7 @@
   },
   "home": {
     "browseAll": "使用侧边栏搜索并筛选 {count} 个品牌",
+    "brandCount": "{count} 个品牌",
     "cta": "开始探索",
     "cliDocs": "CLI 文档",
     "cliTooltip": "在 npm 上打开 Loftlyy CLI",
