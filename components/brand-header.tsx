@@ -30,6 +30,14 @@ export function BrandHeader({
       label: t("headquarters"),
       value: brand.headquarters,
     },
+    brand.designer && {
+      label: t("identityDesigner"),
+      value: brand.designer,
+    },
+    brand.lastRebranded && {
+      label: t("lastRebranded"),
+      value: brand.lastRebranded,
+    },
   ].filter(Boolean) as { label: string; value: string }[]
 
   const pillClassName =

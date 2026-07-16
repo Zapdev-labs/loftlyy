@@ -15,13 +15,13 @@ export function BrandLegal({ brand }: { brand: Brand }) {
   const t = useTranslations("brand")
 
   return (
-    <footer className="flex flex-col gap-3 pt-4">
-      <div className="flex items-start gap-2 text-[11.5px] leading-relaxed text-muted-foreground">
+    <footer className="flex flex-col items-center gap-4 pt-16 text-center">
+      <div className="flex max-w-2xl items-start gap-2 text-[12px] leading-relaxed text-muted-foreground">
         <IconScale className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
         <p>{t("legalNotice", { brandName: brand.name })}</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         {brand.legal?.guidelinesUrl && (
           <a
             href={buildUtmUrl(brand.legal.guidelinesUrl, brand.slug)}
@@ -53,11 +53,11 @@ export function BrandLegal({ brand }: { brand: Brand }) {
 
       {brand.legal && (brand.legal.dos || brand.legal.donts) && (
         <div
-          className="grid transition-[grid-template-rows] duration-200 ease-out"
+          className="grid w-full max-w-2xl transition-[grid-template-rows] duration-200 ease-out"
           style={{ gridTemplateRows: expanded ? "1fr" : "0fr" }}
         >
           <div className="overflow-hidden">
-            <div className="mt-2 flex flex-col gap-5 rounded-2xl bg-surface-muted p-5">
+            <div className="mt-2 flex flex-col gap-5 rounded-2xl bg-surface-muted p-5 text-left">
               {brand.legal.donts && brand.legal.donts.length > 0 && (
                 <div className="flex flex-col gap-2">
                   <span className="text-[10.5px] font-medium tracking-[0.12em] text-destructive uppercase">

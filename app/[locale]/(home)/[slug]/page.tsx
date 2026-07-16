@@ -18,7 +18,7 @@ import {
 } from "@/components/structured-data"
 import { BrandStory } from "@/components/brand-story"
 import { getSimilarBrands, getBrandColorFamilies } from "@/lib/filters"
-import { BrowseBySection } from "@/components/browse-by-section"
+import { BrandBrowseMore } from "@/components/brand-browse-more"
 import { BrandSeoSummary } from "@/components/brand-seo-summary"
 import { RelatedBrands } from "@/components/home/related-brands"
 import { BASE_URL, composeBrandSeoContent, toAbsoluteUrl } from "@/lib/seo"
@@ -196,40 +196,36 @@ export default async function BrandPage({
         title={tBrand("moreLike", { name: brand.name })}
         brands={relatedBrands}
       />
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-6">
-        <BrandStory brand={brand} translatedPhilosophy={translatedPhilosophy} />
-        <BrandSeoSummary
-          title={tSeo("summaryTitle")}
-          items={seo.summaryItems}
-        />
-      </div>
-      <div className="flex flex-col gap-6">
-        {brand.tags && brand.tags.length > 0 && (
-          <BrowseBySection
-            title={tBrowse("relatedTags")}
-            links={brand.tags.map((tag) => ({
+      <BrandStory brand={brand} translatedPhilosophy={translatedPhilosophy} />
+      <BrandBrowseMore
+        title={tBrowse("browseMore")}
+        groups={[
+          {
+            label: tBrowse("relatedTags"),
+            links: (brand.tags ?? []).map((tag) => ({
               href: `/tag/${tag}`,
               label: tTags(tag),
-            }))}
-          />
-        )}
-        <BrowseBySection
-          title={tBrowse("relatedColors")}
-          links={colorFamilies.map((color) => ({
-            href: `/color/${color}`,
-            label: tColors(color),
-          }))}
-        />
-        <BrowseBySection
-          title={tBrowse("relatedTypography")}
-          links={typoStyles.map((style) => ({
-            href: `/typography/${style}`,
-            label: tTypo(style),
-          }))}
-        />
-      </div>
-      <BrandLegal brand={brand} />
-      <div className="flex justify-center pb-4">
+            })),
+          },
+          {
+            label: tBrowse("relatedColors"),
+            links: colorFamilies.map((color) => ({
+              href: `/color/${color}`,
+              label: tColors(color),
+            })),
+          },
+          {
+            label: tBrowse("relatedTypography"),
+            links: typoStyles.map((style) => ({
+              href: `/typography/${style}`,
+              label: tTypo(style),
+            })),
+          },
+        ]}
+      />
+      <BrandSeoSummary items={seo.summaryItems} />
+      <div className="flex flex-col items-center gap-4 pb-4">
+        <BrandLegal brand={brand} />
         <a
           href={`https://www.ikiform.com/f/report-a-brand-issue-w93co6?brand_url=${encodeURIComponent(`${BASE_URL}/${locale}/${brand.slug}`)}&brand_name=${encodeURIComponent(brand.name)}`}
           target="_blank"

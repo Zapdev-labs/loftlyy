@@ -411,6 +411,7 @@
     }
   },
   "browseBy": {
+    "browseMore": "Explorer plus",
     "relatedCategories": "Catégories associées",
     "relatedColors": "Couleurs associées",
     "relatedTags": "Tags associés",
