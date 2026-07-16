@@ -6,11 +6,6 @@ import { cn, buildUtmUrl } from "@/lib/utils"
 import type { Brand } from "@/lib/types"
 import { CopyMarkdownButton } from "@/components/copy-markdown-button"
 
-function firstSentence(description: string): string {
-  const [sentence] = description.split(". ")
-  return sentence.endsWith(".") ? sentence.slice(0, -1) : sentence
-}
-
 export function BrandHeader({
   brand,
   translatedDescription,
@@ -23,7 +18,6 @@ export function BrandHeader({
   translatedCategories: string[]
 }) {
   const t = useTranslations("brand")
-  const tagline = firstSentence(translatedDescription)
 
   const metaColumns = [
     { label: t("industry"), value: translatedIndustry },
@@ -68,7 +62,7 @@ export function BrandHeader({
       </div>
 
       <h1 className="text-3xl leading-[1.1] font-semibold tracking-[-0.03em] text-balance text-foreground sm:text-5xl">
-        {brand.name} — {tagline}
+        {brand.name}
       </h1>
 
       <div className="flex flex-wrap gap-x-12 gap-y-4">
