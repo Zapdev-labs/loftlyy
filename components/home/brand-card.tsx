@@ -104,7 +104,7 @@ export function BrandCard({
               height={asset.height}
               loading={assetIndex === 0 ? "eager" : "lazy"}
               unoptimized={asset.format === "svg"}
-              className="max-h-full object-contain"
+              className="h-auto max-h-full w-auto max-w-full object-contain"
             />
           </div>
         ))}
@@ -119,7 +119,7 @@ export function BrandCard({
             height={brand.thumbnail.height}
             loading="lazy"
             className={cn(
-              "size-full object-contain",
+              "h-auto max-h-full w-auto max-w-full object-contain",
               brand.thumbnailDark && "dark:hidden"
             )}
           />
@@ -130,7 +130,7 @@ export function BrandCard({
               width={brand.thumbnailDark.width}
               height={brand.thumbnailDark.height}
               loading="lazy"
-              className="hidden size-full object-contain dark:block"
+              className="hidden h-auto max-h-full w-auto max-w-full object-contain dark:block"
             />
           )}
         </div>

@@ -21,6 +21,7 @@ function HomeSearch({ brands }: { brands: SidebarBrand[] }) {
       onToggleFilter={toggleFilter}
       onClearFilters={clearFilters}
       hasActiveFilters={hasActiveFilters}
+      triggerClassName="h-10 items-center py-0"
     />
   )
 }
@@ -65,7 +66,7 @@ export function HomeHeader({ brands }: { brands: SidebarBrand[] }) {
           <ListCompanyButton inline />
         </div>
         <Suspense>
-          <LocaleSwitcher />
+          <LocaleSwitcher className="h-10 px-4 text-[13px]" />
         </Suspense>
       </div>
     </header>

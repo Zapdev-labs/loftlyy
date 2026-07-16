@@ -44,6 +44,7 @@ interface CommandMenuProps {
   onToggleFilter: (dimension: FilterDimension, value: string) => void
   onClearFilters: () => void
   hasActiveFilters: boolean
+  triggerClassName?: string
 }
 
 const colorFamilyMap: Record<string, string> = {
@@ -58,28 +59,12 @@ const colorFamilyMap: Record<string, string> = {
 }
 
 const WHITESPACE_RE = /\s+/g
-const PLACEHOLDER_ROTATION_MS = 2200
 
 const GROUP_HEADING_CLASS =
   "[&_[cmdk-group-heading]]:px-2.5 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[10.5px] [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:uppercase"
 
 const ITEM_CLASS =
   "flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-[13.5px] text-foreground transition-colors duration-150 data-[selected=true]:bg-accent"
-
-function getSequentialSearchPrompts(
-  searchPlaceholder: string,
-  groups: Array<{ label: string; values: string[] }>
-) {
-  const prompts = [searchPlaceholder]
-
-  for (const group of groups) {
-    for (const value of group.values.slice(0, 2)) {
-      prompts.push(`${group.label}: ${value}`)
-    }
-  }
-
-  return [...new Set(prompts)]
-}
 
 function getSearchHeadingKey(
   query: string,
@@ -115,6 +100,7 @@ export function CommandMenu({
   onToggleFilter,
   onClearFilters,
   hasActiveFilters,
+  triggerClassName,
 }: CommandMenuProps) {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState("")
@@ -127,8 +113,6 @@ export function CommandMenu({
   const { theme, setTheme } = useTheme()
   const available = useMemo(() => getAvailableFilters(brands), [brands])
   const deferredQuery = useDeferredValue(query)
-  const [placeholderIndex, setPlaceholderIndex] = useState(0)
-  const [allowMotion, setAllowMotion] = useState(true)
   const filteredBrands = useMemo(
     () => filterBrands(brands, { ...filters, query: deferredQuery }),
     [brands, filters, deferredQuery]
@@ -144,19 +128,6 @@ export function CommandMenu({
     filters.colorFamilies.length +
     filters.typographyStyles.length
 
-  const searchPrompts = useMemo(
-    () =>
-      getSequentialSearchPrompts(t("searchPlaceholder"), [
-        { label: t("industry"), values: available.industries },
-        { label: t("styleTags"), values: available.tags },
-        { label: t("colorFamily"), values: available.colorFamilies },
-        { label: t("typographyStyle"), values: available.typographyStyles },
-      ]),
-    [available, t]
-  )
-
-  const activeSearchPrompt = searchPrompts[placeholderIndex] ?? t("search")
-
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -167,38 +138,6 @@ export function CommandMenu({
     document.addEventListener("keydown", onKeyDown)
     return () => document.removeEventListener("keydown", onKeyDown)
   }, [])
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
-    const syncMotionPreference = () => {
-      setAllowMotion(!mediaQuery.matches)
-    }
-
-    syncMotionPreference()
-    if (typeof mediaQuery.addEventListener === "function") {
-      mediaQuery.addEventListener("change", syncMotionPreference)
-      return () =>
-        mediaQuery.removeEventListener("change", syncMotionPreference)
-    }
-
-    mediaQuery.addListener(syncMotionPreference)
-    return () => mediaQuery.removeListener(syncMotionPreference)
-  }, [])
-
-  useEffect(() => {
-    if (!allowMotion || searchPrompts.length < 2) {
-      setPlaceholderIndex(0)
-      return
-    }
-
-    const intervalId = window.setInterval(() => {
-      setPlaceholderIndex(
-        (currentIndex) => (currentIndex + 1) % searchPrompts.length
-      )
-    }, PLACEHOLDER_ROTATION_MS)
-
-    return () => window.clearInterval(intervalId)
-  }, [allowMotion, searchPrompts])
 
   const navigateToBrand = useCallback(
     (slug: string) => {
@@ -231,18 +170,12 @@ export function CommandMenu({
         aria-label={t("search")}
         className={cn(
           "flex w-full items-center gap-2.5 rounded-full bg-surface-muted px-4 py-2.5 text-[13px] text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring",
-          hasActiveFilters && "text-foreground"
+          hasActiveFilters && "text-foreground",
+          triggerClassName
         )}
       >
         <IconSearch className="size-3.5" aria-hidden="true" />
-        <span className="min-w-0 flex-1 text-left">
-          <span
-            key={activeSearchPrompt}
-            className="block animate-in truncate duration-300 fade-in-0 slide-in-from-bottom-1"
-          >
-            {activeSearchPrompt}
-          </span>
-        </span>
+        <span className="min-w-0 flex-1 truncate text-left">{t("search")}</span>
         {activeCount > 0 && (
           <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground text-[10px] font-semibold text-background">
             {activeCount}
@@ -287,7 +220,7 @@ export function CommandMenu({
               <Command.Input
                 value={query}
                 onValueChange={setQuery}
-                placeholder={activeSearchPrompt}
+                placeholder={t("search")}
                 aria-label={t("searchPlaceholder")}
                 autoFocus
                 className="w-full bg-transparent px-5 py-4 text-[15px] text-foreground outline-none placeholder:text-muted-foreground"

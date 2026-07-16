@@ -15,7 +15,8 @@ export function ListCompanyButton({ inline = false }: { inline?: boolean }) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        buttonVariants({ size: "sm" }),
+        buttonVariants({ size: inline ? "default" : "sm" }),
+        inline && "text-[13px]",
         !inline && "fixed top-8 right-8 z-50"
       )}
       style={inline ? undefined : { boxShadow: "var(--shadow-soft)" }}
