@@ -12,6 +12,8 @@
     "explore": "Más Marcas",
     "headline": "Descubre identidades de marca reales.",
     "popular": "Populares",
+    "sortAZ": "A–Z",
+    "sortLatest": "Más recientes",
     "sponsor": "Apóyanos",
     "startExploring": "Comenzar a explorar",
     "subheadline": "Una base de datos en constante crecimiento de identidad de marca."
@@ -23,6 +25,7 @@
     "colorFamily": "Color",
     "colorResults": "Resultados de color",
     "explore": "Explorar",
+    "filter": "Filtro",
     "filters": "Filtros",
     "fontResults": "Resultados de tipografía",
     "industry": "Industria",

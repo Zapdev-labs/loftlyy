@@ -1,29 +1,33 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { needsDarkBg, needsLightBg } from "@/lib/asset-theme"
+import { seededShuffle } from "@/lib/random"
 import type { HomeBrand } from "@/lib/types"
 
-const CYCLE_INTERVAL_MS = 3500
-const STAGGER_STEP_MS = 400
-const STAGGER_CYCLE = 6
+const INITIAL_DELAY_MIN_MS = 300
+const INITIAL_DELAY_MAX_MS = 2500
+const CYCLE_MIN_MS = 2800
+const CYCLE_MAX_MS = 5200
 
-export function BrandCard({
-  brand,
-  index,
-}: {
-  brand: HomeBrand
-  index: number
-}) {
+function randomBetween(min: number, max: number): number {
+  return min + Math.random() * (max - min)
+}
+
+export function BrandCard({ brand }: { brand: HomeBrand }) {
   const cardRef = useRef<HTMLAnchorElement>(null)
   const [isVisible, setIsVisible] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [allowMotion, setAllowMotion] = useState(true)
   const [slideIndex, setSlideIndex] = useState(0)
-  const canCycle = brand.assets.length >= 2
+  const displayAssets = useMemo(
+    () => seededShuffle(brand.slug, brand.assets),
+    [brand.slug, brand.assets]
+  )
+  const canCycle = displayAssets.length >= 2
 
   useEffect(() => {
     const el = cardRef.current
@@ -57,20 +61,21 @@ export function BrandCard({
   useEffect(() => {
     if (!(canCycle && allowMotion && isVisible) || isPaused) return
 
-    const staggerDelay = (index % STAGGER_CYCLE) * STAGGER_STEP_MS
-    let intervalId: number | undefined
+    let timeoutId: number | undefined
 
-    const startDelay = window.setTimeout(() => {
-      intervalId = window.setInterval(() => {
-        setSlideIndex((prev) => (prev + 1) % brand.assets.length)
-      }, CYCLE_INTERVAL_MS)
-    }, staggerDelay)
+    const scheduleNext = (delay: number) => {
+      timeoutId = window.setTimeout(() => {
+        setSlideIndex((prev) => (prev + 1) % displayAssets.length)
+        scheduleNext(randomBetween(CYCLE_MIN_MS, CYCLE_MAX_MS))
+      }, delay)
+    }
+
+    scheduleNext(randomBetween(INITIAL_DELAY_MIN_MS, INITIAL_DELAY_MAX_MS))
 
     return () => {
-      window.clearTimeout(startDelay)
-      if (intervalId) window.clearInterval(intervalId)
+      if (timeoutId) window.clearTimeout(timeoutId)
     }
-  }, [canCycle, allowMotion, isVisible, isPaused, index, brand.assets.length])
+  }, [canCycle, allowMotion, isVisible, isPaused, displayAssets.length])
 
   return (
     <Link
@@ -84,7 +89,7 @@ export function BrandCard({
       onBlur={() => setIsPaused(false)}
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-        {brand.assets.map((asset, assetIndex) => (
+        {displayAssets.map((asset, assetIndex) => (
           <div
             key={asset.src}
             className={cn(

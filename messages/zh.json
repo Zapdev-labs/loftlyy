@@ -12,6 +12,8 @@
     "explore": "更多品牌",
     "headline": "发现真实世界的品牌识别。",
     "popular": "热门",
+    "sortAZ": "A–Z",
+    "sortLatest": "最新",
     "sponsor": "支持我们",
     "startExploring": "开始探索",
     "subheadline": "一个持续增长的品牌识别数据库。"
@@ -23,6 +25,7 @@
     "colorFamily": "颜色",
     "colorResults": "颜色结果",
     "explore": "探索",
+    "filter": "筛选",
     "filters": "筛选",
     "fontResults": "字体结果",
     "industry": "行业",

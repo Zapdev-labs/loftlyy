@@ -12,6 +12,8 @@
     "explore": "더 많은 브랜드",
     "headline": "실제 브랜드 아이덴티티를 발견하세요.",
     "popular": "인기",
+    "sortAZ": "A–Z",
+    "sortLatest": "최신순",
     "sponsor": "후원하기",
     "startExploring": "탐색 시작",
     "subheadline": "계속 성장하는 브랜드 아이덴티티 데이터베이스."
@@ -23,6 +25,7 @@
     "colorFamily": "색상",
     "colorResults": "색상 결과",
     "explore": "탐색",
+    "filter": "필터",
     "filters": "필터",
     "fontResults": "폰트 결과",
     "industry": "산업",

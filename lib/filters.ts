@@ -1,7 +1,7 @@
 import type { Brand, SimilarBrandCard } from "./types"
 
 /** Fields shared by Brand and SidebarBrand that filtering needs */
-type FilterableBrand = Pick<Brand, "name" | "industry" | "tags"> & {
+export type FilterableBrand = Pick<Brand, "name" | "industry" | "tags"> & {
   colors: { hex: string }[]
   typography: { category?: string }[]
 }

@@ -12,6 +12,8 @@
     "explore": "Weitere Marken",
     "headline": "Entdecken Sie echte Markenidentitäten.",
     "popular": "Beliebt",
+    "sortAZ": "A–Z",
+    "sortLatest": "Neueste",
     "sponsor": "Unterstützen",
     "startExploring": "Jetzt entdecken",
     "subheadline": "Eine stetig wachsende Datenbank für Markenidentität."
@@ -23,6 +25,7 @@
     "colorFamily": "Farbe",
     "colorResults": "Farbergebnisse",
     "explore": "Entdecken",
+    "filter": "Filter",
     "filters": "Filter",
     "fontResults": "Schriftergebnisse",
     "industry": "Branche",

@@ -12,6 +12,8 @@
     "explore": "その他のブランド",
     "headline": "実際のブランドアイデンティティを発見。",
     "popular": "人気",
+    "sortAZ": "A–Z",
+    "sortLatest": "最新",
     "sponsor": "サポートする",
     "startExploring": "探索を始める",
     "subheadline": "ブランドアイデンティティの常に成長し続けるデータベース。"
@@ -23,6 +25,7 @@
     "colorFamily": "カラー",
     "colorResults": "カラー結果",
     "explore": "探索",
+    "filter": "フィルター",
     "filters": "フィルター",
     "fontResults": "フォント結果",
     "industry": "業界",

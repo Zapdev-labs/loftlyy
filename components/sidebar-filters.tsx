@@ -5,11 +5,11 @@ import { useTranslations } from "next-intl"
 import { IconAdjustmentsHorizontal, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import {
+  type FilterableBrand,
   type FilterDimension,
   type FilterState,
   getAvailableFilters,
 } from "@/lib/filters"
-import type { Brand } from "@/lib/types"
 import {
   Dialog,
   DialogContent,
@@ -20,11 +20,13 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface SidebarFiltersProps {
-  brands: Brand[]
+  brands: FilterableBrand[]
   filters: FilterState
   onToggle: (dimension: FilterDimension, value: string) => void
   onClear: () => void
   hasActiveFilters: boolean
+  label?: string
+  triggerClassName?: string
 }
 
 export function SidebarFilters({
@@ -33,6 +35,8 @@ export function SidebarFilters({
   onToggle,
   onClear,
   hasActiveFilters,
+  label,
+  triggerClassName,
 }: SidebarFiltersProps) {
   const t = useTranslations("nav")
   const available = useMemo(() => getAvailableFilters(brands), [brands])
@@ -51,11 +55,12 @@ export function SidebarFilters({
           "flex items-center gap-2 rounded-full px-3.5 py-2 text-[13px] transition-colors duration-150",
           hasActiveFilters
             ? "bg-foreground text-background"
-            : "bg-surface-muted text-muted-foreground hover:bg-accent hover:text-foreground"
+            : "bg-surface-muted text-muted-foreground hover:bg-accent hover:text-foreground",
+          triggerClassName
         )}
       >
         <IconAdjustmentsHorizontal className="size-3.5" />
-        <span>{t("filters")}</span>
+        <span>{label ?? t("filters")}</span>
         {activeCount > 0 && (
           <span className="flex size-5 items-center justify-center rounded-full bg-sidebar/20 text-[10px] font-semibold">
             {activeCount}

@@ -13,6 +13,8 @@
     "headline": "Discover real-world brand identities.",
     "popular": "Popular",
     "sponsor": "Support us",
+    "sortAZ": "A–Z",
+    "sortLatest": "Latest",
     "startExploring": "Start exploring",
     "subheadline": "A constantly growing database of brand identity."
   },
@@ -23,6 +25,7 @@
     "colorFamily": "Color",
     "colorResults": "Color Results",
     "explore": "Explore",
+    "filter": "Filter",
     "filters": "Filters",
     "fontResults": "Font Results",
     "industry": "Industry",

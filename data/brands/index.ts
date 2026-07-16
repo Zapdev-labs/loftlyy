@@ -274,6 +274,7 @@ const homeBrands: HomeBrand[] = brands.map((b) => ({
   name: b.name,
   description: b.description,
   industry: b.industry,
+  dateAdded: b.dateAdded,
   thumbnail: {
     src: b.thumbnail.src,
     width: b.thumbnail.width,

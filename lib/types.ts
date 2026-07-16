@@ -91,6 +91,7 @@ export interface HomeBrand {
   name: string
   description: string
   industry: string
+  dateAdded: string
   thumbnail: { src: string; width: number; height: number; label: string }
   thumbnailDark?: { src: string; width: number; height: number }
   assets: {

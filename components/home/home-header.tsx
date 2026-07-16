@@ -21,7 +21,7 @@ function HomeSearch({ brands }: { brands: SidebarBrand[] }) {
       onToggleFilter={toggleFilter}
       onClearFilters={clearFilters}
       hasActiveFilters={hasActiveFilters}
-      triggerClassName="h-10 items-center py-0"
+      triggerClassName="h-11 items-center py-0"
     />
   )
 }
@@ -58,7 +58,7 @@ export function HomeHeader({ brands }: { brands: SidebarBrand[] }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-muted text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
+          className="flex size-11 shrink-0 items-center justify-center rounded-full bg-surface-muted text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
         >
           <IconBrandGithub className="size-4" />
         </a>
@@ -66,7 +66,7 @@ export function HomeHeader({ brands }: { brands: SidebarBrand[] }) {
           <ListCompanyButton inline />
         </div>
         <Suspense>
-          <LocaleSwitcher className="h-10 px-4 text-[13px]" />
+          <LocaleSwitcher className="h-11 px-4 text-[13px]" />
         </Suspense>
       </div>
     </header>
