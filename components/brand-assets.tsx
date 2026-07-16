@@ -94,22 +94,17 @@ function AssetCard({
     []
   )
 
-  useEffect(() => {
-    if (!isSvg) return
-    let active = true
-    const src = asset.srcFull ?? asset.src
-    fetch(src)
-      .then((r) => r.text())
-      .then((markup) => {
-        if (active) svgMarkupRef.current = markup
-      })
-      .catch(() => {
-        if (active) svgMarkupRef.current = null
-      })
-    return () => {
-      active = false
+  async function getSvgMarkup(): Promise<string | null> {
+    if (svgMarkupRef.current) return svgMarkupRef.current
+    try {
+      const response = await fetch(asset.srcFull ?? asset.src)
+      const markup = await response.text()
+      svgMarkupRef.current = markup
+      return markup
+    } catch {
+      return null
     }
-  }, [isSvg, asset.src, asset.srcFull])
+  }
 
   async function downloadAs(format: "svg" | "png") {
     const src = asset.srcFull ?? asset.src
@@ -155,24 +150,15 @@ function AssetCard({
     svgTimerRef.current = setTimeout(() => setCopiedSvg(false), 1500)
   }
 
-  function copySvg() {
-    const cached = svgMarkupRef.current
-    if (cached !== null) {
-      navigator.clipboard
-        .writeText(cached)
-        .then(flagCopiedSvg)
-        .catch(() => {})
-      return
+  async function copySvg() {
+    const markup = await getSvgMarkup()
+    if (markup === null) return
+    try {
+      await navigator.clipboard.writeText(markup)
+      flagCopiedSvg()
+    } catch {
+      // clipboard write failed
     }
-    const src = asset.srcFull ?? asset.src
-    fetch(src)
-      .then((r) => r.text())
-      .then((markup) => {
-        svgMarkupRef.current = markup
-        return navigator.clipboard.writeText(markup)
-      })
-      .then(flagCopiedSvg)
-      .catch(() => {})
   }
 
   return (
