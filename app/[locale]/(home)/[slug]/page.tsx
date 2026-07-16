@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation"
 import dynamic from "next/dynamic"
 import { setRequestLocale, getTranslations } from "next-intl/server"
-import { getAllBrands, getBrandBySlug } from "@/data/brands"
+import {
+  getAllBrands,
+  getBrandBySlug,
+  getHomeBrandsBySlugs,
+} from "@/data/brands"
 import { routing } from "@/i18n/routing"
 import { BrandHeader } from "@/components/brand-header"
 import { BrandColors } from "@/components/brand-colors"
@@ -13,19 +17,17 @@ import {
   FAQStructuredData,
 } from "@/components/structured-data"
 import { BrandStory } from "@/components/brand-story"
-import { getSimilarBrandCards, getBrandColorFamilies } from "@/lib/filters"
+import { getSimilarBrands, getBrandColorFamilies } from "@/lib/filters"
 import { BrowseBySection } from "@/components/browse-by-section"
 import { BrandSeoSummary } from "@/components/brand-seo-summary"
+import { RelatedBrands } from "@/components/home/related-brands"
 import { BASE_URL, composeBrandSeoContent, toAbsoluteUrl } from "@/lib/seo"
 import { getBuildOnlyStaticParams } from "@/lib/static-params"
 
+const SIMILAR_BRANDS_LIMIT = 6
+
 const BrandAssets = dynamic(() =>
   import("@/components/brand-assets").then((m) => ({ default: m.BrandAssets }))
-)
-const SimilarBrands = dynamic(() =>
-  import("@/components/similar-brands").then((m) => ({
-    default: m.SimilarBrands,
-  }))
 )
 const BrandLegal = dynamic(() =>
   import("@/components/brand-legal").then((m) => ({ default: m.BrandLegal }))
@@ -98,7 +100,7 @@ export default async function BrandPage({
   const brand = getBrandBySlug(slug)
   if (!brand) notFound()
 
-  const [tSeo, tTags, tColors, tTypo, tBrowse, tBrands, tCategories] =
+  const [tSeo, tTags, tColors, tTypo, tBrowse, tBrands, tCategories, tBrand] =
     await Promise.all([
       getTranslations({ locale, namespace: "seo" }),
       getTranslations({ locale, namespace: "tags" }),
@@ -107,6 +109,7 @@ export default async function BrandPage({
       getTranslations({ locale, namespace: "browseBy" }),
       getTranslations({ locale, namespace: "brands" }),
       getTranslations({ locale, namespace: "categories" }),
+      getTranslations({ locale, namespace: "brand" }),
     ])
 
   const colorFamilies = getBrandColorFamilies(brand)
@@ -141,14 +144,9 @@ export default async function BrandPage({
     ? trBrand(`${brand.slug}.philosophy`, brand.philosophy)
     : undefined
   const translatedIndustry = trCat(brand.industry, brand.industry)
-  const translatedTags: Record<string, string> = {}
-  for (const tag of brand.tags ?? []) {
-    try {
-      translatedTags[tag] = tTags(tag)
-    } catch {
-      translatedTags[tag] = tag
-    }
-  }
+  const translatedCategories = brand.categories.map((category) =>
+    trCat(category, category)
+  )
 
   const seo = composeBrandSeoContent({
     brand,
@@ -157,8 +155,14 @@ export default async function BrandPage({
     translatedIndustry,
   })
 
+  const relatedBrands = getHomeBrandsBySlugs(
+    getSimilarBrands(brand, getAllBrands(), SIMILAR_BRANDS_LIMIT).map(
+      (b) => b.slug
+    )
+  )
+
   return (
-    <article className="mx-auto flex w-full max-w-4xl flex-col gap-14 px-6 py-6 lg:px-6 lg:py-14">
+    <article className="mx-auto flex w-full max-w-[1600px] flex-col gap-14 px-4 py-8 sm:px-6 lg:py-12">
       <BrandStructuredData brand={brand} />
       <BrandPageStructuredData
         name={seo.title}
@@ -183,16 +187,22 @@ export default async function BrandPage({
         brand={brand}
         translatedDescription={translatedDescription}
         translatedIndustry={translatedIndustry}
-        translatedTags={translatedTags}
+        translatedCategories={translatedCategories}
       />
-      <BrandSeoSummary title={tSeo("summaryTitle")} items={seo.summaryItems} />
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-6">
-        <BrandStory brand={brand} translatedPhilosophy={translatedPhilosophy} />
-      </div>
       <BrandAssets assets={brand.assets} brandName={brand.name} />
       <BrandColors colors={brand.colors} />
       <BrandTypography typography={brand.typography} />
-      <SimilarBrands brands={getSimilarBrandCards(brand, getAllBrands())} />
+      <RelatedBrands
+        title={tBrand("moreLike", { name: brand.name })}
+        brands={relatedBrands}
+      />
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-6">
+        <BrandStory brand={brand} translatedPhilosophy={translatedPhilosophy} />
+        <BrandSeoSummary
+          title={tSeo("summaryTitle")}
+          items={seo.summaryItems}
+        />
+      </div>
       <div className="flex flex-col gap-6">
         {brand.tags && brand.tags.length > 0 && (
           <BrowseBySection

@@ -3,8 +3,15 @@
 import { useEffect, useRef, useState } from "react"
 import { useLocale, useTranslations } from "next-intl"
 import { IconCheck, IconMarkdown } from "@tabler/icons-react"
+import { cn } from "@/lib/utils"
 
-export function CopyMarkdownButton({ slug }: { slug: string }) {
+export function CopyMarkdownButton({
+  slug,
+  className,
+}: {
+  slug: string
+  className?: string
+}) {
   const t = useTranslations("brand")
   const locale = useLocale()
   const [copied, setCopied] = useState(false)
@@ -35,7 +42,10 @@ export function CopyMarkdownButton({ slug }: { slug: string }) {
         copyMarkdown()
       }}
       aria-label={t("copyMarkdown")}
-      className="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 transition-colors duration-150 hover:bg-accent hover:text-foreground"
+      className={cn(
+        "inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 transition-colors duration-150 hover:bg-accent hover:text-foreground",
+        className
+      )}
     >
       {copied ? (
         <IconCheck className="size-3" />

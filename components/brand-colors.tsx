@@ -36,7 +36,7 @@ export function BrandColors({ colors }: { colors: BrandColor[] }) {
   return (
     <section className="flex flex-col gap-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
           {t("colors")}
         </h2>
         <button

@@ -301,6 +301,16 @@ export function getAllHomeBrands() {
   return homeBrands
 }
 
+const homeBrandsBySlug: Record<string, HomeBrand> = Object.fromEntries(
+  homeBrands.map((b) => [b.slug, b])
+)
+
+export function getHomeBrandsBySlugs(slugs: string[]): HomeBrand[] {
+  return slugs
+    .map((slug) => homeBrandsBySlug[slug])
+    .filter((b): b is HomeBrand => Boolean(b))
+}
+
 export function getBrandBySlug(slug: string) {
   return brandsBySlug[slug]
 }

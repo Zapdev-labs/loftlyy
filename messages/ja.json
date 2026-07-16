@@ -72,7 +72,9 @@
     "viewGuidelines": "公式ブランドガイドラインを見る",
     "visitWebsite": "ウェブサイトを訪問",
     "compareBrand": "比較",
-    "copyMarkdown": ".md をコピー"
+    "copyMarkdown": ".md をコピー",
+    "categories": "カテゴリー",
+    "moreLike": "{name}に似たブランド"
   },
   "brands": {
     "21st": {

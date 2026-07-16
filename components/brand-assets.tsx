@@ -17,10 +17,6 @@ import type { BrandAsset } from "@/lib/types"
 
 const WHITESPACE_RE = /\s+/g
 
-function getSpan(asset: BrandAsset): "wide" | "normal" {
-  return asset.width / asset.height > 2.5 ? "wide" : "normal"
-}
-
 function rasterizeToCanvas(blob: Blob, scale = 2): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const img = new window.Image()
@@ -59,22 +55,14 @@ export function BrandAssets({
 
   return (
     <section className="flex flex-col gap-5">
-      <h2 className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
+      <h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
         {t("assets")}
       </h2>
 
-      <div className="grid grid-cols-1 gap-4 sm:auto-rows-[220px] sm:grid-cols-2 lg:grid-cols-3">
-        {assets.map((asset) => {
-          const span = getSpan(asset)
-          return (
-            <AssetCard
-              key={asset.src}
-              asset={asset}
-              brandName={brandName}
-              span={span}
-            />
-          )
-        })}
+      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {assets.map((asset) => (
+          <AssetCard key={asset.src} asset={asset} brandName={brandName} />
+        ))}
       </div>
     </section>
   )
@@ -83,11 +71,9 @@ export function BrandAssets({
 function AssetCard({
   asset,
   brandName,
-  span,
 }: {
   asset: BrandAsset
   brandName: string
-  span: "wide" | "normal"
 }) {
   const [copied, setCopied] = useState(false)
   const [copiedSvg, setCopiedSvg] = useState(false)
@@ -190,16 +176,11 @@ function AssetCard({
   }
 
   return (
-    <div
-      className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl bg-surface-muted",
-        span === "wide" && "sm:col-span-2"
-      )}
-    >
+    <div className="group relative mb-4 flex break-inside-avoid flex-col overflow-hidden rounded-2xl bg-surface-muted">
       {/* Asset preview */}
       <div
         className={cn(
-          "flex flex-1 items-center justify-center p-8 transition-colors duration-150",
+          "flex items-center justify-center p-8 transition-colors duration-150",
           needsDarkBg(asset.label)
             ? "bg-foreground"
             : needsLightBg(asset.label)
@@ -212,7 +193,7 @@ function AssetCard({
           alt={`${brandName} ${asset.label}`}
           width={asset.width}
           height={asset.height}
-          className="h-auto max-h-[120px] w-auto max-w-full object-contain"
+          className="h-auto w-full object-contain"
           unoptimized={asset.format === "svg"}
         />
       </div>

@@ -72,7 +72,9 @@
     "viewGuidelines": "Voir les directives officielles de la marque",
     "visitWebsite": "Visiter le site",
     "compareBrand": "Comparer",
-    "copyMarkdown": "Copier .md"
+    "copyMarkdown": "Copier .md",
+    "categories": "Catégories",
+    "moreLike": "Plus comme {name}"
   },
   "brands": {
     "21st": {

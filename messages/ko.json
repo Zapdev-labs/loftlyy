@@ -72,7 +72,9 @@
     "viewGuidelines": "공식 브랜드 가이드라인 보기",
     "visitWebsite": "웹사이트 방문",
     "compareBrand": "비교",
-    "copyMarkdown": ".md 복사"
+    "copyMarkdown": ".md 복사",
+    "categories": "카테고리",
+    "moreLike": "{name}와(과) 비슷한 브랜드"
   },
   "brands": {
     "21st": {

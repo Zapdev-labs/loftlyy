@@ -72,7 +72,9 @@
     "viewGuidelines": "查看官方品牌指南",
     "visitWebsite": "访问网站",
     "compareBrand": "比较",
-    "copyMarkdown": "复制 .md"
+    "copyMarkdown": "复制 .md",
+    "categories": "分类",
+    "moreLike": "更多类似 {name} 的品牌"
   },
   "brands": {
     "21st": {

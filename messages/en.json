@@ -72,7 +72,9 @@
     "viewGuidelines": "View official brand guidelines",
     "visitWebsite": "Visit Website",
     "compareBrand": "Compare",
-    "copyMarkdown": "Copy .md"
+    "copyMarkdown": "Copy .md",
+    "categories": "Categories",
+    "moreLike": "More like {name}"
   },
   "brands": {
     "21st": {
