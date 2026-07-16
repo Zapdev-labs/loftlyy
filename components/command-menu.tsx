@@ -9,7 +9,6 @@ import {
   useState,
 } from "react"
 import Image from "next/image"
-import { useSearchParams } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Command } from "cmdk"
 import {
@@ -26,7 +25,7 @@ import {
 import { useLocale } from "next-intl"
 import { useTheme } from "next-themes"
 import { localeMetadata } from "@/i18n/locales"
-import { useRouter, usePathname } from "@/i18n/navigation"
+import { useRouter } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { cn, searchParamsToQuery } from "@/lib/utils"
 import {
@@ -107,8 +106,6 @@ export function CommandMenu({
   const listRef = useRef<HTMLDivElement>(null)
   const t = useTranslations("nav")
   const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
   const currentLocale = useLocale()
   const { theme, setTheme } = useTheme()
   const available = useMemo(() => getAvailableFilters(brands), [brands])
@@ -127,6 +124,11 @@ export function CommandMenu({
     filters.tags.length +
     filters.colorFamilies.length +
     filters.typographyStyles.length
+
+  const activeIndustries = new Set(filters.industries)
+  const activeTags = new Set(filters.tags)
+  const activeColorFamilies = new Set(filters.colorFamilies)
+  const activeTypography = new Set(filters.typographyStyles)
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -274,7 +276,7 @@ export function CommandMenu({
                     className={GROUP_HEADING_CLASS}
                   >
                     {available.industries.map((v) => {
-                      const isActive = filters.industries.includes(v)
+                      const isActive = activeIndustries.has(v)
                       return (
                         <Command.Item
                           key={v}
@@ -300,7 +302,7 @@ export function CommandMenu({
                     className={GROUP_HEADING_CLASS}
                   >
                     {available.tags.map((v) => {
-                      const isActive = filters.tags.includes(v)
+                      const isActive = activeTags.has(v)
                       return (
                         <Command.Item
                           key={v}
@@ -326,7 +328,7 @@ export function CommandMenu({
                     className={GROUP_HEADING_CLASS}
                   >
                     {available.colorFamilies.map((v) => {
-                      const isActive = filters.colorFamilies.includes(v)
+                      const isActive = activeColorFamilies.has(v)
                       return (
                         <Command.Item
                           key={v}
@@ -357,7 +359,7 @@ export function CommandMenu({
                     className={GROUP_HEADING_CLASS}
                   >
                     {available.typographyStyles.map((v) => {
-                      const isActive = filters.typographyStyles.includes(v)
+                      const isActive = activeTypography.has(v)
                       return (
                         <Command.Item
                           key={v}
@@ -388,10 +390,19 @@ export function CommandMenu({
                         key={loc}
                         value={`language ${localeMetadata[loc].displayName} ${localeMetadata[loc].nativeName} ${loc}`}
                         onSelect={() => {
+                          const rawPath = window.location.pathname
+                          const pathname =
+                            rawPath === `/${currentLocale}`
+                              ? "/"
+                              : rawPath.startsWith(`/${currentLocale}/`)
+                                ? rawPath.slice(currentLocale.length + 1)
+                                : rawPath
                           router.replace(
                             {
                               pathname,
-                              query: searchParamsToQuery(searchParams),
+                              query: searchParamsToQuery(
+                                new URLSearchParams(window.location.search)
+                              ),
                             },
                             {
                               locale: loc,

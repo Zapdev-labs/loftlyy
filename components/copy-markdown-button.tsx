@@ -35,12 +35,9 @@ export function CopyMarkdownButton({
   }
 
   return (
-    <a
-      href={href}
-      onClick={(event) => {
-        event.preventDefault()
-        copyMarkdown()
-      }}
+    <button
+      type="button"
+      onClick={() => copyMarkdown()}
       aria-label={t("copyMarkdown")}
       className={cn(
         "inline-flex items-center gap-1 rounded-full bg-surface-muted px-2.5 py-1 transition-colors duration-150 hover:bg-accent hover:text-foreground",
@@ -53,6 +50,6 @@ export function CopyMarkdownButton({
         <IconMarkdown className="size-3" />
       )}
       <span>{copied ? t("copied") : t("copyMarkdown")}</span>
-    </a>
+    </button>
   )
 }

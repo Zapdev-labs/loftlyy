@@ -22,13 +22,13 @@
     "translations:status": "tsx scripts/translation-agent.ts status",
     "translations:scaffold": "tsx scripts/translation-agent.ts scaffold",
     "prebuild": "tsx scripts/validate.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "doctor": "npx react-doctor@latest"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "@next/third-parties": "^16.2.10",
     "@tabler/icons-react": "^3.44.0",
-    "@vercel/og": "^0.11.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

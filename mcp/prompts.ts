@@ -341,10 +341,9 @@ Present the comparison in a clear, scannable format with tables or structured li
 
         if (families.length > 0) {
           const facets = getBrandFacets(sidebarBrands)
+          const knownColorFamilies = new Set(facets.colorFamilies)
           const filtered = filterBrands(sidebarBrands, {
-            colorFamilies: families.filter((f) =>
-              facets.colorFamilies.includes(f)
-            ),
+            colorFamilies: families.filter((f) => knownColorFamilies.has(f)),
             industries: [],
             query: "",
             tags: [],

@@ -17,7 +17,11 @@ import {
   FAQStructuredData,
 } from "@/components/structured-data"
 import { BrandStory } from "@/components/brand-story"
-import { getSimilarBrands, getBrandColorFamilies } from "@/lib/filters"
+import {
+  getBrandColorFamilies,
+  getBrandTypographyCategories,
+  getSimilarBrands,
+} from "@/lib/filters"
 import { BrandBrowseMore } from "@/components/brand-browse-more"
 import { BrandSeoSummary } from "@/components/brand-seo-summary"
 import { RelatedBrands } from "@/components/home/related-brands"
@@ -113,11 +117,7 @@ export default async function BrandPage({
     ])
 
   const colorFamilies = getBrandColorFamilies(brand)
-  const typoStyles = [
-    ...new Set(
-      brand.typography.map((t) => t.category).filter(Boolean) as string[]
-    ),
-  ]
+  const typoStyles = [...new Set(getBrandTypographyCategories(brand))]
 
   // Resolve translations on the server so child components
   // don't need access to namespaces missing from NextIntlClientProvider

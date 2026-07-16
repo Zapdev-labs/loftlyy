@@ -24,9 +24,10 @@ function toAbsoluteUrl(path: string): string {
 function getLastModified(
   brands: ReadonlyArray<Pick<Brand, "dateAdded">>
 ): Date {
-  const timestamps = brands
-    .map((brand) => Date.parse(brand.dateAdded))
-    .filter((timestamp) => Number.isFinite(timestamp))
+  const timestamps = brands.flatMap((brand) => {
+    const timestamp = Date.parse(brand.dateAdded)
+    return Number.isFinite(timestamp) ? [timestamp] : []
+  })
 
   if (timestamps.length === 0) {
     return new Date()

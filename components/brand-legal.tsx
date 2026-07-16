@@ -64,9 +64,9 @@ export function BrandLegal({ brand }: { brand: Brand }) {
                     {t("donts")}
                   </span>
                   <ul className="flex flex-col gap-1.5">
-                    {brand.legal.donts.map((item, i) => (
+                    {brand.legal.donts.map((item) => (
                       <li
-                        key={i}
+                        key={item}
                         className="flex gap-2 text-[12.5px] leading-relaxed text-muted-foreground"
                       >
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60" />
@@ -82,9 +82,9 @@ export function BrandLegal({ brand }: { brand: Brand }) {
                     {t("dos")}
                   </span>
                   <ul className="flex flex-col gap-1.5">
-                    {brand.legal.dos.map((item, i) => (
+                    {brand.legal.dos.map((item) => (
                       <li
-                        key={i}
+                        key={item}
                         className="flex gap-2 text-[12.5px] leading-relaxed text-muted-foreground"
                       >
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60" />

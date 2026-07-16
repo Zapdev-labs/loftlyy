@@ -1,4 +1,4 @@
-import { ImageResponse } from "@vercel/og"
+import { ImageResponse } from "next/og"
 import { getAllBrands, getBrandBySlug } from "@/data/brands"
 import { routing } from "@/i18n/routing"
 import {

@@ -36,11 +36,16 @@ function dedupe(values: string[]): string[] {
   return Array.from(new Set(values.filter(Boolean)))
 }
 
+const listFormatters = new Map<string, Intl.ListFormat>()
+
 function formatList(values: string[], locale: string, style: "long" | "short") {
-  return new Intl.ListFormat(locale, {
-    style,
-    type: "conjunction",
-  }).format(values)
+  const key = `${locale}:${style}`
+  let formatter = listFormatters.get(key)
+  if (!formatter) {
+    formatter = new Intl.ListFormat(locale, { style, type: "conjunction" })
+    listFormatters.set(key, formatter)
+  }
+  return formatter.format(values)
 }
 
 function truncateText(text: string, maxLength: number): string {
@@ -100,10 +105,10 @@ function getTopFontNames(brand: Brand): string[] {
 
 function getDownloadFormats(brand: Brand): string[] {
   return dedupe(
-    brand.assets
-      .map((asset) => asset.format.toLowerCase())
-      .filter((format) => format === "svg" || format === "png")
-      .map((format) => format.toUpperCase())
+    brand.assets.flatMap((asset) => {
+      const format = asset.format.toLowerCase()
+      return format === "svg" || format === "png" ? [format.toUpperCase()] : []
+    })
   )
 }
 

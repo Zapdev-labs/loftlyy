@@ -28,7 +28,7 @@ function HomeSearch({ brands }: { brands: SidebarBrand[] }) {
 
 export function HomeHeader({ brands }: { brands: SidebarBrand[] }) {
   return (
-    <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 bg-background px-4 sm:px-6">
+    <header className="flex shrink-0 items-center gap-3 bg-background px-4 sm:px-6 sm:py-6 py-4">
       <Link
         href="/"
         aria-label="Loftlyy home"
@@ -65,9 +65,7 @@ export function HomeHeader({ brands }: { brands: SidebarBrand[] }) {
         <div className="hidden sm:block">
           <ListCompanyButton inline />
         </div>
-        <Suspense>
-          <LocaleSwitcher className="h-11 px-4 text-[13px]" />
-        </Suspense>
+        
       </div>
     </header>
   )

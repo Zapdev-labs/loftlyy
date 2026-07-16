@@ -50,12 +50,9 @@ export function HomeGrid({
   return (
     <div className="flex w-full flex-1 flex-col">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-1 px-4 pt-8 pb-6 sm:px-6">
-        <h1 className="text-2xl font-semibold tracking-[-0.03em] text-foreground sm:text-3xl">
+        <h1 className="text-4xl font-semibold tracking-[-0.04em] sm:tracking-[-0.04em] text-foreground sm:text-5xl">
           {t("headline")}
         </h1>
-        <p className="text-[13.5px] text-muted-foreground">
-          {t("brandCount", { count: visibleBrands.length })}
-        </p>
       </div>
 
       <HomeToolbar

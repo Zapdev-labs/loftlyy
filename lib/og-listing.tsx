@@ -1,4 +1,4 @@
-import { ImageResponse } from "@vercel/og"
+import { ImageResponse } from "next/og"
 import { OG_SIZE, getInterBoldFont } from "./og"
 
 export async function createListingOGImage({

@@ -140,7 +140,6 @@ function AssetCard({
       if (timerRef.current) clearTimeout(timerRef.current)
       timerRef.current = setTimeout(() => setCopied(false), 1500)
     } catch {
-      // clipboard write failed
     }
   }
 
@@ -157,7 +156,6 @@ function AssetCard({
       await navigator.clipboard.writeText(markup)
       flagCopiedSvg()
     } catch {
-      // clipboard write failed
     }
   }
 

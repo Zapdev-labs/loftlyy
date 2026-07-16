@@ -68,6 +68,7 @@ export function MobileSidebarToggle({ brands }: { brands: SidebarBrand[] }) {
             ref={sidebarRef}
             role="dialog"
             aria-modal="true"
+            aria-label="Sidebar"
             style={{ boxShadow: "var(--shadow-soft)" }}
             className="fixed inset-y-0 left-0 z-50 flex w-[300px] animate-in flex-col gap-4 overflow-hidden overscroll-y-contain rounded-r-3xl bg-sidebar pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] duration-200 slide-in-from-left"
           >

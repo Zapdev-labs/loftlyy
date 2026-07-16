@@ -1,4 +1,4 @@
-import type { Brand, SimilarBrandCard } from "./types"
+import type { Brand } from "./types"
 
 /** Fields shared by Brand and SidebarBrand that filtering needs */
 export type FilterableBrand = Pick<Brand, "name" | "industry" | "tags"> & {
@@ -58,10 +58,12 @@ function matchesQuery(brand: SearchableBrand, query: string): boolean {
 
   if (tokens.length === 0) return true
 
+  const hexSet = new Set(brand.searchIndex.hexes)
+
   return tokens.every((token) => {
     const normalizedHex = normalizeHex(token)
     if (normalizedHex) {
-      return brand.searchIndex.hexes.includes(normalizedHex)
+      return hexSet.has(normalizedHex)
     }
 
     return brand.searchIndex.text.includes(token)
@@ -106,6 +108,12 @@ export function getBrandColorFamilies(brand: {
   return Array.from(families)
 }
 
+export function getBrandTypographyCategories(brand: {
+  typography: { category?: string }[]
+}): string[] {
+  return brand.typography.flatMap((t) => (t.category ? [t.category] : []))
+}
+
 export function getAvailableFilters(brands: FilterableBrand[]) {
   const industries = new Set<string>()
   const tags = new Set<string>()
@@ -133,31 +141,32 @@ export function filterBrands<T extends SearchableBrand>(
   brands: T[],
   filters: FilterState
 ): T[] {
+  const industrySet = new Set(filters.industries)
+  const tagSet = new Set(filters.tags)
+  const colorFamilySet = new Set(filters.colorFamilies)
+  const typographySet = new Set(filters.typographyStyles)
+
   return brands.filter((brand) => {
     if (filters.query) {
       if (!matchesQuery(brand, filters.query)) return false
     }
 
     if (filters.industries.length > 0) {
-      if (!filters.industries.includes(brand.industry)) return false
+      if (!industrySet.has(brand.industry)) return false
     }
 
     if (filters.tags.length > 0) {
-      if (!filters.tags.some((t) => brand.tags?.includes(t))) return false
+      if (!(brand.tags?.some((t) => tagSet.has(t)) ?? false)) return false
     }
 
     if (filters.colorFamilies.length > 0) {
       const brandFamilies = getBrandColorFamilies(brand)
-      if (!filters.colorFamilies.some((f) => brandFamilies.includes(f)))
-        return false
+      if (!brandFamilies.some((f) => colorFamilySet.has(f))) return false
     }
 
     if (filters.typographyStyles.length > 0) {
-      const brandStyles = brand.typography
-        .map((t) => t.category)
-        .filter(Boolean) as string[]
-      if (!filters.typographyStyles.some((s) => brandStyles.includes(s)))
-        return false
+      const brandStyles = getBrandTypographyCategories(brand)
+      if (!brandStyles.some((s) => typographySet.has(s))) return false
     }
 
     return true
@@ -170,44 +179,44 @@ export function getSimilarBrands(
   limit = 5
 ): Brand[] {
   const currentColorFamilies = getBrandColorFamilies(current)
-  const currentTypoCategories = current.typography
-    .map((t) => t.category)
-    .filter(Boolean) as string[]
+  const currentTypoCategories = getBrandTypographyCategories(current)
+  const currentCategorySet = new Set(current.categories)
+  const currentTagSet = new Set(current.tags ?? [])
+  const currentColorSet = new Set(currentColorFamilies)
+  const currentTypoSet = new Set(currentTypoCategories)
 
   const scored = allBrands
-    .filter((b) => b.slug !== current.slug)
-    .map((brand) => {
+    .flatMap((brand) => {
+      if (brand.slug === current.slug) return []
+
       let score = 0
 
       const sharedCategories = brand.categories.filter((c) =>
-        current.categories.includes(c)
+        currentCategorySet.has(c)
       )
       score += sharedCategories.length * 3
 
       if (brand.industry === current.industry) score += 1
 
       const sharedTags = (brand.tags ?? []).filter((t) =>
-        current.tags?.includes(t)
+        currentTagSet.has(t)
       )
       score += sharedTags.length * 2
 
       const brandFamilies = getBrandColorFamilies(brand)
       const sharedColors = brandFamilies.filter((f) =>
-        currentColorFamilies.includes(f)
+        currentColorSet.has(f)
       )
       score += sharedColors.length * 2
 
-      const brandTypoCategories = brand.typography
-        .map((t) => t.category)
-        .filter(Boolean) as string[]
+      const brandTypoCategories = getBrandTypographyCategories(brand)
       const sharedTypo = brandTypoCategories.filter((c) =>
-        currentTypoCategories.includes(c)
+        currentTypoSet.has(c)
       )
       score += sharedTypo.length
 
-      return { brand, score }
+      return score > 0 ? [{ brand, score }] : []
     })
-    .filter((s) => s.score > 0)
     .sort(
       (a, b) => b.score - a.score || a.brand.name.localeCompare(b.brand.name)
     )
@@ -254,30 +263,4 @@ export function getRelatedTypographyForBrands(brands: Brand[]): string[] {
     }
   }
   return Array.from(styles).sort()
-}
-
-/** Returns slim brand cards for the similar-brands section (minimal serialization). */
-export function getSimilarBrandCards(
-  current: Brand,
-  allBrands: Brand[],
-  limit = 5
-): SimilarBrandCard[] {
-  return getSimilarBrands(current, allBrands, limit).map((b) => ({
-    slug: b.slug,
-    name: b.name,
-    industry: b.industry,
-    thumbnail: {
-      src: b.thumbnail.src,
-      width: b.thumbnail.width,
-      height: b.thumbnail.height,
-    },
-    thumbnailDark: b.thumbnailDark
-      ? {
-          src: b.thumbnailDark.src,
-          width: b.thumbnailDark.width,
-          height: b.thumbnailDark.height,
-        }
-      : undefined,
-    colors: b.colors.slice(0, 4).map((c) => ({ hex: c.hex })),
-  }))
 }

@@ -1,6 +1,22 @@
 import type { Brand } from "@/lib/types"
 import { toAbsoluteUrl } from "@/lib/seo"
 
+function toJsonLdHtml(data: unknown): string {
+  return JSON.stringify(data)
+    .replace(/&/g, "\\u0026")
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+}
+
+function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script
+      dangerouslySetInnerHTML={{ __html: toJsonLdHtml(data) }}
+      type="application/ld+json"
+    />
+  )
+}
+
 export function SiteStructuredData({
   siteName,
   siteDescription,
@@ -18,12 +34,7 @@ export function SiteStructuredData({
     url,
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function BrandStructuredData({ brand }: { brand: Brand }) {
@@ -38,12 +49,7 @@ export function BrandStructuredData({ brand }: { brand: Brand }) {
     sameAs: brand.url ? [brand.url] : undefined,
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function BrandPageStructuredData({
@@ -80,12 +86,7 @@ export function BrandPageStructuredData({
     }),
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function CategoryStructuredData({
@@ -115,12 +116,7 @@ export function CategoryStructuredData({
     },
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function ListingStructuredData({
@@ -150,12 +146,7 @@ export function ListingStructuredData({
     },
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function BreadcrumbStructuredData({
@@ -174,12 +165,7 @@ export function BreadcrumbStructuredData({
     })),
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }
 
 export function FAQStructuredData({
@@ -200,10 +186,5 @@ export function FAQStructuredData({
     })),
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
+  return <JsonLd data={jsonLd} />
 }

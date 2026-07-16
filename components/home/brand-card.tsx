@@ -43,19 +43,10 @@ export function BrandCard({ brand }: { brand: HomeBrand }) {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
-    const syncMotionPreference = () => {
-      setAllowMotion(!mediaQuery.matches)
-    }
-
+    const syncMotionPreference = () => setAllowMotion(!mediaQuery.matches)
     syncMotionPreference()
-    if (typeof mediaQuery.addEventListener === "function") {
-      mediaQuery.addEventListener("change", syncMotionPreference)
-      return () =>
-        mediaQuery.removeEventListener("change", syncMotionPreference)
-    }
-
-    mediaQuery.addListener(syncMotionPreference)
-    return () => mediaQuery.removeListener(syncMotionPreference)
+    mediaQuery.addEventListener("change", syncMotionPreference)
+    return () => mediaQuery.removeEventListener("change", syncMotionPreference)
   }, [])
 
   useEffect(() => {

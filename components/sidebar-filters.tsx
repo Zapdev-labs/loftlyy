@@ -48,6 +48,8 @@ export function SidebarFilters({
     filters.colorFamilies.length +
     filters.typographyStyles.length
 
+  const activeColorFamilies = new Set(filters.colorFamilies)
+
   return (
     <Dialog>
       <DialogTrigger
@@ -110,7 +112,7 @@ export function SidebarFilters({
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {available.colorFamilies.map((v) => {
-                    const isActive = filters.colorFamilies.includes(v)
+                    const isActive = activeColorFamilies.has(v)
                     return (
                       <button
                         type="button"
@@ -164,6 +166,8 @@ function FilterGroup({
   active: string[]
   onToggle: (value: string) => void
 }) {
+  const activeSet = new Set(active)
+
   return (
     <div className="flex flex-col gap-2.5">
       <span className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
@@ -171,7 +175,7 @@ function FilterGroup({
       </span>
       <div className="flex flex-wrap gap-2">
         {values.map((v) => {
-          const isActive = active.includes(v)
+          const isActive = activeSet.has(v)
           return (
             <button
               type="button"

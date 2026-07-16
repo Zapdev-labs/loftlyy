@@ -2,7 +2,7 @@
 
 import { IconArrowUpRight } from "@tabler/icons-react"
 
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button-variants"
 import { cn } from "@/lib/utils"
 
 const LIST_COMPANY_URL =

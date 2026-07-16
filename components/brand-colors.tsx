@@ -60,8 +60,8 @@ export function BrandColors({ colors }: { colors: BrandColor[] }) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {colors.map((color, index) => (
-          <ColorTile key={`${color.hex}-${index}`} color={color} />
+        {colors.map((color) => (
+          <ColorTile key={`${color.hex}-${color.name}`} color={color} />
         ))}
       </div>
     </section>

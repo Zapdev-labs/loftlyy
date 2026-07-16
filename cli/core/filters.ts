@@ -1,4 +1,4 @@
-import type { Brand, SidebarBrand } from "@/cli/core/contracts"
+import type { Brand } from "@/cli/core/contracts"
 
 export interface FilterState {
   colorFamilies: string[]
@@ -265,47 +265,3 @@ export const getSimilarBrands = (
 
   return scored.map((entry) => entry.brand)
 }
-
-export const toBrandSummary = (brand: Brand): SidebarBrand => ({
-  categories: brand.categories,
-  colors: brand.colors.map((color) => ({ hex: color.hex })),
-  description: brand.description,
-  industry: brand.industry,
-  name: brand.name,
-  searchIndex: {
-    hexes: brand.colors
-      .map((color) => normalizeHex(color.hex))
-      .filter((color): color is string => color !== null),
-    text: normalizeText(
-      [
-        brand.name,
-        brand.description,
-        brand.industry,
-        ...brand.categories,
-        ...(brand.tags ?? []),
-      ].join(" ")
-    ),
-  },
-  slug: brand.slug,
-  tags: brand.tags,
-  thumbnail: {
-    height: brand.thumbnail.height,
-    label: brand.thumbnail.label,
-    src: brand.thumbnail.src,
-    width: brand.thumbnail.width,
-  },
-  thumbnailDark: brand.thumbnailDark
-    ? {
-        height: brand.thumbnailDark.height,
-        src: brand.thumbnailDark.src,
-        width: brand.thumbnailDark.width,
-      }
-    : undefined,
-  typography: brand.typography.map((font) => ({
-    category: font.category,
-    name: font.name,
-  })),
-})
-
-export const toSidebarBrands = (brands: Brand[]): SidebarBrand[] =>
-  brands.map(toBrandSummary)
